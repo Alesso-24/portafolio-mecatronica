@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+
+// Lazy load below-the-fold components to reduce initial bundle size
+const About = lazy(() => import('./components/About'));
+const Projects = lazy(() => import('./components/Projects'));
+const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   // Initialize Smooth Scrolling (Lenis)
@@ -38,9 +40,13 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Projects />
-        <Contact />
+        
+        {/* Defer loading of heavy content until the Above-The-Fold is rendered */}
+        <Suspense fallback={<div className="h-screen w-full bg-brand-dark"></div>}>
+            <About />
+            <Projects />
+            <Contact />
+        </Suspense>
       </main>
     </div>
   );
