@@ -10,14 +10,15 @@ const projectsData = [
         title: "Articulated Robotic Arm",
         category: "Robotics / Control",
         tech: "Arduino • SolidWorks • C++",
-        image: "/assets/images/project1.jpg" // Using the legacy images we created
+        // Using Vite's import.meta.env.BASE_URL to handle GitHub Pages subpaths
+        image: `${import.meta.env.BASE_URL}images/project1.jpg`
     },
     {
         id: 2,
         title: "Environmental IoT Station",
         category: "Embedded / Web",
         tech: "ESP32 • Dashboard",
-        image: "/assets/images/project2.jpg"
+        image: `${import.meta.env.BASE_URL}images/project2.jpg`
     }
 ];
 
