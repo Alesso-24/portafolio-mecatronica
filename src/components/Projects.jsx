@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,18 +8,20 @@ gsap.registerPlugin(ScrollTrigger);
 const projectsData = [
     {
         id: 1,
-        title: "Articulated Robotic Arm",
-        category: "Robotics / Control",
-        tech: "Arduino • SolidWorks • C++",
+        title: "Self-Balancing Platform with Computer Vision",
+        category: "Robotics & Control Systems",
+        tech: "ESP32 • Python • C/C++ • Servomotors • PID Control",
         // Using Vite's import.meta.env.BASE_URL to handle GitHub Pages subpaths
-        image: `${import.meta.env.BASE_URL}images/project1.jpg`
+        image: `${import.meta.env.BASE_URL}images/project1.png`,
+        link: "/project/self-balancing-platform"
     },
     {
         id: 2,
-        title: "Environmental IoT Station",
-        category: "Embedded / Web",
-        tech: "ESP32 • Dashboard",
-        image: `${import.meta.env.BASE_URL}images/project2.jpg`
+        title: "Industrial Fault Detection via Machine Learning",
+        category: "Data Science & Machine Learning",
+        tech: "Python • Supervised Learning • NASA Datasets • LaTeX",
+        image: `${import.meta.env.BASE_URL}images/project2.png`, // Using AI generated sci-fi cover
+        link: "/project/fault-detection"
     }
 ];
 
@@ -57,8 +60,10 @@ const Projects = () => {
         </div>
 
         <div className="flex flex-col gap-32">
-            {projectsData.map((project, index) => (
-                <div key={project.id} className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-16 items-center group cursor-pointer`}>
+            {projectsData.map((project, index) => {
+                const Wrapper = project.link ? Link : 'div';
+                return (
+                <Wrapper to={project.link || "#"} key={project.id} className={`flex flex-col block ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-16 items-center group cursor-pointer`}>
                     
                     {/* Image Container with hidden overflow for parallax */}
                     <div className="w-full md:w-3/5 aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-lg relative">
@@ -90,8 +95,9 @@ const Projects = () => {
                         </div>
                     </div>
 
-                </div>
-            ))}
+                </Wrapper>
+                );
+            })}
         </div>
       </div>
     </section>

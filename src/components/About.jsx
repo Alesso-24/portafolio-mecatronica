@@ -30,7 +30,7 @@ const About = () => {
   }, []);
 
   // Split text into lines for animation
-  const text = "As a Mechatronics Engineering student at Ibero Puebla, I thrive at the intersection of mechanical design, electronic control, and software architecture. I build systems that move, think, and solve real-world problems.";
+  const text = "I am a Mechatronics Engineering student with a strong interest in solving problems through hardware and software integration. I enjoy working on projects involving robotics, C/C++ and Python programming, and applying machine learning for data analysis. When I'm not coding or building circuits, you can find me studying German, playing the guitar, or discovering new places to eat.";
   const words = text.split(" ");
 
   return (
@@ -46,16 +46,16 @@ const About = () => {
             
             <div className="space-y-12">
                 <div>
-                    <h3 className="text-white text-sm mb-2 font-mono uppercase tracking-widest border-b border-white/10 pb-2 inline-block">What I do</h3>
+                    <h3 className="text-white text-sm mb-2 font-mono uppercase tracking-widest border-b border-white/10 pb-2 inline-block">Alessandro Reyes</h3>
                     <p className="text-gray-400 text-sm leading-relaxed font-mono mt-4">
-                        I operate and deliver advanced <span className="text-white">Mechatronics Projects</span>.
+                        Student & Developer focused on <span className="text-white">Intelligent Systems</span>.
                     </p>
                 </div>
                 <div>
                     <p className="text-gray-400 text-sm leading-relaxed font-mono">
                         Hardware • Software<br/>
                         Embedded Systems<br/>
-                        IoT Architecture
+                        Machine Learning
                     </p>
                 </div>
             </div>
@@ -63,7 +63,7 @@ const About = () => {
 
         {/* Right column large text */}
         <div className="md:w-3/4">
-            <h3 ref={textRef} className="text-2xl md:text-5xl lg:text-[4rem] font-display font-medium leading-[1.1] tracking-tight text-white flex flex-wrap gap-x-3 gap-y-2">
+            <h3 ref={textRef} className="text-2xl md:text-3xl lg:text-4xl font-display font-medium leading-[1.3] tracking-tight text-white flex flex-wrap gap-x-3 gap-y-2 lg:leading-[1.4]">
                 {words.map((word, i) => (
                     <span key={i} className="inline-block relative">
                         {word}
@@ -72,7 +72,7 @@ const About = () => {
             </h3>
             
             <div className="mt-20 flex flex-wrap gap-3">
-                {['Robotics', 'C++', 'React', 'Three.js', 'Arduino', 'Python', 'CAD'].map((skill, i) => (
+                {['Robotics', 'C/C++', 'Python', 'Machine Learning', 'ESP32', 'Control Systems', 'Data Analysis'].map((skill, i) => (
                     <span key={i} className="px-4 py-2 font-mono text-[11px] uppercase tracking-widest border border-white/10 text-gray-400 hover:text-white transition-colors duration-300">
                         {skill}
                     </span>

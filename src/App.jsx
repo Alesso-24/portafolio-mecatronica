@@ -1,12 +1,29 @@
 import React, { useEffect, lazy, Suspense } from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 
-// Lazy load below-the-fold components to reduce initial bundle size
+// Lazy load below-the-fold components
 const About = lazy(() => import('./components/About'));
 const Projects = lazy(() => import('./components/Projects'));
 const Contact = lazy(() => import('./components/Contact'));
+const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
+const SelfBalancingPlatform = lazy(() => import('./pages/SelfBalancingPlatform'));
+const FaultDetection = lazy(() => import('./pages/FaultDetection'));
+
+function Home() {
+  return (
+    <>
+      <Hero />
+      <Suspense fallback={<div className="h-screen w-full bg-brand-dark"></div>}>
+          <About />
+          <Projects />
+          <Contact />
+      </Suspense>
+    </>
+  );
+}
 
 function App() {
   // Initialize Smooth Scrolling (Lenis)
@@ -36,19 +53,22 @@ function App() {
   }, []);
 
   return (
-    <div className="relative w-full bg-brand-dark text-gray-100 font-sans selection:bg-brand-cyan selection:text-black">
-      <Navbar />
-      <main>
-        <Hero />
-        
-        {/* Defer loading of heavy content until the Above-The-Fold is rendered */}
-        <Suspense fallback={<div className="h-screen w-full bg-brand-dark"></div>}>
-            <About />
-            <Projects />
-            <Contact />
-        </Suspense>
-      </main>
-    </div>
+    // The basename MUST match the GitHub repository name for gh-pages routing to work correctly
+    <Router basename={import.meta.env.BASE_URL}>
+      <div className="relative w-full bg-brand-dark text-gray-100 font-sans selection:bg-brand-cyan selection:text-black min-h-screen">
+        <Navbar />
+        <main>
+          <Suspense fallback={<div className="h-screen w-full bg-brand-dark flex items-center justify-center font-mono opacity-50">Loading Interface...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/project/self-balancing-platform" element={<SelfBalancingPlatform />} />
+              <Route path="/project/fault-detection" element={<FaultDetection />} />
+              <Route path="/project/:id" element={<ProjectDetail />} />
+            </Routes>
+          </Suspense>
+        </main>
+      </div>
+    </Router>
   );
 }
 

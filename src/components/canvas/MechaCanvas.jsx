@@ -41,19 +41,19 @@ const Nodes = ({ count = 100 }) => {
 export default function MechaCanvas() {
   return (
     <div className="absolute inset-0 z-0 h-screen w-full pointer-events-none opacity-60">
-      <Canvas shadows dpr={[1, 1.5]}>
+      <Canvas shadows dpr={[1, 1]}>
         <PerspectiveCamera makeDefault position={[0, 0, 10]} fov={50} />
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} color="#7c3aed" intensity={1} />
         <pointLight position={[-10, -10, -10]} color="#00e5ff" intensity={1} />
         
         <Suspense fallback={null}>
-          <Nodes count={150} />
+          <Nodes count={30} />
           <Environment preset="city" />
         </Suspense>
         
-        {/* We disable controls to prevent interrupting the scroll experience on mobile */}
-        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} autoRotate autoRotateSpeed={0.5} />
+        {/* We disable controls to prevent interrupting the scroll experience on mobile. Disabled autoRotate for performance on mid-tier devices. */}
+        <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
       </Canvas>
     </div>
   );

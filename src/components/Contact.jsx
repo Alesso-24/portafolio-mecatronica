@@ -21,8 +21,8 @@ const Contact = () => {
                 </h3>
                 <p className="text-gray-400 mb-8 max-w-xs font-mono text-[13px] leading-relaxed">Ready to build the future of mechatronics together? Reach out to me.</p>
                 <div className="space-y-4 text-lg">
-                    <a href="mailto:jordi@iberopuebla.mx" className="block text-white hover:opacity-70 transition-opacity">jordi@iberopuebla.mx</a>
-                    <p className="text-gray-500">Puebla, Mexico</p>
+                    <a href="mailto:203032@iberopuebla.mx?cc=jordi.reyes.martinez@gmail.com" className="block text-white hover:opacity-70 transition-opacity">203032@iberopuebla.mx</a>
+                    <p className="text-gray-500 font-mono text-sm">Puebla, Mexico</p>
                 </div>
             </div>
 
@@ -50,11 +50,11 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full mt-32 flex justify-between items-center font-mono text-[10px] text-gray-500 uppercase tracking-widest border-t border-white/10 pt-8 z-10">
-        <p>© 2026 Jordi All rights reserved.</p>
+      <div className="max-w-7xl mx-auto w-full mt-32 flex flex-col md:flex-row gap-6 justify-between items-center font-mono text-[10px] text-gray-500 uppercase tracking-widest border-t border-white/10 pt-8 z-10">
+        <p>© 2026 Alessandro Reyes. All rights reserved.</p>
         <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/alessandro-reyes-mtz" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://github.com/Alesso-24" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
         </div>
       </div>
     </section>
