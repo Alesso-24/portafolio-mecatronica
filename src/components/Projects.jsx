@@ -55,7 +55,7 @@ const Projects = () => {
                 Selected<br/>Works<span className="text-brand-cyan">.</span>
             </h2>
             <p className="font-mono text-brand-cyan uppercase tracking-widest text-[11px] hidden md:block border border-white/20 px-3 py-1 rounded-full">
-                (2023 - Present)
+                (2025 - Present)
             </p>
         </div>
 
