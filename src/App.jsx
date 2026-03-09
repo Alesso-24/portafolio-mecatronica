@@ -53,8 +53,7 @@ function App() {
   }, []);
 
   return (
-    // The basename MUST match the GitHub repository name for gh-pages routing to work correctly
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <div className="relative w-full bg-brand-dark text-gray-100 font-sans selection:bg-brand-cyan selection:text-black min-h-screen">
         <Navbar />
         <main>
