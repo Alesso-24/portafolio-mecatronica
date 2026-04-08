@@ -31,7 +31,7 @@ const HeroDiagramSVG = () => (
             <rect width="140" height="80" rx="12" fill="#121212" stroke="#555" strokeWidth="2" />
             <circle cx="70" cy="30" r="10" fill="#adb5bd" />
             <path d="M 30 50 Q 50 20 70 50 T 110 50" stroke="#adb5bd" strokeWidth="2" fill="none" />
-            <text x="70" y="70" fill="#adb5bd" fontSize="12" textAnchor="middle" fontWeight="bold">Piezo Sensor</text>
+            <text x="70" y="70" fill="#adb5bd" fontSize="12" textAnchor="middle" fontWeight="bold">Vibration Sensor</text>
         </g>
         
         {/* Arrow 1 */}
@@ -367,8 +367,13 @@ const FaultDetectionCASE = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             {/* Image logially flipped visually on desktop */}
             <div className="md:col-span-6 order-2 md:order-1">
-                 <div className="w-full rounded-xl shadow-xl overflow-hidden border border-white/5 bg-[#050505]">
-                    <FDRGraphSVG />
+                 <div className="w-full rounded-xl shadow-xl overflow-hidden border border-white/5 bg-white/5">
+                    <img 
+                        src={`${import.meta.env.BASE_URL}images/case_fdr.png`} 
+                        alt="FDR Condition Monitoring Trend"
+                        className="w-full h-auto"
+                        style={{ filter: 'invert(0.85) hue-rotate(180deg) brightness(1.2)' }}
+                    />
                     <div className="p-4 border-t border-white/5 text-center">
                         <p className="font-mono text-gray-400 text-[10px] leading-tight">
                             <strong className="text-white">Fig 1.</strong> Evolución de características estadísticas y segmentación de etapas de degradación basadas en el marco de FDR.
@@ -403,8 +408,13 @@ const FaultDetectionCASE = () => {
                 </div>
             </div>
             <div className="md:col-span-6 flex flex-col gap-8">
-                <div className="w-full rounded-xl shadow-xl overflow-hidden border border-white/5 bg-[#050505]">
-                    <LatencyBarChartSVG />
+                <div className="w-full rounded-xl shadow-xl overflow-hidden border border-white/5 bg-white/5">
+                    <img 
+                        src={`${import.meta.env.BASE_URL}images/case_latency.png`} 
+                        alt="Inference Latency Setup"
+                        className="w-full h-auto"
+                        style={{ filter: 'invert(0.85) hue-rotate(180deg) brightness(1.2)' }}
+                    />
                     <div className="p-4 border-t border-white/5 text-center">
                         <p className="font-mono text-gray-400 text-[10px] leading-tight">
                             <strong className="text-white">Fig 2.</strong> Benchmarking de latencia en hardware: Regresión Logística logra una inferencia 126 veces más rápida (126x speedup) que Random Forest en el ESP32.
