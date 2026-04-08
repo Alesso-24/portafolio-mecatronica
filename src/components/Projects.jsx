@@ -20,16 +20,18 @@ const projectsData = [
         title: "Industrial Fault Detection via Machine Learning",
         category: "Data Science & Machine Learning",
         tech: "Python • Supervised Learning • NASA Datasets • LaTeX",
-        image: `${import.meta.env.BASE_URL}images/project2.png`, // Using AI generated sci-fi cover
-        link: "/project/fault-detection"
+        image: `${import.meta.env.BASE_URL}images/cover_bdai.png`,
+        link: "/project/fault-detection",
+        filter: "brightness(0.6) contrast(1.1) grayscale(0.2)"
     },
     {
         id: 3,
         title: "Edge AI Decision Framework: Quantifying the Sensitivity-Latency Trade-off",
         category: "Publicación Científica (IEEE CASE)",
         tech: "C/C++ • ESP32 • Random Forest • Hardware Latency",
-        image: `${import.meta.env.BASE_URL}images/project2.png`, 
-        link: "/project/fault-detection-case"
+        image: `${import.meta.env.BASE_URL}images/cover_case.png`, 
+        link: "/project/fault-detection-case",
+        filter: "brightness(0.6) contrast(1.1) grayscale(0.2)"
     }
 ];
 
@@ -80,6 +82,7 @@ const Projects = () => {
                                 src={project.image} 
                                 alt={project.title} 
                                 className="img-parallax w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                                style={project.filter ? { filter: project.filter } : {}}
                             />
                         </div>
                         {/* Overlay */}
