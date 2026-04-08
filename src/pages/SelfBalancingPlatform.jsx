@@ -11,44 +11,21 @@ const SelfBalancingPlatform = () => {
     // Scroll to top on mount
     window.scrollTo(0, 0);
 
-    // Re-initialize Lenis for this page
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
     // Animations
     gsap.fromTo(".fade-up", 
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: "power3.out", delay: 0.2 }
     );
-
-    return () => {
-      lenis.destroy();
-    };
   }, []);
 
   return (
-    <div className="bg-brand-dark min-h-screen text-gray-100 font-sans selection:bg-brand-cyan selection:text-black">
+    <div className="bg-brand-dark min-h-screen text-[#e5e5e5] font-sans">
 
 
       {/* Hero Header */}
       <header className="pt-40 pb-20 px-4 md:px-8 max-w-5xl mx-auto">
         <div className="fade-up">
-          <span className="font-mono text-[11px] uppercase tracking-widest text-brand-cyan mb-6 block">Robotics & Control Systems</span>
+          <span className="font-sans font-light text-[10px] uppercase tracking-[0.2em] text-white/50 mb-6 block">Robotics & Control Systems</span>
           <h1 className="font-display font-medium text-5xl md:text-7xl text-white tracking-tight leading-none mb-8">
             Self-Balancing Platform with Computer Vision.
           </h1>
@@ -150,10 +127,10 @@ const SelfBalancingPlatform = () => {
               The intelligence of the system is split into two main components: a <strong>Python-based Vision & Control Hub</strong>, 
               and an <strong>ESP32 embedded execution unit</strong>.
             </p>
-            <ul className="list-disc pl-5 space-y-3 text-white">
-              <li><span className="text-brand-cyan">Computer Vision:</span> Using a camera and OpenCV, the system tracks a dynamic "blob" representing the ball across the color spectrum (HSV isolation). It simultaneously detects the bounds of the MDF plate to calculate relative positioning coordinates.</li>
-              <li><span className="text-brand-cyan">PID Controller:</span> A Proportional-Integral-Derivative equation computes the exact spatial error and derivative speed to anticipate where the ball is heading, generating correction vectors to slow it down before it falls edge-side.</li>
-              <li><span className="text-brand-cyan">Bluetooth & Kinematics:</span> The correction vectors are sent over Bluetooth Serial to the ESP32. The microcontroller runs a C++ script that maps the 2D Cartesian plane corrections into a 3D inverse kinematic model, translating the values into pulse widths that command the three distinct MG996R servomotors to tilt the plane.</li>
+            <ul className="list-disc pl-5 space-y-3 text-white/80">
+              <li><span className="text-white font-medium">Computer Vision:</span> Using a camera and OpenCV, the system tracks a dynamic "blob" representing the ball across the color spectrum (HSV isolation). It simultaneously detects the bounds of the MDF plate to calculate relative positioning coordinates.</li>
+              <li><span className="text-white font-medium">PID Controller:</span> A Proportional-Integral-Derivative equation computes the exact spatial error and derivative speed to anticipate where the ball is heading, generating correction vectors to slow it down before it falls edge-side.</li>
+              <li><span className="text-white font-medium">Bluetooth & Kinematics:</span> The correction vectors are sent over Bluetooth Serial to the ESP32. The microcontroller runs a C++ script that maps the 2D Cartesian plane corrections into a 3D inverse kinematic model, translating the values into pulse widths that command the three distinct MG996R servomotors to tilt the plane.</li>
             </ul>
           </div>
         </section>
@@ -173,7 +150,7 @@ const SelfBalancingPlatform = () => {
               href="https://youtube.com/shorts/88SjHziDrIY?feature=share" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 text-white font-mono uppercase text-[11px] tracking-[0.2em] mt-8 hover:text-brand-cyan transition-colors"
+              className="inline-flex items-center gap-4 text-white font-sans uppercase text-[10px] tracking-[0.2em] mt-8 hover:text-white/60 transition-colors"
             >
               <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center">▶</div>
               Watch Demonstration Video
@@ -181,14 +158,6 @@ const SelfBalancingPlatform = () => {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="w-full border-t border-white/10 py-12 text-center">
-        <h2 className="font-display text-3xl text-white mb-6">Want to see the code?</h2>
-        <a href="https://github.com/Alesso-24" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 bg-white text-black font-mono text-[11px] uppercase tracking-widest hover:bg-gray-300 transition-colors">
-            Visit GitHub Repository
-        </a>
-      </footer>
 
     </div>
   );

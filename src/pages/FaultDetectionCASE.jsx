@@ -189,56 +189,34 @@ const FaultDetectionCASE = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
     gsap.fromTo(".fade-up", 
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out" }
     );
-
-    return () => {
-      lenis.destroy();
-    };
   }, []);
 
   return (
-    <div className="bg-brand-dark min-h-screen text-gray-100 font-sans selection:bg-brand-cyan selection:text-black">
+    <div className="bg-brand-dark min-h-screen text-[#e5e5e5] font-sans">
 
       {/* Hero Header */}
       <header className="pt-32 pb-16 px-4 md:px-8 max-w-6xl mx-auto">
         <div className="fade-up flex justify-between items-center mb-12">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-4 text-white font-mono uppercase text-[11px] tracking-[0.2em] hover:text-brand-cyan transition-colors"
+            className="inline-flex items-center gap-4 text-white font-sans uppercase text-[10px] tracking-[0.2em] hover:text-white/60 transition-colors"
           >
               <span className="bg-white/10 p-2 rounded-full rotate-180">→</span> Regresar al Inicio
           </Link>
           <Link 
             to="/project/fault-detection" 
-            className="inline-flex items-center gap-3 px-4 py-2 border border-brand-cyan/30 text-brand-cyan font-mono uppercase text-[10px] tracking-widest rounded-full hover:bg-brand-cyan/10 transition-colors"
+            className="inline-flex items-center gap-3 px-4 py-2 border border-white/20 text-white font-sans uppercase text-[10px] tracking-[0.2em] rounded-full hover:bg-white/10 transition-colors"
           >
               Ver Proyecto Base (BDAI) <span className="text-lg leading-none">↗</span>
           </Link>
         </div>
 
         <div className="fade-up">
-          <span className="font-mono text-[11px] uppercase tracking-widest text-brand-cyan mb-6 block">Publicación Científica (EDGE AI)</span>
+          <span className="font-sans font-light text-[10px] uppercase tracking-[0.2em] text-white/50 mb-6 block">Publicación Científica (EDGE AI)</span>
           
           <h1 className="font-display font-medium text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-tight mb-12">
             Edge AI Decision Framework: Quantifying the Sensitivity-Latency Trade-off in Industrial Bearing Predictive Maintenance.
@@ -330,28 +308,28 @@ const FaultDetectionCASE = () => {
             <div className="md:col-span-8 font-mono text-gray-400 text-sm leading-relaxed text-justify space-y-6">
                 <ul className="list-none space-y-6">
                     <li className="flex gap-4">
-                        <span className="text-brand-cyan text-xl">⚡</span>
+                        <span className="text-white text-xl">⚡</span>
                         <div>
                             <strong className="text-white block mb-1">Validación en Hardware Real</strong>
                             A diferencia de simulaciones previas, este modelo fue desplegado y evaluado en un ESP32 utilizando la biblioteca <i>EloquentTinyML</i>.
                         </div>
                     </li>
                     <li className="flex gap-4">
-                        <span className="text-brand-cyan text-xl">📊</span>
+                        <span className="text-white text-xl">📊</span>
                         <div>
                             <strong className="text-white block mb-1">Detección de Etapas de Falla</strong>
                             Implementación de un método basado en FDR y características estadísticas (RMS, Curtosis, Peak) para segmentar el estado del rodamiento en Healthy (Sano), Incipient (Incipiente) y Advanced (Avanzado).
                         </div>
                     </li>
                     <li className="flex gap-4">
-                        <span className="text-brand-cyan text-xl">⏱️</span>
+                        <span className="text-white text-xl">⏱️</span>
                         <div>
                             <strong className="text-white block mb-1">Medición de Latencia en Ciclos de CPU</strong>
                             Se midió el tiempo de inferencia exacto dentro del microcontrolador. Un Random Forest ligero toma 23.3 µs (5,592 ciclos de CPU) por inferencia, mientras que la Regresión Logística optimizada requiere solo 184 ns (44 ciclos), permitiendo un monitoreo ultra-eficiente en tiempo real.
                         </div>
                     </li>
                     <li className="flex gap-4">
-                        <span className="text-brand-cyan text-xl">🔄</span>
+                        <span className="text-white text-xl">🔄</span>
                         <div>
                             <strong className="text-white block mb-1">Cascading Model Strategy</strong>
                             Proponemos un esquema adaptativo donde un modelo pesado (Random Forest) opera en estado sano, y cambia a un modelo ultra-ligero (Regresión Logística) una vez detectada la falla para maximizar la eficiencia energética.
@@ -450,9 +428,9 @@ const FaultDetectionCASE = () => {
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
                     El sistema se validó en un canal de monitoreo independiente (IMS Bearing 2) para garantizar el desempeño en condiciones operativas normales, manteniendo un registro de <strong>cero falsas alarmas</strong> y obteniendo una especificidad superior al 98%.
                 </p>
-                <div className="bg-brand-cyan/10 border border-brand-cyan/20 p-5 rounded-lg mt-4">
-                    <h4 className="text-brand-cyan font-mono text-[11px] uppercase tracking-widest mb-2 font-bold flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-brand-cyan rounded-full shadow-[0_0_8px_rgba(0,216,255,0.8)]"></div>
+                <div className="bg-white/[0.03] border border-white/10 p-5 rounded-lg mt-4">
+                    <h4 className="text-white font-sans font-medium text-[11px] uppercase tracking-widest mb-2 flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-white/50 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.4)]"></div>
                         Edge Insights: Problemas FPU en Hardware
                     </h4>
                     <p className="font-mono text-gray-300 text-xs leading-relaxed text-justify mt-3">
@@ -477,7 +455,7 @@ const FaultDetectionCASE = () => {
                 <span className="text-[10px] text-gray-500 font-sans tracking-normal capitalize">Under Review (Decision expected May 17th, 2026)</span>
             </button>
             <div className="mt-8">
-                <Link to="/project/fault-detection" className="font-mono text-[10px] text-brand-cyan uppercase tracking-widest hover:underline">
+                <Link to="/project/fault-detection" className="font-sans font-light text-[10px] text-white/50 uppercase tracking-[0.2em] hover:underline hover:text-white/80 transition-colors">
                     ← Ver Investigación Previa (BDAI)
                 </Link>
             </div>

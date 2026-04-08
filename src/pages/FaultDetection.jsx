@@ -11,38 +11,15 @@ const FaultDetection = () => {
     // Scroll to top on mount
     window.scrollTo(0, 0);
 
-    // Re-initialize Lenis for this page
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
     // Animations
     gsap.fromTo(".fade-up", 
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out" }
     );
-
-    return () => {
-      lenis.destroy();
-    };
   }, []);
 
   return (
-    <div className="bg-brand-dark min-h-screen text-gray-100 font-sans selection:bg-brand-cyan selection:text-black">
+    <div className="bg-brand-dark min-h-screen text-[#e5e5e5] font-sans">
 
       {/* Hero Header */}
       <header className="pt-32 pb-16 px-4 md:px-8 max-w-6xl mx-auto">
@@ -53,7 +30,7 @@ const FaultDetection = () => {
           >
               <span className="bg-white/10 p-2 rounded-full rotate-180">→</span> Regresar al Inicio
           </Link>
-          <span className="font-mono text-[11px] uppercase tracking-widest text-brand-cyan mb-6 block">Publicación Científica</span>
+          <span className="font-sans font-light text-[10px] uppercase tracking-[0.2em] text-white/50 mb-6 block">Publicación Científica</span>
           
           <h1 className="font-display font-medium text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-tight mb-12">
             Comparative Evaluation of Lightweight Supervised Machine Learning Techniques for Industrial Rotating Machinery.
@@ -82,7 +59,7 @@ const FaultDetection = () => {
           </div>
           <div>
             <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Estado</h4>
-            <p className="font-mono text-[11px] px-3 py-1 bg-brand-cyan/10 text-brand-cyan inline-block rounded-full border border-brand-cyan/20">Aceptado para publicación</p>
+            <p className="font-sans font-medium text-[10px] uppercase tracking-widest px-3 py-1 bg-white/5 text-white/80 inline-block rounded-full border border-white/10">Aceptado para publicación</p>
           </div>
         </div>
       </header>
@@ -92,7 +69,7 @@ const FaultDetection = () => {
         
         {/* Abstract Box */}
         <section className="fade-up mb-24 w-full md:w-10/12 mx-auto">
-            <div className="bg-white/5 border-l-4 border-brand-cyan p-8 md:p-12 rounded-r-lg shadow-2xl relative overflow-hidden">
+            <div className="bg-white/[0.03] border-l-4 border-white/40 p-8 md:p-12 rounded-r-lg shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-8 opacity-5">
                     <span className="font-display text-8xl text-white">#</span>
                 </div>
@@ -193,9 +170,9 @@ const FaultDetection = () => {
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
                     Previniendo el sobreajuste (overfitting), los hiperparámetros fueron entonados vía validación cruzada estructurada sobre ciclos temporales para aislar el "Data Leakage". El modelo SVM y k-NN resultaron competentes, pero el <strong>Random Forest (100 estimadores) dominó con una efectividad superior al 99.85%.</strong> A nivel analítico, reportar 0 falsos positivos fue el hito fundamental para validarlo como protocolo seguro de detención de emergencia sin parar la fábrica arbitrariamente.
                 </p>
-                <div className="bg-brand-cyan/10 border border-brand-cyan/20 p-6 rounded-lg mt-6">
-                    <h4 className="text-brand-cyan font-mono text-xs uppercase tracking-widest mb-3 flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-brand-cyan rounded-full animate-pulse"></div>
+                <div className="bg-white/[0.03] border border-white/10 p-6 rounded-2xl mt-6">
+                    <h4 className="text-white font-sans font-medium text-xs uppercase tracking-[0.15em] mb-3 flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-white/60 rounded-full animate-pulse"></div>
                         Relevancia de Energía Edge (ESP32)
                     </h4>
                     <p className="font-sans text-gray-300 text-sm leading-relaxed">

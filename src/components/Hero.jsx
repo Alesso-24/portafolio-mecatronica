@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useState, useRef, lazy } from 'react';
 import gsap from 'gsap';
 import ErrorBoundary from './ErrorBoundary';
+import { TextScramble } from './ui/text-scramble';
 
 // Dynamically load the heavy 3D canvas only when needed
 const MechaCanvas = lazy(() => import('./canvas/MechaCanvas'));
@@ -21,22 +22,21 @@ const Hero = () => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
-    const tl = gsap.timeline({ delay: 0.2 });
+    const tl = gsap.timeline({ delay: 0.4 });
 
-    // Premium split text animation equivalent
     tl.fromTo(title1Ref.current,
-      { y: 100, opacity: 0, rotateX: -20 },
-      { y: 0, opacity: 1, rotateX: 0, duration: 1.2, ease: 'power4.out' }
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' }
     )
     .fromTo(title2Ref.current,
-      { y: 100, opacity: 0, rotateX: -20 },
-      { y: 0, opacity: 1, rotateX: 0, duration: 1.2, ease: 'power4.out' },
-      "-=1"
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' },
+      "-=1.1"
     )
     .fromTo(subtitleRef.current,
-      { y: 20, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: 'power3.out' },
-      "-=0.6"
+      { opacity: 0 },
+      { opacity: 1, duration: 2, ease: 'power2.out' },
+      "-=0.5"
     );
 
     return () => window.removeEventListener('resize', checkMobile);
@@ -49,31 +49,37 @@ const Hero = () => {
       {!isMobile && (
         <ErrorBoundary fallback={<div className="absolute inset-0 z-0 bg-brand-dark opacity-60"></div>}>
             <Suspense fallback={null}>
-                <MechaCanvas />
+                <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
+                  <MechaCanvas />
+                </div>
             </Suspense>
         </ErrorBoundary>
       )}
 
+      {/* Subtle radial gradient overlay for focus */}
+      <div className="absolute inset-0 z-1 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-brand-dark/50 to-brand-dark"></div>
+
       {/* Content */}
       <div className="relative z-10 text-center px-4 w-full max-w-7xl mx-auto flex flex-col items-center">
-        <div className="overflow-hidden pb-2 mb-[-1vw]">
-            <h1 ref={title1Ref} className="font-display font-medium text-[10vw] md:text-[8vw] leading-none tracking-tight text-white">
-                Mechatronics
-            </h1>
+        <div className="overflow-hidden pb-2 mb-2">
+            <span ref={title1Ref} className="font-sans font-light text-[6vw] md:text-[3vw] tracking-[0.2em] text-brand-primary uppercase opacity-80 block">
+                Alessandro
+            </span>
         </div>
         <div className="overflow-hidden pb-4">
-            <h1 ref={title2Ref} className="font-display font-medium text-[10vw] md:text-[8vw] leading-none tracking-tight text-white opacity-90">
-                Engineering
+            <h1 ref={title2Ref} className="font-display font-medium text-[12vw] md:text-[9vw] leading-[0.9] tracking-tight text-white block">
+                Mechatronics
+                <br />
+                <span className="text-white/40 italic font-light">&</span> Software
             </h1>
         </div>
         
-        <p ref={subtitleRef} className="mt-8 text-sm md:text-base font-mono text-gray-400 max-w-xl uppercase tracking-widest leading-relaxed">
-          Focused on embedded systems, automation, and <span className="text-white">data analysis.</span>
+        <p ref={subtitleRef} className="mt-12 text-xs md:text-sm font-sans text-brand-primary/60 max-w-xl mx-auto leading-relaxed">
+          Bridging the gap between physical systems and elegant software. <br className="hidden md:block" /> Focused on intelligent automation and seamless digital experiences.
         </p>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-            <div className="font-mono text-[10px] tracking-widest uppercase text-gray-500 mb-2">Scroll</div>
-            <div className="w-[1px] h-[30px] bg-white opacity-30 mx-auto"></div>
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+            <div className="w-[1px] h-[50px] bg-gradient-to-b from-white/0 via-white/40 to-white/0 mx-auto animate-pulse"></div>
         </div>
       </div>
     </section>

@@ -36,38 +36,40 @@ const Navbar = () => {
   };
 
   return (
-    <nav ref={navRef} className="fixed top-0 left-0 w-full z-50 mix-blend-difference px-6 md:px-8 py-6">
-      <div className="max-w-7xl mx-auto flex justify-between items-center text-white">
-        
-        <div className="flex items-center gap-6">
-            <Link to="/" className="font-display font-bold text-xl tracking-tight hover:opacity-70 transition-opacity">
+    <header className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none">
+      <nav ref={navRef} className="w-[95%] max-w-3xl glass-panel rounded-full px-6 py-4 flex justify-between items-center transition-all duration-300 pointer-events-auto">
+        <div className="flex items-center gap-6 text-brand-primary">
+            <Link to="/" className="font-display font-medium text-lg tracking-wide hover:text-white transition-colors duration-300">
               ALESSANDRO.
             </Link>
+            <a href="https://github.com/Alesso-24" target="_blank" rel="noopener noreferrer" className="hidden sm:block font-sans text-[10px] uppercase tracking-widest text-brand-primary/60 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+              ★ GitHub
+            </a>
             {isProjectPage && (
-              <Link to="/" className="hidden sm:block font-mono text-[10px] uppercase tracking-widest text-white border border-white/20 px-3 py-1.5 hover:bg-white hover:text-black transition-all">
+              <Link to="/" className="hidden sm:block font-mono text-[10px] uppercase tracking-widest text-brand-primary/60 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition-all duration-300">
                 ← Back to Work
               </Link>
             )}
         </div>
         
-        <div className="hidden md:flex items-center gap-10 font-mono text-[11px] uppercase tracking-[0.2em] text-gray-400">
-          <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-white transition-colors cursor-pointer">About</a>
-          <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="hover:text-white transition-colors cursor-pointer">Projects</a>
-          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-white transition-colors cursor-pointer">Contact</a>
+        <div className="hidden md:flex items-center gap-8 font-sans text-xs uppercase tracking-[0.15em] text-gray-400">
+          <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="hover:text-white transition-colors cursor-pointer duration-300">About</a>
+          <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="hover:text-white transition-colors cursor-pointer duration-300">Projects</a>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="hover:text-white transition-colors cursor-pointer duration-300">Contact</a>
         </div>
 
-        <div className="md:hidden flex items-center gap-4">
+        <div className="md:hidden flex items-center gap-4 text-brand-primary">
             {isProjectPage && (
-              <Link to="/" className="sm:hidden font-mono text-[10px] uppercase tracking-widest text-white border border-white/20 px-3 py-1.5 hover:bg-white hover:text-black transition-all">
+              <Link to="/" className="sm:hidden font-mono text-[10px] uppercase tracking-widest text-brand-primary/60 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition-all duration-300">
                 ← Back
               </Link>
             )}
-            <button aria-label="Open Menu">
-              <Menu size={24} />
+            <button aria-label="Open Menu" className="hover:text-white transition-colors">
+              <Menu size={20} strokeWidth={1.5} />
             </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
