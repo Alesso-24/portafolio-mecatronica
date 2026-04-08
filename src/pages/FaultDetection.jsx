@@ -51,9 +51,9 @@ const FaultDetection = () => {
             to="/" 
             className="inline-flex items-center gap-4 text-white font-mono uppercase text-[11px] tracking-[0.2em] mb-12 hover:text-brand-cyan transition-colors"
           >
-              <span className="bg-white/10 p-2 rounded-full rotate-180">→</span> Regresar al Inicio
+              <span className="bg-white/10 p-2 rounded-full rotate-180">→</span> Back to Home
           </Link>
-          <span className="font-sans font-light text-[10px] uppercase tracking-[0.2em] text-white/50 mb-6 block">Publicación Científica</span>
+          <span className="font-sans font-light text-[10px] uppercase tracking-[0.2em] text-white/50 mb-6 block">Scientific Publication</span>
           
           <h1 className="font-display font-medium text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-tight mb-12">
             Comparative Evaluation of Lightweight Supervised Machine Learning Techniques for Industrial Rotating Machinery.
@@ -63,7 +63,7 @@ const FaultDetection = () => {
         {/* Project Meta - Academic Format */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 border-y border-white/10 py-8 fade-up">
           <div>
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Autores</h4>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Authors</h4>
             <div className="font-mono text-[12px] text-gray-300 leading-relaxed font-semibold">
               Jordi Alessandro Reyes Martinez¹<br/>
               Karime Melissa Pastrana Monzon¹<br/>
@@ -73,16 +73,16 @@ const FaultDetection = () => {
             <p className="font-mono text-[10px] text-gray-500 mt-2">¹ Universidad Iberoamericana Puebla</p>
           </div>
           <div>
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Conferencia</h4>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Conference</h4>
             <p className="font-mono text-[12px] text-gray-300 italic">IEEE International Conference on Big Data and Artificial Intelligence (BDAI)</p>
           </div>
           <div>
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Presentación</h4>
-            <p className="font-mono text-[12px] text-gray-300">Del 3 al 5 de julio de 2026<br/>Chongqing, China.</p>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Presentation</h4>
+            <p className="font-mono text-[12px] text-gray-300">July 3–5, 2026<br/>Chongqing, China.</p>
           </div>
           <div>
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Estado</h4>
-            <p className="font-sans font-medium text-[10px] uppercase tracking-widest px-3 py-1 bg-white/5 text-white/80 inline-block rounded-full border border-white/10">Aceptado para publicación</p>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Status</h4>
+            <p className="font-sans font-medium text-[10px] uppercase tracking-widest px-3 py-1 bg-white/5 text-white/80 inline-block rounded-full border border-white/10">Accepted for publication</p>
           </div>
         </div>
       </header>
@@ -98,8 +98,9 @@ const FaultDetection = () => {
                 </div>
                 <h3 className="font-display text-2xl text-white mb-6 uppercase tracking-wider relative z-10">Abstract</h3>
                 <p className="font-sans text-gray-300 text-sm md:text-base leading-relaxed text-justify relative z-10">
-                    Este proyecto presenta un enfoque basado en datos para el mantenimiento predictivo en maquinaria rotativa industrial utilizando el dataset de rodamientos IMS de la NASA. Mediante el uso de características estadísticas en el dominio del tiempo, se desarrolló un modelo ligero que elimina la necesidad de cálculos complejos como la Transformada Rápida de Fourier (FFT). El modelo Random Forest optimizado logró una precisión superior al 99.85%. Adicionalmente, se propone una arquitectura Edge AI estructurada sobre FreeRTOS para el microcontrolador ESP32-S3, la cual estima una reducción del consumo de energía de transmisión en aproximadamente un 98.4% frente al procesamiento tradicional en la nube (Cloud offloading) bajo simulaciones teóricas ideales.
+                    This paper presents a data-driven approach for predictive maintenance in industrial rotating machinery using the NASA IMS Bearing Dataset. Unplanned downtime caused by bearing failures represents a significant cost in manufacturing. The efficacy of supervised learning algorithms is analyzed to detect mechanical failures before breakdown occurs. To achieve this, a comparative study between Random Forest, Support Vector Machines (SVM), and k-Nearest Neighbors (k-NN) was conducted. Furthermore, a hyperparameter optimization was performed via Grid Search and the model robustness was evaluated against synthetic noise injection. A first-order analytical energy consumption model comparing Edge Artificial Intelligence (AI) processing versus Cloud offloading is also presented. The results demonstrate that the Random Forest classifier achieves over 99 percent accuracy on the test set with optimized parameters. Additionally, under nominal datasheet operating conditions, the analytical model estimates that local inference could reduce data transmission energy by approximately 98 percent compared to raw data streaming. This study concludes that statistical feature extraction combined with ensemble learning represents a potentially energy-efficient solution for battery-powered Industrial Internet of Things (IIoT) nodes targeted for the Espressif ESP32 microcontroller platform.
                 </p>
+                <p className="font-mono text-[10px] text-gray-500 mt-6"><span className="text-white/40 uppercase tracking-widest">Index Terms —</span> Predictive Maintenance, Machine Learning, Random Forest, Energy Efficiency, Edge AI, ESP32, FreeRTOS.</p>
             </div>
         </section>
 
@@ -114,7 +115,7 @@ const FaultDetection = () => {
                 />
                 <div className="p-4 bg-white/5 border-t border-white/5">
                     <p className="font-mono text-gray-400 text-[11px] text-center">
-                        <strong className="text-white">Fig. 1.</strong> Comparativa de rendimiento: Random Forest supera a SVM y k-NN con una precisión del 99.85%.
+                        <strong className="text-white">Fig. 1.</strong> Performance comparison: Random Forest outperforms SVM and k-NN, achieving over 99% accuracy on the test set.
                     </p>
                 </div>
             </div>
@@ -126,12 +127,12 @@ const FaultDetection = () => {
         <section className="fade-up mb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-6 space-y-6">
-                <h3 className="font-display text-3xl text-white tracking-tight mb-4">I. Introducción y Contexto</h3>
+                <h3 className="font-display text-3xl text-white tracking-tight mb-4">I. Introduction & Context</h3>
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
-                    La maquinaria rotativa funge como el actuador primario en sectores fundamentales como la energía eólica y el ensamblaje automotriz. Los rodamientos de elementos rodantes son propensos a sufrir degradación severa por fatiga y desalineación, representando casi el 40% de las fallas en motores de inducción.
+                    Rotating machinery is a primary actuator in key sectors such as wind energy and automotive assembly. Rolling-element bearings are prone to severe degradation from fatigue and misalignment, accounting for nearly 40% of induction motor failures.
                 </p>
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
-                    Las estrategias tradicionales como el "Run-to-Failure" o mantenimientos preventivos guiados por calendario presentan serios desafíos operativos, provocando detenciones de planta imprevistas. Aunque la Industria 4.0 empuja el Mantenimiento Predictivo (PdM) con Deep Learning (DL), depender de GPUs y matemática compleja limita la viabilidad del monitoreo descentralizado por baterías.
+                    Traditional strategies such as "Run-to-Failure" or calendar-based preventive maintenance present serious operational challenges, causing unplanned plant shutdowns. Although Industry 4.0 drives Predictive Maintenance (PdM) with Deep Learning (DL), reliance on GPUs and complex mathematics limits the feasibility of battery-powered decentralized monitoring.
                 </p>
             </div>
             <div className="md:col-span-6">
@@ -174,12 +175,12 @@ const FaultDetection = () => {
                 </div>
             </div>
             <div className="md:col-span-7 space-y-6 order-1 md:order-2">
-                <h3 className="font-display text-3xl text-white tracking-tight mb-4">II. Ingeniería de Características</h3>
+                <h3 className="font-display text-3xl text-white tracking-tight mb-4">II. Feature Engineering</h3>
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
-                    Para asegurar que el modelo fuese suficientemente ligero para un microcontrolador, se omitió deliberadamente el uso de la Transformada Rápida de Fourier (FFT), la cual requiere una complejidad logarítmica <code className="bg-white/10 px-1 rounded">O(N log N)</code>. En su lugar, el sistema evalúa de manera unidimensional la evolución estadística temporal de las vibraciones en complejidad <code className="bg-white/10 px-1 rounded">O(N)</code>.
+                    To ensure the model was lightweight enough for a microcontroller, the Fast Fourier Transform (FFT) was deliberately omitted, as it requires logarithmic complexity <code className="bg-white/10 px-1 rounded">O(N log N)</code>. Instead, the system evaluates the one-dimensional statistical temporal evolution of vibrations at <code className="bg-white/10 px-1 rounded">O(N)</code> complexity.
                 </p>
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
-                    Se calcularon métricas candidatas como el Factor de Forma, Crest Factor, Skewness (Asimetría) y Curtosis. Tras el análisis de Importancia de Variables (Gini impurity), se concluyó que el Root Mean Square (RMS) y la magnitud de máxima amplitud mantenían la mayor penalización sobre el clasificador, fungiendo como métricas ideales por su tendencia monotónica correlacionada directamente al desgaste físico progresivo.
+                    Candidate metrics such as Shape Factor, Crest Factor, Skewness, and Kurtosis were computed. After Variable Importance analysis (Gini impurity), it was concluded that Root Mean Square (RMS) and peak amplitude magnitude carried the highest weight in the classifier, making them ideal features due to their monotonic trend directly correlated to progressive physical wear.
                 </p>
             </div>
           </div>
@@ -189,17 +190,17 @@ const FaultDetection = () => {
         <section className="fade-up mb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-7 space-y-6">
-                <h3 className="font-display text-3xl text-white tracking-tight mb-4">III. Resultados y Edge Computing</h3>
+                <h3 className="font-display text-3xl text-white tracking-tight mb-4">III. Results & Edge Computing</h3>
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
-                    Previniendo el sobreajuste (overfitting), los hiperparámetros fueron entonados vía validación cruzada estructurada sobre ciclos temporales para aislar el "Data Leakage". El modelo SVM y k-NN resultaron competentes, pero el <strong>Random Forest (100 estimadores) dominó con una efectividad superior al 99.85%.</strong> A nivel analítico, reportar 0 falsos positivos fue el hito fundamental para validarlo como protocolo seguro de detención de emergencia sin parar la fábrica arbitrariamente.
+                    To prevent overfitting, hyperparameters were tuned via structured cross-validation over temporal cycles to isolate data leakage. The SVM and k-NN models proved competitive, but the <strong>Random Forest (100 estimators) dominated with over 99% effectiveness.</strong> At the analytical level, reporting 0 false positives was the fundamental milestone for validating it as a safe emergency halt protocol without arbitrarily stopping the plant.
                 </p>
                 <div className="bg-white/[0.03] border border-white/10 p-6 rounded-2xl mt-6">
                     <h4 className="text-white font-sans font-medium text-xs uppercase tracking-[0.15em] mb-3 flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-white/60 rounded-full animate-pulse"></div>
-                        Relevancia de Energía Edge (ESP32)
+                        Edge Energy Relevance (ESP32)
                     </h4>
                     <p className="font-sans text-gray-300 text-sm leading-relaxed">
-                        Este enfoque se extrapoló matemáticamente a una arquitectura conectada IoT (ESP32-S3 y sistema RTOS). Al inferir localmente las ramificaciones de los árboles en Hardware y usar MQTT para transmitir *exclusivamente* un payload de alarma, se estimó teóricamente que el dispositivo utilizará 0.99 mJ por ejecución. Esto denota un <strong>ahorro del 98.4% de energía</strong> respecto a forzar un streaming de todos los datos en crudo vía Wi-Fi hacia la Nube.
+                        This approach was mathematically extrapolated to an IoT-connected architecture (ESP32-S3 with an RTOS). By inferring the tree branches locally on hardware and using MQTT to transmit <em>exclusively</em> an alarm payload, the device is theoretically estimated to consume 0.99 mJ per execution — a <strong>98% energy saving</strong> compared to streaming all raw data over Wi-Fi to the Cloud.
                     </p>
                 </div>
             </div>
@@ -214,7 +215,7 @@ const FaultDetection = () => {
                     />
                     <div className="p-3 border-t border-white/5 text-center px-4">
                         <p className="font-mono text-gray-400 text-[10px] leading-tight">
-                            <strong className="text-white">Fig. 4.</strong> Matriz de confusión del modelo optimizado, demostrando absoluta fiabilidad sin falsos positivos incidentales ni negativos (False Acceptance Rate de 0%).
+                        <strong className="text-white">Fig. 4.</strong> Optimized model confusion matrix, demonstrating complete reliability with zero false positives or false negatives (False Acceptance Rate = 0%).
                         </p>
                     </div>
                 </div>
@@ -227,13 +228,13 @@ const FaultDetection = () => {
       {/* Call to Action */}
       <footer className="w-full border-t border-white/10 py-20 text-center bg-black/20">
         <div className="max-w-2xl mx-auto px-4">
-            <h2 className="font-display text-2xl md:text-3xl text-white mb-6">Disponibilidad del Documento</h2>
+            <h2 className="font-display text-2xl md:text-3xl text-white mb-6">Document Availability</h2>
             <p className="font-mono text-gray-400 text-[11px] md:text-xs leading-relaxed uppercase tracking-wider mb-10">
-                El "Camera-Ready Script" finalizará su indexación editorial tras la conferencia. La descarga del PDF completo y anexos de datos estarán liberados al público a mediados de 2026 en el repositorio IEEE Xplore.
+                The Camera-Ready Script will finalize editorial indexing after the conference. The full PDF and data annexes will be released publicly in mid-2026 on the IEEE Xplore repository.
             </p>
             <button disabled className="inline-flex items-center gap-3 px-8 py-4 bg-gray-800 text-gray-500 font-mono text-[11px] uppercase tracking-widest border border-white/10 rounded-full cursor-not-allowed transition-colors shadow-inner">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                Ver Paper Oficial en IEEE (Bloqueado)
+                View Official IEEE Paper (Locked)
             </button>
         </div>
       </footer>
