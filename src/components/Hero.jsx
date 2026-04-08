@@ -1,3 +1,19 @@
+/**
+ * @file Hero.jsx
+ * @description Full-screen Hero section — the first thing visitors see.
+ *
+ * Layout:
+ *  - `<HeroGradient />` renders an animated Canvas2D background (cursor-reactive orbs).
+ *  - A radial vignette overlay darkens the edges to focus attention on the text.
+ *  - Two headline lines ("Alessandro" + "Mechatronics & Software") animate in with GSAP
+ *    staggered y-translate + opacity on mount.
+ *  - A subtitle paragraph fades in last.
+ *  - A pulsing 1px vertical line at the bottom hints at scrollable content.
+ *
+ * Performance:
+ *  - No Three.js / WebGL — the background is pure Canvas2D.
+ *  - GSAP animations only use `opacity` and `transform: translateY` (GPU composited).
+ */
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import HeroGradient from './HeroGradient';

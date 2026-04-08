@@ -1,3 +1,18 @@
+/**
+ * @file Navbar.jsx
+ * @description Floating glassmorphism pill navigation bar with a fully-functional mobile overlay menu.
+ *
+ * Features:
+ *  - Centered via `fixed inset-x-0 flex justify-center` (avoids Chrome's backdrop-filter + transform offset bug).
+ *  - GSAP entrance animation: slides down from y:-100 on first mount.
+ *  - Desktop: shows About / Projects / Contact anchor links.
+ *  - Mobile (<md): hamburger (≡) / close (✕) button toggles a fullscreen overlay menu.
+ *    The overlay uses CSS opacity + pointer-events transitions with staggered link entrance animations.
+ *  - Locks `document.body.overflow` while the mobile menu is open to prevent scroll-behind.
+ *  - On project pages, shows a "← Back to Work" pill linking back to the homepage.
+ *  - `handleNavClick` handles cross-route navigation: if not on `/`, navigates home first,
+ *    then scrolls to the target section after a 150ms render delay.
+ */
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';

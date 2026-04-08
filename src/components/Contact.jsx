@@ -1,3 +1,17 @@
+/**
+ * @file Contact.jsx
+ * @description Contact section and site footer.
+ *
+ * Content:
+ *  - Primary email: jordi.reyes.martinez@gmail.com (mailto: link).
+ *  - CC instruction: * Please CC your email to jordi.reyes@iberopuebla.mx
+ *    Note: the CC text must NOT use the `uppercase` CSS class — it renders the email in ALL CAPS.
+ *  - Location: Puebla, Mexico.
+ *  - Copyright: © Alessandro Reyes.
+ *
+ * Background:
+ *  - Uses `<AnimatedGradientBackground />` for a subtle moving gradient behind the text.
+ */
 import React from 'react';
 import AnimatedGradientBackground from './ui/animated-gradient-background';
 

@@ -1,3 +1,21 @@
+/**
+ * @file Projects.jsx
+ * @description "Selected Work" section — showcases the three main projects with parallax imagery.
+ *
+ * Data:
+ *  `projectsData` array defines each project: title, category, tech stack, image path, route link.
+ *  Images use `import.meta.env.BASE_URL` prefix to support GitHub Pages subdirectory hosting.
+ *
+ * Animation:
+ *  - GSAP ScrollTrigger applies a vertical parallax (`yPercent: 20`) to each `.img-parallax` image
+ *    as the user scrolls past the card, creating a cinematic depth effect.
+ *  - On hover, images scale from 110% → 100% (scale-out zoom) for a polished feel.
+ *  - A "Explore →" CTA link fades/slides in on hover via CSS group-hover transitions.
+ *
+ * Routing:
+ *  Each card is wrapped in a `<Link>` that navigates to the relevant page route.
+ *  Alternating layout (flex-row / flex-row-reverse) for visual rhythm.
+ */
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';

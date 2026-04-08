@@ -1,3 +1,21 @@
+/**
+ * @file App.jsx
+ * @description Root application component.
+ *
+ * Responsibilities:
+ *  - Wraps the entire app in HashRouter (required for GitHub Pages static hosting).
+ *  - Initializes a single, global Lenis smooth-scroll instance (duration 0.7s).
+ *    ⚠️  Do NOT re-initialize Lenis inside nested pages — this causes competing
+ *    scroll controllers and causes severe trackpad lag.
+ *  - Lazy-loads all heavy page-level components to keep the initial JS bundle small.
+ *  - Renders the persistent <Navbar /> above the <Routes /> tree.
+ *
+ * Routes:
+ *  /                              → Home (Hero + About + Projects + Contact)
+ *  /project/self-balancing-platform → SelfBalancingPlatform
+ *  /project/fault-detection         → FaultDetection (IEEE BDAI paper)
+ *  /project/fault-detection-case    → FaultDetectionCASE (IEEE CASE paper)
+ */
 import React, { useEffect, lazy, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Lenis from 'lenis';

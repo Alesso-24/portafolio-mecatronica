@@ -1,3 +1,19 @@
+/**
+ * @file About.jsx
+ * @description "About Me" section — presented as an information-dense Bento Grid layout.
+ *
+ * Design:
+ *  - Inspired by modern SaaS Bento layouts (e.g., Linear, Vercel dashboards).
+ *  - Uses CSS Grid with `glass-panel` utility (backdrop-blur + border + shadow) for each cell.
+ *  - Background glow is a CSS `radial-gradient` (NOT `filter: blur`) to prevent GPU paint storms.
+ *
+ * Content:
+ *  - Bio, education, key skills, tools, languages, and a "Currently Working On" panel.
+ *
+ * Animation:
+ *  - GSAP ScrollTrigger batch reveals each `.bento-item` with a staggered y-translate + opacity
+ *    as the section enters the viewport. Trigger resets on leave for re-play on scroll-up.
+ */
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

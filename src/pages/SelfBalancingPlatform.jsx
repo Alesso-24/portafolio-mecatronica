@@ -1,8 +1,26 @@
+/**
+ * @file SelfBalancingPlatform.jsx
+ * @route /project/self-balancing-platform
+ * @description Detail page for the Self-Balancing Platform with Computer Vision project.
+ *
+ * Project summary:
+ *  - Mechatronic system using an ESP32 microcontroller, two servo motors, and a Raspberry Pi camera.
+ *  - Computer Vision (Python/OpenCV) detects the ball position in real-time.
+ *  - PID Control algorithm adjusts servo angles to keep the ball balanced at the center.
+ *  - Full closed-loop control implemented in embedded C/C++.
+ *
+ * Page layout:
+ *  - Hero header with back link.
+ *  - Project metadata grid (Role, Duration, Hardware, Tools).
+ *  - Alternating text + image sections for each technical chapter.
+ *  - Video demo link (YouTube).
+ *
+ * ⚠️  Does NOT re-initialize Lenis — the global instance in App.jsx handles scroll.
+ */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 

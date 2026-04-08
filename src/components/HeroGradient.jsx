@@ -1,3 +1,18 @@
+/**
+ * @file HeroGradient.jsx
+ * @description Cursor-reactive Canvas2D gradient animation for the Hero section background.
+ *
+ * Architecture:
+ *  - Uses a native HTML5 `<canvas>` element sized via a ResizeObserver (never triggers layout).
+ *  - Tracks mouse via `window.mousemove` and touch via `window.touchmove` (passive listeners).
+ *  - Renders on every animation frame via `requestAnimationFrame` — no React state mutations.
+ *  - Three ambient orbs move in slow Lissajous paths; a fourth spotlight orb tracks the cursor.
+ *
+ * Performance notes:
+ *  - Pure Canvas2D (no WebGL / Three.js) — runs at 60fps even on low-end laptops.
+ *  - All gradient geometry is recalculated per frame using `performance.now()` for smooth timing.
+ *  - Properly cleans up listeners and animation frame on unmount.
+ */
 import React, { useEffect, useRef, useCallback } from 'react';
 
 /**

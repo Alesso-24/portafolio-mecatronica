@@ -1,8 +1,31 @@
+/**
+ * @file FaultDetection.jsx
+ * @route /project/fault-detection
+ * @description Detail page for the IEEE BDAI 2026 paper:
+ *   "Comparative Evaluation of Lightweight Supervised Machine Learning Techniques
+ *    for Industrial Rotating Machinery."
+ *
+ * Sections (rendered as an academic article layout):
+ *  1. Header  — paper title, authors, conference, date, status badge.
+ *  2. Abstract — bordered quote block with decorative hash symbol.
+ *  3. Figure 1 — algorithm performance comparison chart (inverted PNG).
+ *  4. Section I  — Introduction & Context.
+ *  5. Section II — Feature Engineering (RMS, FFT-free, O(N) complexity).
+ *  6. Section III — Results & Edge Computing (ESP32, FreeRTOS, MQTT, 98.4% energy saving).
+ *  7. Footer — IEEE Xplore availability notice (button disabled until post-conference).
+ *
+ * Animation:
+ *  - GSAP batch `.fade-up` entrance on mount (opacity + y offset).
+ *  - ⚠️  Does NOT re-initialize Lenis — the global instance in App.jsx handles scroll.
+ *
+ * Images:
+ *  - All images use `import.meta.env.BASE_URL` for GitHub Pages subdirectory compatibility.
+ *  - CSS filter: `invert(0.85) hue-rotate(180deg)` converts white-background charts to dark-UI.
+ */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 

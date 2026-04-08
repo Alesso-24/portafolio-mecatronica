@@ -1,8 +1,23 @@
+/**
+ * @file FaultDetectionCASE.jsx
+ * @route /project/fault-detection-case
+ * @description Detail page for the IEEE CASE 2026 paper:
+ *   "Edge AI Decision Framework: Quantifying the Sensitivity-Latency Trade-off"
+ *
+ * Content summary:
+ *  - Extends the BDAI paper: deploys the Random Forest on ESP32-S3 under FreeRTOS.
+ *  - Introduces the concept of Sensitivity-Latency trade-off for industrial edge inference.
+ *  - Includes latency benchmarks, confusion matrices, and architecture diagrams.
+ *
+ * Structure mirrors FaultDetection.jsx — academic article format with alternating
+ * text + figure grid columns for readability and visual rhythm.
+ *
+ * ⚠️  Does NOT re-initialize Lenis — the global instance in App.jsx handles scroll.
+ */
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
