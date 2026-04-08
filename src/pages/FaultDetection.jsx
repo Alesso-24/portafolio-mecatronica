@@ -123,7 +123,7 @@ const FaultDetection = () => {
 
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-16"></div>
 
-        {/* 1. Contexto e Introducción */}
+        {/* 1. Context & Introduction */}
         <section className="fade-up mb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-6 space-y-6">
@@ -136,7 +136,7 @@ const FaultDetection = () => {
                 </p>
             </div>
             <div className="md:col-span-6">
-                 {/* Imagen Técnica 1 */}
+                 {/* Technical Image 1 */}
                 <div className="w-full rounded-lg shadow-xl overflow-hidden border border-white/10 bg-white/5">
                     <img 
                     src={`${import.meta.env.BASE_URL}images/paper5.png`} 
@@ -154,12 +154,12 @@ const FaultDetection = () => {
           </div>
         </section>
 
-        {/* 2. Metodología e Ingeniería de Características */}
+        {/* 2. Methodology & Feature Engineering */}
         <section className="fade-up mb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             {/* Image goes first on mobile, but text goes first logically. Let's flip order visually on desktop */}
             <div className="md:col-span-5 order-2 md:order-1">
-                 {/* Imagen Técnica 3 */}
+                 {/* Technical Image 3 */}
                  <div className="w-full rounded-lg shadow-xl overflow-hidden border border-white/10 bg-white/5">
                     <img 
                     src={`${import.meta.env.BASE_URL}images/paper6.png`} 
@@ -205,7 +205,7 @@ const FaultDetection = () => {
                 </div>
             </div>
             <div className="md:col-span-5 flex flex-col gap-8">
-                 {/* Imagen Técnica 2 (Confusion Matrix) */}
+                 {/* Technical Image 2 (Confusion Matrix) */}
                 <div className="w-full rounded-lg shadow-xl overflow-hidden border border-white/10 bg-white/5">
                     <img 
                     src={`${import.meta.env.BASE_URL}images/paper3.png`} 

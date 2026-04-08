@@ -314,7 +314,7 @@ const FaultDetectionCASE = () => {
 
         <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-16"></div>
 
-        {/* Puntos Clave Técnicos */}
+        {/* Key Technical Points */}
         <section className="fade-up mb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-4">
