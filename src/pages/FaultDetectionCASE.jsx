@@ -220,18 +220,18 @@ const FaultDetectionCASE = () => {
             to="/" 
             className="inline-flex items-center gap-4 text-white font-sans uppercase text-[10px] tracking-[0.2em] hover:text-white/60 transition-colors"
           >
-              <span className="bg-white/10 p-2 rounded-full rotate-180">→</span> Regresar al Inicio
+              <span className="bg-white/10 p-2 rounded-full rotate-180">→</span> Back to Home
           </Link>
           <Link 
             to="/project/fault-detection" 
             className="inline-flex items-center gap-3 px-4 py-2 border border-white/20 text-white font-sans uppercase text-[10px] tracking-[0.2em] rounded-full hover:bg-white/10 transition-colors"
           >
-              Ver Proyecto Base (BDAI) <span className="text-lg leading-none">↗</span>
+              View Base Research (BDAI) <span className="text-lg leading-none">↗</span>
           </Link>
         </div>
 
         <div className="fade-up">
-          <span className="font-sans font-light text-[10px] uppercase tracking-[0.2em] text-white/50 mb-6 block">Publicación Científica (EDGE AI)</span>
+          <span className="font-sans font-light text-[10px] uppercase tracking-[0.2em] text-white/50 mb-6 block">Scientific Publication — Edge AI</span>
           
           <h1 className="font-display font-medium text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-tight mb-12">
             Edge AI Decision Framework: Quantifying the Sensitivity-Latency Trade-off in Industrial Bearing Predictive Maintenance.
@@ -241,7 +241,7 @@ const FaultDetectionCASE = () => {
         {/* Project Meta - Academic Format */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 border-y border-white/10 py-8 fade-up">
           <div>
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Autores</h4>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Authors</h4>
             <div className="font-mono text-[11px] text-gray-300 leading-relaxed font-semibold space-y-3">
               <div>
                 <span className="text-white">Jordi Alessandro Reyes Martinez</span><br/>
@@ -270,15 +270,15 @@ const FaultDetectionCASE = () => {
             </div>
           </div>
           <div>
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Conferencia</h4>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Conference</h4>
             <p className="font-mono text-[12px] text-gray-300 italic">IEEE International Conference on Automation Science and Engineering (CASE)</p>
           </div>
           <div>
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Presentación</h4>
-            <p className="font-mono text-[12px] text-gray-300">Del 17 al 21 de agosto de 2026<br/>Shenyang, China.</p>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Presentation</h4>
+            <p className="font-mono text-[12px] text-gray-300">August 17–21, 2026<br/>Shenyang, China.</p>
           </div>
           <div>
-            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Estado</h4>
+            <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Status</h4>
             <p className="font-mono text-[11px] px-3 py-1 bg-[#ef4444]/10 text-[#ef4444] inline-block rounded-full border border-[#ef4444]/20">Under Review</p>
           </div>
         </div>
@@ -293,10 +293,11 @@ const FaultDetectionCASE = () => {
                 <div className="absolute top-0 right-0 p-8 opacity-5">
                     <span className="font-display text-8xl text-white">#</span>
                 </div>
-                <h3 className="font-display text-2xl text-white mb-6 uppercase tracking-wider relative z-10">Resumen General</h3>
+                <h3 className="font-display text-2xl text-white mb-6 uppercase tracking-wider relative z-10">Abstract</h3>
                 <p className="font-sans text-gray-300 text-sm md:text-base leading-relaxed text-justify relative z-10">
-                    Este trabajo representa una evolución significativa de nuestra investigación previa. Pasamos del análisis teórico a la validación física implementando un esquema de Edge AI adaptativo en un microcontrolador ESP32 real. El sistema propuesto no solo detecta fallas, sino que distingue entre etapas "incipientes" y "avanzadas" de degradación utilizando un marco de Failure-to-Defect Ratio (FDR). Logramos un benchmarking de latencia contando ciclos de CPU reales, demostrando que un clasificador de Regresión Logística optimizado puede ejecutar la inferencia en hardware en solo 184 nanosegundos (0.184 µs), ideal para sistemas críticos en tiempo real.
+                    There are several classification strategies available for evaluating when a bearing has failed. Bearing failure is a gradual process, and the question posed is whether or not the best classifier should also be allowed to change based on the fault’s progression. Using measurements which come from the NASA Intelligent Maintenance Systems (IMS) 2nd_test dataset (984 total files that measure Bearing 1, which has a fault on the outer race), three classifiers—Random Forest (RF), Logistic Regression (LR), and Support Vector Machine (SVM)—were evaluated with respect to their ability to detect faults at two stages of degradation. At the incipient stage, RF detected 27 out of 56 fault cycles (48.2% detection rate) while LR detected only 7 out of 56 (12.5%), representing a difference of 3.9×. At the advanced stage, both classifiers converged to Area Under the Curve (AUC) = 1.000. Latency was measured using CPU cycle-counting directly from a real-world ESP32 microcontroller (Xtensa LX6, 240 MHz), not from simulation. LR had a latency of 184 ns while RF had a latency of 23.3 μs, i.e., a 126× difference. SVM misclassified the fault on hardware at 96.5 μs and was disqualified. Fisher Discriminant Ratio (FDR) analysis shows a 5.89× separability increase from incipient to advanced stage, and a label-free proxy trigger validated on IMS Bearing 2 yielded zero false positives. To the best of the authors’ knowledge, no prior study has characterized this trade-off based on degradation stage using physical microcontroller hardware.
                 </p>
+                <p className="font-mono text-[10px] text-gray-500 mt-6"><span className="text-white/40 uppercase tracking-widest">Index Terms —</span> Edge AI, Predictive Maintenance, TinyML, Bearing Fault Detection, Fisher Discriminant Ratio, Hardware Benchmark.</p>
             </div>
         </section>
 
@@ -306,7 +307,7 @@ const FaultDetectionCASE = () => {
                 <HeroDiagramSVG />
                 <div className="p-5 bg-white/5 border-t border-white/5">
                     <p className="font-mono text-gray-400 text-[11px] text-center">
-                        <strong className="text-white">Conceptual Diagram.</strong> Arquitectura de despliegue propuesta: Bucle de inferencia adaptativo en ESP32 para detección multietapa de fallas.
+                    <strong className="text-white">Conceptual Diagram.</strong> Proposed deployment architecture: Adaptive inference loop on ESP32 for multi-stage bearing fault detection.
                     </p>
                 </div>
             </div>
@@ -318,36 +319,36 @@ const FaultDetectionCASE = () => {
         <section className="fade-up mb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-4">
-                <h3 className="font-display text-3xl text-white tracking-tight mb-4">Puntos Clave Técnicos</h3>
+                <h3 className="font-display text-3xl text-white tracking-tight mb-4">Key Technical Points</h3>
             </div>
             <div className="md:col-span-8 font-mono text-gray-400 text-sm leading-relaxed text-justify space-y-6">
                 <ul className="list-none space-y-6">
                     <li className="flex gap-4">
                         <span className="text-white text-xl">⚡</span>
                         <div>
-                            <strong className="text-white block mb-1">Validación en Hardware Real</strong>
-                            A diferencia de simulaciones previas, este modelo fue desplegado y evaluado en un ESP32 utilizando la biblioteca <i>EloquentTinyML</i>.
+                            <strong className="text-white block mb-1">Real Hardware Validation</strong>
+                            Unlike prior simulations, this model was deployed and evaluated on a physical ESP32 using the <i>EloquentTinyML</i> library.
                         </div>
                     </li>
                     <li className="flex gap-4">
                         <span className="text-white text-xl">📊</span>
                         <div>
-                            <strong className="text-white block mb-1">Detección de Etapas de Falla</strong>
-                            Implementación de un método basado en FDR y características estadísticas (RMS, Curtosis, Peak) para segmentar el estado del rodamiento en Healthy (Sano), Incipient (Incipiente) y Advanced (Avanzado).
+                            <strong className="text-white block mb-1">Multi-Stage Fault Detection</strong>
+                            An FDR-based method with statistical features (RMS, Kurtosis, Peak) segments bearing health into three states: Healthy, Incipient, and Advanced.
                         </div>
                     </li>
                     <li className="flex gap-4">
                         <span className="text-white text-xl">⏱️</span>
                         <div>
-                            <strong className="text-white block mb-1">Medición de Latencia en Ciclos de CPU</strong>
-                            Se midió el tiempo de inferencia exacto dentro del microcontrolador. Un Random Forest ligero toma 23.3 µs (5,592 ciclos de CPU) por inferencia, mientras que la Regresión Logística optimizada requiere solo 184 ns (44 ciclos), permitiendo un monitoreo ultra-eficiente en tiempo real.
+                            <strong className="text-white block mb-1">CPU-Cycle Latency Measurement</strong>
+                            Inference time was measured directly on the microcontroller. A lightweight Random Forest takes 23.3 μs (5,592 CPU cycles) per inference, while optimized Logistic Regression requires only 184 ns (44 cycles), enabling ultra-efficient real-time monitoring.
                         </div>
                     </li>
                     <li className="flex gap-4">
                         <span className="text-white text-xl">🔄</span>
                         <div>
                             <strong className="text-white block mb-1">Cascading Model Strategy</strong>
-                            Proponemos un esquema adaptativo donde un modelo pesado (Random Forest) opera en estado sano, y cambia a un modelo ultra-ligero (Regresión Logística) una vez detectada la falla para maximizar la eficiencia energética.
+                            The system uses an adaptive scheme: a heavier model (Random Forest) operates in the healthy state, then switches to an ultra-lightweight model (Logistic Regression) once a fault is detected, maximizing energy efficiency.
                         </div>
                     </li>
                 </ul>
@@ -369,18 +370,18 @@ const FaultDetectionCASE = () => {
                     />
                     <div className="p-4 border-t border-white/5 text-center">
                         <p className="font-mono text-gray-400 text-[10px] leading-tight">
-                            <strong className="text-white">Fig 1.</strong> Evolución de características estadísticas y segmentación de etapas de degradación basadas en el marco de FDR.
+                            <strong className="text-white">Fig 1.</strong> Statistical feature evolution and degradation stage segmentation based on the FDR framework.
                         </p>
                     </div>
                 </div>
             </div>
             <div className="md:col-span-6 space-y-6 order-1 md:order-2">
-                <h3 className="font-display text-2xl text-white tracking-tight mb-4">Transición de Etapas Cognitivas</h3>
+                <h3 className="font-display text-2xl text-white tracking-tight mb-4">Cognitive Stage Transition</h3>
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
-                    A través de la métrica Failure-to-Defect Ratio (FDR) podemos distinguir matemáticamente cuándo un defecto es menor (Incipiente) versus cuando presenta degradación mecánica considerable (Avanzado). 
+                    Through the Fisher Discriminant Ratio (FDR) metric, the system mathematically distinguishes when a defect is minor (Incipient) versus when it shows considerable mechanical degradation (Advanced).
                 </p>
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
-                    Al cruzar este umbral, el sistema dinámicamente detiene la ejecución del "Random Forest" (consumidor moderado de batería), y comienza a ejecutar exclusivamente "Logistic Regression" para continuar rastreando el fallo avanzado con una fracción muy inferior de gasto energético.
+                    Upon crossing this threshold, the system dynamically stops running the Random Forest (a moderate battery consumer) and switches exclusively to Logistic Regression to continue tracking the advanced fault at a much lower energy cost.
                 </p>
             </div>
           </div>
@@ -390,13 +391,13 @@ const FaultDetectionCASE = () => {
         <section className="fade-up mb-24">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             <div className="md:col-span-6 space-y-6">
-                <h3 className="font-display text-2xl text-white tracking-tight mb-4">Hardware Speedup en Producción</h3>
+                <h3 className="font-display text-2xl text-white tracking-tight mb-4">Production Hardware Speedup</h3>
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
-                    Demostrar la mejora de software en PC es relativamente trivial con métodos de emulación. En este trabajo iteramos midiendo el uso directo del reloj CPU en la arquitectura real Xtensa LX6 (ESP32).
+                    Demonstrating software improvements on PC using emulation is relatively trivial. In this work, we iterated by directly measuring CPU clock usage on the real Xtensa LX6 architecture (ESP32).
                 </p>
                 <div className="bg-white/5 border border-white/10 p-5 rounded-lg mt-4">
                     <p className="font-mono text-gray-300 text-xs leading-relaxed">
-                        Evadimos herramientas como <code className="bg-white/10 px-1 rounded">micros()</code> que inyectan overhead en C++, y leímos directamente los registros nativos del hardware cycle-counter para asegurar precisión nanométrica, validando matemáticamente por qué la Regresión Logística representa el máximo exponente para IoT remoto alimentado pasivamente.
+                        We avoided tools like <code className="bg-white/10 px-1 rounded">micros()</code> that inject overhead in C++, and instead read the native hardware cycle-counter registers directly to ensure nanosecond precision — mathematically validating why Logistic Regression represents the optimal choice for passively powered remote IoT.
                     </p>
                 </div>
             </div>
@@ -410,7 +411,7 @@ const FaultDetectionCASE = () => {
                     />
                     <div className="p-4 border-t border-white/5 text-center">
                         <p className="font-mono text-gray-400 text-[10px] leading-tight">
-                            <strong className="text-white">Fig 2.</strong> Benchmarking de latencia en hardware: Regresión Logística logra una inferencia 126 veces más rápida (126x speedup) que Random Forest en el ESP32.
+                            <strong className="text-white">Fig 2.</strong> Hardware latency benchmark: Logistic Regression achieves 126× faster inference than Random Forest on the ESP32.
                         </p>
                     </div>
                 </div>
@@ -432,24 +433,24 @@ const FaultDetectionCASE = () => {
                     />
                     <div className="p-4 border-t border-white/5 text-center">
                         <p className="font-mono text-gray-400 text-[10px] leading-tight">
-                            <strong className="text-white">Fig 3.</strong> Análisis PCA ilustrando la progresión de la falla de estado Incipiente a Avanzado.
+                            <strong className="text-white">Fig 3.</strong> PCA analysis illustrating fault progression from Incipient to Advanced degradation stage.
                         </p>
                     </div>
                 </div>
             </div>
             {/* Text & Edge Insights */}
             <div className="md:col-span-6 space-y-6">
-                <h3 className="font-display text-2xl text-white tracking-tight mb-4">Validación Industrial y Fiabilidad</h3>
+                <h3 className="font-display text-2xl text-white tracking-tight mb-4">Industrial Validation & Reliability</h3>
                 <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
-                    El sistema se validó en un canal de monitoreo independiente (IMS Bearing 2) para garantizar el desempeño en condiciones operativas normales, manteniendo un registro de <strong>cero falsas alarmas</strong> y obteniendo una especificidad superior al 98%.
+                    The system was validated on an independent monitoring channel (IMS Bearing 2) to ensure performance under normal operating conditions, maintaining a record of <strong>zero false alarms</strong> and achieving specificity above 98%.
                 </p>
                 <div className="bg-white/[0.03] border border-white/10 p-5 rounded-lg mt-4">
                     <h4 className="text-white font-sans font-medium text-[11px] uppercase tracking-widest mb-2 flex items-center gap-2">
                         <div className="w-1.5 h-1.5 bg-white/50 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.4)]"></div>
-                        Edge Insights: Problemas FPU en Hardware
+                        Edge Insights: FPU Hardware Issues
                     </h4>
                     <p className="font-mono text-gray-300 text-xs leading-relaxed text-justify mt-3">
-                        Durante las pruebas físicas, el modelo SVM fue descartado debido a errores de precisión catastróficos en la unidad de punto flotante (FPU) del ESP32, donde la pérdida de precisión de la instrucción <code className="bg-black/30 px-1 rounded text-white">expf()</code> invertía fronteras de decisión válidas. Esto subraya la urgencia crítica de <strong>validar benchmarks en el hardware final en lugar de limitarse a simulaciones analíticas</strong>.
+                        During physical testing, the SVM model was disqualified due to catastrophic floating-point precision errors on the ESP32 FPU, where precision loss in the <code className="bg-black/30 px-1 rounded text-white">expf()</code> instruction inverted valid decision boundaries. This underscores the critical urgency of <strong>validating benchmarks on the final hardware rather than relying solely on analytical simulations</strong>.
                     </p>
                 </div>
             </div>
@@ -461,9 +462,9 @@ const FaultDetectionCASE = () => {
       {/* Call to Action */}
       <footer className="w-full border-t border-white/10 py-20 text-center bg-black/20">
         <div className="max-w-2xl mx-auto px-4">
-            <h2 className="font-display text-2xl md:text-3xl text-white mb-6">Status del Manuscrito</h2>
+            <h2 className="font-display text-2xl md:text-3xl text-white mb-6">Manuscript Status</h2>
             <p className="font-mono text-gray-400 text-[11px] md:text-xs leading-relaxed uppercase tracking-wider mb-10">
-                El trabajo está atravesando la fase de corrección de pares "Double-blind review". Los resultados de evaluación del comité científico se darán a conocer en mayo.
+                The paper is currently in the double-blind peer review phase. The scientific committee's evaluation results are expected in May 2026.
             </p>
             <button disabled className="inline-flex flex-col items-center gap-1 px-8 py-4 bg-gray-800 text-gray-400 font-mono text-[11px] uppercase tracking-widest border border-white/5 rounded-2xl cursor-not-allowed transition-colors shadow-inner w-full md:w-auto">
                 <span className="flex items-center gap-2"><svg className="w-4 h-4 text-[#ef4444]" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" /></svg> Paper Status</span>
@@ -471,7 +472,7 @@ const FaultDetectionCASE = () => {
             </button>
             <div className="mt-8">
                 <Link to="/project/fault-detection" className="font-sans font-light text-[10px] text-white/50 uppercase tracking-[0.2em] hover:underline hover:text-white/80 transition-colors">
-                    ← Ver Investigación Previa (BDAI)
+                    ← View Base Research (BDAI)
                 </Link>
             </div>
         </div>

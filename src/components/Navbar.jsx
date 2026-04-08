@@ -74,11 +74,11 @@ const Navbar = () => {
               ALESSANDRO.
             </Link>
             <a href="https://github.com/Alesso-24" target="_blank" rel="noopener noreferrer"
-               className="hidden sm:block font-sans text-[10px] uppercase tracking-widest text-brand-primary/60 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition-all duration-300 shrink-0">
+               className="hidden sm:flex items-center justify-center gap-1 font-sans text-[10px] uppercase tracking-widest text-brand-primary/60 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition-all duration-300 shrink-0 leading-none">
               ★ GitHub
             </a>
             {isProjectPage && (
-              <Link to="/" className="hidden sm:block font-mono text-[10px] uppercase tracking-widest text-brand-primary/60 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition-all duration-300 shrink-0">
+              <Link to="/" className="hidden sm:flex items-center justify-center font-mono text-[10px] uppercase tracking-widest text-brand-primary/60 border border-white/10 px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition-all duration-300 shrink-0 leading-none">
                 ← Back to Work
               </Link>
             )}
@@ -97,7 +97,7 @@ const Navbar = () => {
           {/* Mobile: back link + hamburger */}
           <div className="md:hidden flex items-center gap-3 text-brand-primary">
             {isProjectPage && (
-              <Link to="/" className="font-mono text-[10px] uppercase tracking-widest text-brand-primary/60 border border-white/10 px-3 py-1.5 rounded-full">
+              <Link to="/" className="flex items-center justify-center font-mono text-[10px] uppercase tracking-widest text-brand-primary/60 border border-white/10 px-3 py-1.5 rounded-full leading-none">
                 ← Back
               </Link>
             )}

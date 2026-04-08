@@ -82,7 +82,7 @@ const FaultDetection = () => {
           </div>
           <div>
             <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Status</h4>
-            <p className="font-sans font-medium text-[10px] uppercase tracking-widest px-3 py-1 bg-white/5 text-white/80 inline-block rounded-full border border-white/10">Accepted for publication</p>
+            <p className="font-sans font-medium text-[10px] uppercase tracking-widest px-3 py-1.5 bg-[#3b82f6]/10 text-[#60a5fa] inline-flex items-center rounded-full border border-[#3b82f6]/30">Accepted for publication</p>
           </div>
         </div>
       </header>
