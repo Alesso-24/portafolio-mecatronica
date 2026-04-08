@@ -29,9 +29,9 @@ const HeroDiagramSVG = () => (
         {/* 1. Vibration Sensor */}
         <g transform="translate(50, 150)">
             <rect width="140" height="80" rx="12" fill="#121212" stroke="#555" strokeWidth="2" />
-            <circle cx="70" cy="30" r="10" fill="#adb5bd" />
-            <path d="M 30 50 Q 50 20 70 50 T 110 50" stroke="#adb5bd" strokeWidth="2" fill="none" />
-            <text x="70" y="70" fill="#adb5bd" fontSize="12" textAnchor="middle" fontWeight="bold">Vibration Sensor</text>
+            <circle cx="70" cy="26" r="10" fill="#adb5bd" />
+            <path d="M 30 46 Q 50 16 70 46 T 110 46" stroke="#adb5bd" strokeWidth="2" fill="none" />
+            <text x="70" y="72" fill="#adb5bd" fontSize="12" textAnchor="middle" fontWeight="bold">Vibration Sensor</text>
         </g>
         
         {/* Arrow 1 */}
@@ -256,11 +256,11 @@ const FaultDetectionCASE = () => {
               </div>
               <div>
                 <span className="text-white">Karime Farias Yabur</span><br/>
-                <span className="text-gray-500 font-normal">Nanotechnology and Materials Engineering, ITESM.</span>
+                <span className="text-gray-500 font-normal">Nanotechnology Engineering, ITESM.</span>
               </div>
               <div>
                 <span className="text-white">Fannor Antonio Rodriguez de Leon</span><br/>
-                <span className="text-gray-500 font-normal">Nanotechnology and Materials Engineering, ITESM.</span>
+                <span className="text-gray-500 font-normal">Nanotechnology Engineering, ITESM.</span>
               </div>
               <div>
                 <span className="text-white">Claudia Isaret Mendez Rosas</span><br/>
