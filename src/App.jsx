@@ -24,7 +24,6 @@ import Lenis from 'lenis';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import CustomCursor from './components/CustomCursor';
 import PageTransition from './components/PageTransition';
 
 // Lazy load below-the-fold components
@@ -97,7 +96,6 @@ function App() {
     <HelmetProvider>
       <Router>
         <div className="relative w-full bg-brand-dark text-gray-100 font-sans selection:bg-brand-cyan selection:text-black min-h-screen">
-          <CustomCursor />
           <Navbar />
           <main>
             <Suspense fallback={<div className="h-screen w-full bg-brand-dark flex items-center justify-center font-mono opacity-50">Loading Interface...</div>}>
