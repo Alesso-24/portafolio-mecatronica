@@ -1,26 +1,14 @@
-import React, { Suspense, useEffect, useState, useRef, lazy } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import ErrorBoundary from './ErrorBoundary';
-import { TextScramble } from './ui/text-scramble';
-
-// Dynamically load the heavy 3D canvas only when needed
-const MechaCanvas = lazy(() => import('./canvas/MechaCanvas'));
+import HeroGradient from './HeroGradient';
 
 // --- HERO COMPONENT --- //
 const Hero = () => {
-  const containerRef = useRef(null);
   const title1Ref = useRef(null);
   const title2Ref = useRef(null);
   const subtitleRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check if device is mobile to disable WebGL
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
 
     const tl = gsap.timeline({ delay: 0.4 });
 
@@ -39,25 +27,17 @@ const Hero = () => {
       "-=0.5"
     );
 
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => {};
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-brand-dark">
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-brand-dark">
       
-      {/* 3D Background - Disabled on mobile to prevent crashes and save battery */}
-      {!isMobile && (
-        <ErrorBoundary fallback={<div className="absolute inset-0 z-0 bg-brand-dark opacity-60"></div>}>
-            <Suspense fallback={null}>
-                <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen pointer-events-none">
-                  <MechaCanvas />
-                </div>
-            </Suspense>
-        </ErrorBoundary>
-      )}
+      {/* Cursor-reactive gradient background — pure Canvas2D, 60fps on any device */}
+      <HeroGradient />
 
-      {/* Subtle radial gradient overlay for focus */}
-      <div className="absolute inset-0 z-1 pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-brand-dark/50 to-brand-dark"></div>
+      {/* Subtle vignette to guide the eye to center */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_#050505_90%)] pointer-events-none" style={{ zIndex: 1 }}></div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 w-full max-w-7xl mx-auto flex flex-col items-center">
