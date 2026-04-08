@@ -17,6 +17,15 @@
     color: #a3a3a3;
     overflow-x: hidden;
     font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  /* Ensure all interactive elements have a minimum 44px touch target (Apple HIG) */
+  a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
   h1, h2, h3, h4, h5, h6 {
     color: #ffffff;

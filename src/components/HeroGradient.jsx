@@ -73,13 +73,21 @@ const HeroGradient = () => {
       const rect = canvas.getBoundingClientRect();
       mouse.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
     };
+    const onTouch = (e) => {
+      if (e.touches.length === 0) return;
+      const rect = canvas.getBoundingClientRect();
+      mouse.current = { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+    };
     window.addEventListener('mousemove', onMove, { passive: true });
+    window.addEventListener('touchmove', onTouch, { passive: true });
+    window.addEventListener('touchend', () => { mouse.current = { x: -9999, y: -9999 }; }, { passive: true });
 
     animFrameRef.current = requestAnimationFrame(draw);
 
     return () => {
       ro.disconnect();
       window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('touchmove', onTouch);
       cancelAnimationFrame(animFrameRef.current);
     };
   }, [draw]);
