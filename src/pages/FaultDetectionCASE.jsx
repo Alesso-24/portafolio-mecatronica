@@ -425,6 +425,44 @@ const FaultDetectionCASE = () => {
           </div>
         </section>
 
+        {/* Technical Integration 3: Industrial Validation & PCA */}
+        <section className="fade-up mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            {/* PCA Image */}
+            <div className="md:col-span-6">
+                 <div className="w-full rounded-xl shadow-xl overflow-hidden border border-white/5 bg-white/5">
+                    <img 
+                        src={`${import.meta.env.BASE_URL}images/case_pca.png`} 
+                        alt="PCA Scatter Plots Incipient vs Advanced"
+                        className="w-full h-auto"
+                        style={{ filter: 'invert(0.85) hue-rotate(180deg) brightness(1.2)' }}
+                    />
+                    <div className="p-4 border-t border-white/5 text-center">
+                        <p className="font-mono text-gray-400 text-[10px] leading-tight">
+                            <strong className="text-white">Fig 3.</strong> Análisis PCA ilustrando la progresión de la falla de estado Incipiente a Avanzado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {/* Text & Edge Insights */}
+            <div className="md:col-span-6 space-y-6">
+                <h3 className="font-display text-2xl text-white tracking-tight mb-4">Validación Industrial y Fiabilidad</h3>
+                <p className="font-sans text-gray-400 text-sm leading-relaxed text-justify">
+                    El sistema se validó en un canal de monitoreo independiente (IMS Bearing 2) para garantizar el desempeño en condiciones operativas normales, manteniendo un registro de <strong>cero falsas alarmas</strong> y obteniendo una especificidad superior al 98%.
+                </p>
+                <div className="bg-brand-cyan/10 border border-brand-cyan/20 p-5 rounded-lg mt-4">
+                    <h4 className="text-brand-cyan font-mono text-[11px] uppercase tracking-widest mb-2 font-bold flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 bg-brand-cyan rounded-full shadow-[0_0_8px_rgba(0,216,255,0.8)]"></div>
+                        Edge Insights: Problemas FPU en Hardware
+                    </h4>
+                    <p className="font-mono text-gray-300 text-xs leading-relaxed text-justify mt-3">
+                        Durante las pruebas físicas, el modelo SVM fue descartado debido a errores de precisión catastróficos en la unidad de punto flotante (FPU) del ESP32, donde la pérdida de precisión de la instrucción <code className="bg-black/30 px-1 rounded text-white">expf()</code> invertía fronteras de decisión válidas. Esto subraya la urgencia crítica de <strong>validar benchmarks en el hardware final en lugar de limitarse a simulaciones analíticas</strong>.
+                    </p>
+                </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       {/* Call to Action */}
