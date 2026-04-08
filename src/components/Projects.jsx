@@ -25,7 +25,7 @@ const projectsData = [
     },
     {
         id: 3,
-        title: "Edge AI Fault Diagnosis Scheme for Bearing Detection",
+        title: "Edge AI Decision Framework: Quantifying the Sensitivity-Latency Trade-off",
         category: "Publicación Científica (IEEE CASE)",
         tech: "C/C++ • ESP32 • Random Forest • Hardware Latency",
         image: `${import.meta.env.BASE_URL}images/project2.png`, 

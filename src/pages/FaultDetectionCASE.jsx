@@ -160,13 +160,13 @@ const LatencyBarChartSVG = () => (
 
         {/* Random Forest Bar */}
         <rect x="90" y="60" width="80" height="170" fill="url(#rf-grad)" rx="6" />
-        <text x="130" y="45" fill="white" fontSize="14" textAnchor="middle" fontWeight="bold">1,072</text>
+        <text x="130" y="45" fill="white" fontSize="14" textAnchor="middle" fontWeight="bold">5,592</text>
         <text x="130" y="145" fill="rgba(255,255,255,0.7)" fontSize="10" textAnchor="middle" transform="rotate(-90 130 145)" letterSpacing="1">Random Forest</text>
 
         {/* Logistic Regression Bar */}
-        <rect x="230" y="170" width="80" height="60" fill="url(#lr-grad)" rx="6" />
-        <text x="270" y="155" fill="#00d8ff" fontSize="16" textAnchor="middle" fontWeight="bold">360</text>
-        <text x="270" y="200" fill="#121212" fontSize="10" textAnchor="middle" transform="rotate(-90 270 200)" fontWeight="bold" letterSpacing="1">Log. Reg.</text>
+        <rect x="230" y="215" width="80" height="15" fill="url(#lr-grad)" rx="4" />
+        <text x="270" y="195" fill="#00d8ff" fontSize="16" textAnchor="middle" fontWeight="bold">44</text>
+        <text x="270" y="160" fill="#00d8ff" fontSize="10" textAnchor="middle" transform="rotate(-90 270 160)" fontWeight="bold" letterSpacing="1">Log. Reg.</text>
 
         {/* Ground Line */}
         <line x1="50" y1="230" x2="350" y2="230" stroke="#555" strokeWidth="2" />
@@ -241,7 +241,7 @@ const FaultDetectionCASE = () => {
           <span className="font-mono text-[11px] uppercase tracking-widest text-brand-cyan mb-6 block">Publicación Científica (EDGE AI)</span>
           
           <h1 className="font-display font-medium text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-tight mb-12">
-            Design and Deployment of an Edge AI Fault Diagnosis Scheme for Bearing Incipient and Advanced Defect Detection.
+            Edge AI Decision Framework: Quantifying the Sensitivity-Latency Trade-off in Industrial Bearing Predictive Maintenance.
           </h1>
         </div>
 
@@ -249,13 +249,31 @@ const FaultDetectionCASE = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 border-y border-white/10 py-8 fade-up">
           <div>
             <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Autores</h4>
-            <div className="font-mono text-[12px] text-gray-300 leading-relaxed font-semibold">
-              Jordi Alessandro Reyes Martinez<br/>
-              Karime Melissa Pastrana Monzon<br/>
-              Oliver Ochoa Garcia<br/>
-              Javier Osorio Figueroa<br/>
-              Armando David Morales-Vazquez<br/>
-              Pedro Sanchez Hernandez
+            <div className="font-mono text-[11px] text-gray-300 leading-relaxed font-semibold space-y-3">
+              <div>
+                <span className="text-white">Jordi Alessandro Reyes Martinez</span><br/>
+                <span className="text-gray-500 font-normal">Dept. of Mechatronics Engineering, Universidad Iberoamericana Puebla.</span>
+              </div>
+              <div>
+                <span className="text-white">Karime Farias Yabur</span><br/>
+                <span className="text-gray-500 font-normal">Nanotechnology and Materials Engineering, ITESM.</span>
+              </div>
+              <div>
+                <span className="text-white">Fannor Antonio Rodriguez de Leon</span><br/>
+                <span className="text-gray-500 font-normal">Nanotechnology and Materials Engineering, ITESM.</span>
+              </div>
+              <div>
+                <span className="text-white">Claudia Isaret Mendez Rosas</span><br/>
+                <span className="text-gray-500 font-normal">B.S. in Mechatronics Engineering, ITESM.</span>
+              </div>
+              <div>
+                <span className="text-white">Javier Osorio Figueroa</span><br/>
+                <span className="text-gray-500 font-normal">Dept. of Mechatronics Engineering, Universidad Iberoamericana Puebla.</span>
+              </div>
+              <div>
+                <span className="text-white">Oliver Ochoa Garcia</span><br/>
+                <span className="text-gray-500 font-normal">Dept. of Mechatronics Engineering, Universidad Iberoamericana Puebla.</span>
+              </div>
             </div>
           </div>
           <div>
@@ -264,7 +282,7 @@ const FaultDetectionCASE = () => {
           </div>
           <div>
             <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Presentación</h4>
-            <p className="font-mono text-[12px] text-gray-300">Del 28 de agosto al 1 de septiembre de 2026<br/>Shenyang, China.</p>
+            <p className="font-mono text-[12px] text-gray-300">Del 17 al 21 de agosto de 2026<br/>Shenyang, China.</p>
           </div>
           <div>
             <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Estado</h4>
@@ -284,7 +302,7 @@ const FaultDetectionCASE = () => {
                 </div>
                 <h3 className="font-display text-2xl text-white mb-6 uppercase tracking-wider relative z-10">Resumen General</h3>
                 <p className="font-sans text-gray-300 text-sm md:text-base leading-relaxed text-justify relative z-10">
-                    Este trabajo representa una evolución significativa de nuestra investigación previa. Pasamos del análisis teórico a la validación física implementando un esquema de Edge AI adaptativo en un microcontrolador ESP32 real. El sistema propuesto no solo detecta fallas, sino que distingue entre etapas "incipientes" y "avanzadas" de degradación utilizando un marco de Failure-to-Defect Ratio (FDR). Logramos un benchmarking de latencia contando ciclos de CPU reales, demostrando que un clasificador de Regresión Logística optimizado puede ejecutar la inferencia en hardware en solo 1.5 microsegundos, ideal para sistemas críticos en tiempo real.
+                    Este trabajo representa una evolución significativa de nuestra investigación previa. Pasamos del análisis teórico a la validación física implementando un esquema de Edge AI adaptativo en un microcontrolador ESP32 real. El sistema propuesto no solo detecta fallas, sino que distingue entre etapas "incipientes" y "avanzadas" de degradación utilizando un marco de Failure-to-Defect Ratio (FDR). Logramos un benchmarking de latencia contando ciclos de CPU reales, demostrando que un clasificador de Regresión Logística optimizado puede ejecutar la inferencia en hardware en solo 184 nanosegundos (0.184 µs), ideal para sistemas críticos en tiempo real.
                 </p>
             </div>
         </section>
@@ -329,7 +347,7 @@ const FaultDetectionCASE = () => {
                         <span className="text-brand-cyan text-xl">⏱️</span>
                         <div>
                             <strong className="text-white block mb-1">Medición de Latencia en Ciclos de CPU</strong>
-                            Se midió el tiempo de inferencia exacto dentro del microcontrolador. Un Random Forest ligero toma 1,072 ciclos de CPU, mientras que una Regresión Logística toma solo 360 ciclos.
+                            Se midió el tiempo de inferencia exacto dentro del microcontrolador. Un Random Forest ligero toma 23.3 µs (5,592 ciclos de CPU) por inferencia, mientras que la Regresión Logística optimizada requiere solo 184 ns (44 ciclos), permitiendo un monitoreo ultra-eficiente en tiempo real.
                         </div>
                     </li>
                     <li className="flex gap-4">
@@ -389,7 +407,7 @@ const FaultDetectionCASE = () => {
                     <LatencyBarChartSVG />
                     <div className="p-4 border-t border-white/5 text-center">
                         <p className="font-mono text-gray-400 text-[10px] leading-tight">
-                            <strong className="text-white">Fig 2.</strong> Benchmarking de latencia en hardware: Regresión Logística logra una inferencia 3 veces más rápida que Random Forest en el ESP32.
+                            <strong className="text-white">Fig 2.</strong> Benchmarking de latencia en hardware: Regresión Logística logra una inferencia 126 veces más rápida (126x speedup) que Random Forest en el ESP32.
                         </p>
                     </div>
                 </div>
