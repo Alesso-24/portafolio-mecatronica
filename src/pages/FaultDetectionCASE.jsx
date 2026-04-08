@@ -202,16 +202,23 @@ const LatencyBarChartSVG = () => (
 
 const FaultDetectionCASE = () => {
   useEffect(() => {
+    // Scroll to top
     window.scrollTo(0, 0);
 
+    // Initial fade in
     gsap.fromTo(".fade-up", 
-      { opacity: 0, y: 30 },
+      { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out" }
     );
   }, []);
 
   return (
-    <div className="bg-brand-dark min-h-screen text-[#e5e5e5] font-sans">
+    <PageTransition>
+      <Helmet>
+        <title>IEEE CASE Paper | Alessandro</title>
+        <meta name="description" content="Edge AI Decision Framework: Quantifying the Sensitivity-Latency Trade-off. Paper submitted to IEEE CASE." />
+      </Helmet>
+      <div className="bg-brand-dark min-h-screen text-[#e5e5e5] font-sans">
 
       {/* Hero Header */}
       <header className="pt-32 pb-16 px-4 md:px-8 max-w-6xl mx-auto">
@@ -478,7 +485,8 @@ const FaultDetectionCASE = () => {
         </div>
       </footer>
 
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 

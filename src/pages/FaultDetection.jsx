@@ -26,23 +26,30 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Helmet } from 'react-helmet-async';
+import PageTransition from '../components/PageTransition';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FaultDetection = () => {
   useEffect(() => {
-    // Scroll to top on mount
+    // Scroll to top
     window.scrollTo(0, 0);
 
-    // Animations
+    // Initial fade in
     gsap.fromTo(".fade-up", 
-      { opacity: 0, y: 30 },
+      { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: "power3.out" }
     );
   }, []);
 
   return (
-    <div className="bg-brand-dark min-h-screen text-[#e5e5e5] font-sans">
+    <PageTransition>
+      <Helmet>
+        <title>Fault Detection (BDAI) | Alessandro</title>
+        <meta name="description" content="Industrial fault detection via machine learning using the NASA IMS dataset. Supervised learning and PCA analysis." />
+      </Helmet>
+      <div className="bg-brand-dark min-h-screen text-[#e5e5e5] font-sans">
 
       {/* Hero Header */}
       <header className="pt-32 pb-16 px-4 md:px-8 max-w-6xl mx-auto">
@@ -239,7 +246,8 @@ const FaultDetection = () => {
         </div>
       </footer>
 
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 

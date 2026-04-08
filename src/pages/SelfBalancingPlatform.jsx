@@ -21,6 +21,8 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Helmet } from 'react-helmet-async';
+import PageTransition from '../components/PageTransition';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +39,12 @@ const SelfBalancingPlatform = () => {
   }, []);
 
   return (
-    <div className="bg-brand-dark min-h-screen text-[#e5e5e5] font-sans">
+    <PageTransition>
+      <Helmet>
+        <title>Self-Balancing Platform | Alessandro</title>
+        <meta name="description" content="A mechatronic system using an ESP32, servomotors, and OpenCV computer vision for strict PID closed-loop control." />
+      </Helmet>
+      <div className="bg-brand-dark min-h-screen text-[#e5e5e5] font-sans">
 
 
       {/* Hero Header */}
@@ -177,7 +184,8 @@ const SelfBalancingPlatform = () => {
         </section>
       </main>
 
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 
