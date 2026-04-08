@@ -18,7 +18,7 @@
  */
 import React, { useEffect, lazy, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 
@@ -26,7 +26,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import CustomCursor from './components/CustomCursor';
 import PageTransition from './components/PageTransition';
-import { Helmet } from 'react-helmet-async';
 
 // Lazy load below-the-fold components
 const About = lazy(() => import('./components/About'));

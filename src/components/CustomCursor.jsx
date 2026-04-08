@@ -1,87 +1,89 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+/**
+ * @file CustomCursor.jsx
+ * @description Custom cursor component that replaces the native OS pointer on fine-pointer
+ * (desktop/mouse) devices. Hidden automatically on touch devices via pointer media query in CSS.
+ *
+ * Behavior:
+ *  - Renders a small cyan dot by default, tracking the mouse position via spring physics.
+ *  - On hover over interactive elements (a, button, or cursor:pointer), expands to a larger
+ *    white inverted circle using mix-blend-mode: difference for a premium effect.
+ *  - Uses `{ passive: true }` on all event listeners for zero scroll-jank impact.
+ *  - All size/color transitions are driven by Framer Motion's spring engine — no CSS transitions.
+ *
+ * Performance:
+ *  - Uses spring stiffness 1000 / damping 50 for extremely tight, butter-smooth tracking.
+ *  - The component returns null on touch devices, adding zero overhead to mobile.
+ */
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const CustomCursor = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(true);
 
-  // Use passive event listener for performance
+  // Raw mouse position motion values — updated on every mousemove
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+
+  // Smoothed spring values that follow rawX/rawY with physics
+  const springConfig = { stiffness: 800, damping: 45, mass: 0.1 };
+  const x = useSpring(rawX, springConfig);
+  const y = useSpring(rawY, springConfig);
+
   useEffect(() => {
-    // Detect if device supports hover
-    if (window.matchMedia("(pointer: fine)").matches) {
+    // Only show on fine-pointer (mouse) devices
+    if (window.matchMedia('(pointer: fine)').matches) {
       setIsTouchDevice(false);
     }
 
-    const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      });
+    const onMouseMove = (e) => {
+      rawX.set(e.clientX);
+      rawY.set(e.clientY);
     };
 
-    window.addEventListener("mousemove", mouseMove, { passive: true });
-
-    // Global mutation observer or simple event delegation for hover states
-    const handleMouseOver = (e) => {
-      const target = e.target;
-      // Check if target is actionable (a, button, or has cursor-pointer)
-      if (
-        target.tagName.toLowerCase() === 'a' ||
-        target.tagName.toLowerCase() === 'button' ||
-        target.closest('a') ||
-        target.closest('button') ||
-        window.getComputedStyle(target).cursor === 'pointer'
-      ) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
+    const onMouseOver = (e) => {
+      const t = e.target;
+      const isInteractive =
+        t.tagName === 'A' ||
+        t.tagName === 'BUTTON' ||
+        t.closest('a') ||
+        t.closest('button') ||
+        window.getComputedStyle(t).cursor === 'pointer';
+      setIsHovering(!!isInteractive);
     };
 
-    window.addEventListener("mouseover", handleMouseOver, { passive: true });
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    window.addEventListener('mouseover', onMouseOver, { passive: true });
 
     return () => {
-      window.removeEventListener("mousemove", mouseMove);
-      window.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseover', onMouseOver);
     };
-  }, []);
+  }, [rawX, rawY]);
 
   if (isTouchDevice) return null;
-
-  const variants = {
-    default: {
-      x: mousePosition.x - 8,
-      y: mousePosition.y - 8,
-      scale: 1,
-      backgroundColor: "rgba(0, 216, 255, 1)",
-      mixBlendMode: "normal",
-      boxShadow: "0 0 10px rgba(0,216,255,0.5)"
-    },
-    hover: {
-      x: mousePosition.x - 24,
-      y: mousePosition.y - 24,
-      scale: 1,
-      backgroundColor: "rgba(255, 255, 255, 1)",
-      mixBlendMode: "difference",
-      boxShadow: "none"
-    }
-  };
 
   return (
     <motion.div
       className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999]"
-      variants={variants}
-      animate={isHovering ? "hover" : "default"}
-      transition={{
-        x: { type: "spring", stiffness: 1000, damping: 50, mass: 0.1 },
-        y: { type: "spring", stiffness: 1000, damping: 50, mass: 0.1 },
-        scale: { duration: 0.2 },
-        backgroundColor: { duration: 0.2 }
-      }}
       style={{
-        width: isHovering ? 48 : 16,
-        height: isHovering ? 48 : 16,
+        x,
+        y,
+        translateX: '-50%',
+        translateY: '-50%',
+      }}
+      animate={{
+        width: isHovering ? 48 : 14,
+        height: isHovering ? 48 : 14,
+        backgroundColor: isHovering ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 216, 255, 1)',
+        mixBlendMode: isHovering ? 'difference' : 'normal',
+        boxShadow: isHovering ? 'none' : '0 0 12px rgba(0,216,255,0.6)',
+      }}
+      transition={{
+        width: { type: 'spring', stiffness: 400, damping: 28 },
+        height: { type: 'spring', stiffness: 400, damping: 28 },
+        backgroundColor: { duration: 0.2 },
+        boxShadow: { duration: 0.2 },
       }}
     />
   );

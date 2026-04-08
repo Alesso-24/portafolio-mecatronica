@@ -18,6 +18,8 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Helmet } from 'react-helmet-async';
+import PageTransition from '../components/PageTransition';
 
 gsap.registerPlugin(ScrollTrigger);
 
