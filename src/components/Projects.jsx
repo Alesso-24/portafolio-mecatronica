@@ -20,7 +20,7 @@ const projectsData = [
         title: "Industrial Fault Detection via Machine Learning",
         category: "Data Science & Machine Learning",
         tech: "Python • Supervised Learning • NASA Datasets • LaTeX",
-        image: `${import.meta.env.BASE_URL}images/cover_bdai.png`,
+        image: `${import.meta.env.BASE_URL}images/cover_bdai.jpg`,
         link: "/project/fault-detection",
         filter: "brightness(0.6) contrast(1.1) grayscale(0.2)"
     },
@@ -29,7 +29,7 @@ const projectsData = [
         title: "Edge AI Decision Framework: Quantifying the Sensitivity-Latency Trade-off",
         category: "Publicación Científica (IEEE CASE)",
         tech: "C/C++ • ESP32 • Random Forest • Hardware Latency",
-        image: `${import.meta.env.BASE_URL}images/cover_case.png`, 
+        image: `${import.meta.env.BASE_URL}images/cover_case.jpg`, 
         link: "/project/fault-detection-case",
         filter: "brightness(0.6) contrast(1.1) grayscale(0.2)"
     }
