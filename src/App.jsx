@@ -11,6 +11,7 @@ const Contact = lazy(() => import('./components/Contact'));
 const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
 const SelfBalancingPlatform = lazy(() => import('./pages/SelfBalancingPlatform'));
 const FaultDetection = lazy(() => import('./pages/FaultDetection'));
+const FaultDetectionCASE = lazy(() => import('./pages/FaultDetectionCASE'));
 
 function Home() {
   return (
@@ -62,6 +63,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/project/self-balancing-platform" element={<SelfBalancingPlatform />} />
               <Route path="/project/fault-detection" element={<FaultDetection />} />
+              <Route path="/project/fault-detection-case" element={<FaultDetectionCASE />} />
               <Route path="/project/:id" element={<ProjectDetail />} />
             </Routes>
           </Suspense>

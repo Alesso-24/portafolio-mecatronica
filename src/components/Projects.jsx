@@ -22,6 +22,14 @@ const projectsData = [
         tech: "Python • Supervised Learning • NASA Datasets • LaTeX",
         image: `${import.meta.env.BASE_URL}images/project2.png`, // Using AI generated sci-fi cover
         link: "/project/fault-detection"
+    },
+    {
+        id: 3,
+        title: "Edge AI Fault Diagnosis Scheme for Bearing Detection",
+        category: "Publicación Científica (IEEE CASE)",
+        tech: "C/C++ • ESP32 • Random Forest • Hardware Latency",
+        image: `${import.meta.env.BASE_URL}images/project2.png`, 
+        link: "/project/fault-detection-case"
     }
 ];
 
