@@ -73,7 +73,7 @@ const FaultDetection = () => {
             <h4 className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-3">Authors</h4>
             <div className="font-mono text-[12px] text-gray-300 leading-relaxed font-semibold">
               Jordi Alessandro Reyes Martinez¹<br/>
-              Karime Melissa Pastrana Monzon¹<br/>
+              Karen Melissa Pastrana Monzon¹<br/>
               Javier Osorio Figueroa¹<br/>
               Oliver Ochoa Garcia¹
             </div>
