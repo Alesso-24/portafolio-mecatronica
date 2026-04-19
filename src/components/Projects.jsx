@@ -50,6 +50,15 @@ const projectsData = [
         image: `${import.meta.env.BASE_URL}images/cover_case.jpg`, 
         link: "/project/fault-detection-case",
         filter: "brightness(0.6) contrast(1.1) grayscale(0.2)"
+    },
+    {
+        id: 4,
+        title: "Tracky: High-Speed Line Follower Robot",
+        category: "LARC 2025 Robotics Competition",
+        tech: "Hardware Eng. • ESP32-C6 • PID Control • Python",
+        image: `${import.meta.env.BASE_URL}images/robot_full.png`, 
+        link: "/project/larc-2025",
+        filter: "brightness(0.9) contrast(1.1) hue-rotate(-10deg)"
     }
 ];
 

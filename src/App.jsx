@@ -34,6 +34,7 @@ const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
 const SelfBalancingPlatform = lazy(() => import('./pages/SelfBalancingPlatform'));
 const FaultDetection = lazy(() => import('./pages/FaultDetection'));
 const FaultDetectionCASE = lazy(() => import('./pages/FaultDetectionCASE'));
+const Larc2025 = lazy(() => import('./pages/Larc2025'));
 
 function Home() {
   return (
@@ -62,6 +63,7 @@ function AnimatedRoutes() {
         <Route path="/project/self-balancing-platform" element={<SelfBalancingPlatform />} />
         <Route path="/project/fault-detection" element={<FaultDetection />} />
         <Route path="/project/fault-detection-case" element={<FaultDetectionCASE />} />
+        <Route path="/project/larc-2025" element={<Larc2025 />} />
         <Route path="/project/:id" element={<ProjectDetail />} />
       </Routes>
     </AnimatePresence>
