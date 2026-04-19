@@ -257,7 +257,7 @@ const FaultDetectionCASE = () => {
                 <span className="text-gray-500 font-normal">Dept. of Mechatronics Engineering, Universidad Iberoamericana Puebla.</span>
               </div>
               <div>
-                <span className="text-white">Karen Melissa Pastrana Monzon</span><br/>
+                <span className="text-white">Karime Farias Yabur</span><br/>
                 <span className="text-gray-500 font-normal">Nanotechnology Engineering, ITESM.</span>
               </div>
               <div>
