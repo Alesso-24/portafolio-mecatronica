@@ -69,8 +69,6 @@ const HeroGradient = () => {
       ctx.fillStyle = sg;
       ctx.fill();
     }
-
-    animFrameRef.current = requestAnimationFrame(draw);
   }, []);
 
   useEffect(() => {
@@ -93,11 +91,16 @@ const HeroGradient = () => {
       const rect = canvas.getBoundingClientRect();
       mouse.current = { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
     };
+    const animate = () => {
+      draw();
+      animFrameRef.current = requestAnimationFrame(animate);
+    };
+
     window.addEventListener('mousemove', onMove, { passive: true });
     window.addEventListener('touchmove', onTouch, { passive: true });
     window.addEventListener('touchend', () => { mouse.current = { x: -9999, y: -9999 }; }, { passive: true });
 
-    animFrameRef.current = requestAnimationFrame(draw);
+    animFrameRef.current = requestAnimationFrame(animate);
 
     return () => {
       ro.disconnect();

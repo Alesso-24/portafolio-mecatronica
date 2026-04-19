@@ -14,12 +14,14 @@
  *  - Uses spring stiffness 1000 / damping 50 for extremely tight, butter-smooth tracking.
  *  - The component returns null on touch devices, adding zero overhead to mobile.
  */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(true);
+  const [isTouchDevice] = useState(() => 
+    typeof window !== 'undefined' ? !window.matchMedia('(pointer: fine)').matches : true
+  );
 
   // Raw mouse position motion values — updated on every mousemove
   const rawX = useMotionValue(0);
@@ -31,10 +33,6 @@ const CustomCursor = () => {
   const y = useSpring(rawY, springConfig);
 
   useEffect(() => {
-    // Only show on fine-pointer (mouse) devices
-    if (window.matchMedia('(pointer: fine)').matches) {
-      setIsTouchDevice(false);
-    }
 
     const onMouseMove = (e) => {
       rawX.set(e.clientX);

@@ -20,7 +20,6 @@ import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const navRef = useRef(null);
-  const mobileMenuRef = useRef(null);
   const location = useLocation();
   const navigate = useNavigate();
   const isProjectPage = location.pathname.startsWith('/project');
@@ -28,6 +27,7 @@ const Navbar = () => {
 
   // Close menu on route change
   useEffect(() => {
+    // eslint-disable-next-line
     setMenuOpen(false);
   }, [location.pathname]);
 

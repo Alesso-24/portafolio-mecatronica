@@ -257,7 +257,7 @@ const FaultDetectionCASE = () => {
                 <span className="text-gray-500 font-normal">Dept. of Mechatronics Engineering, Universidad Iberoamericana Puebla.</span>
               </div>
               <div>
-                <span className="text-white">Karime Farias Yabur</span><br/>
+                <span className="text-white">Karen Melissa Pastrana Monzon</span><br/>
                 <span className="text-gray-500 font-normal">Nanotechnology Engineering, ITESM.</span>
               </div>
               <div>
@@ -304,7 +304,7 @@ const FaultDetectionCASE = () => {
                 </div>
                 <h3 className="font-display text-2xl text-white mb-6 uppercase tracking-wider relative z-10">Abstract</h3>
                 <p className="font-sans text-gray-300 text-sm md:text-base leading-relaxed text-justify relative z-10">
-                    There are several classification strategies available for evaluating when a bearing has failed. Bearing failure is a gradual process, and the question posed is whether or not the best classifier should also be allowed to change based on the fault’s progression. Using measurements which come from the NASA Intelligent Maintenance Systems (IMS) 2nd_test dataset (984 total files that measure Bearing 1, which has a fault on the outer race), three classifiers—Random Forest (RF), Logistic Regression (LR), and Support Vector Machine (SVM)—were evaluated with respect to their ability to detect faults at two stages of degradation. At the incipient stage, RF detected 27 out of 56 fault cycles (48.2% detection rate) while LR detected only 7 out of 56 (12.5%), representing a difference of 3.9×. At the advanced stage, both classifiers converged to Area Under the Curve (AUC) = 1.000. Latency was measured using CPU cycle-counting directly from a real-world ESP32 microcontroller (Xtensa LX6, 240 MHz), not from simulation. LR had a latency of 184 ns while RF had a latency of 23.3 μs, i.e., a 126× difference. SVM misclassified the fault on hardware at 96.5 μs and was disqualified. Fisher Discriminant Ratio (FDR) analysis shows a 5.89× separability increase from incipient to advanced stage, and a label-free proxy trigger validated on IMS Bearing 2 yielded zero false positives. To the best of the authors’ knowledge, no prior study has characterized this trade-off based on degradation stage using physical microcontroller hardware.
+                    There are several classification strategies available for evaluating when a bearing has failed. Bearing failure is a gradual process, and the question posed is whether or not the best classifier should also be allowed to change based on the fault’s progression. Using measurements which come from the NASA Intelligent Maintenance Systems (IMS) 2nd_test dataset (984 total files that measure Bearing 1, which has a fault on the outer race), three classifiers—Random Forest (RF), Logistic Regression (LR), and Support Vector Machine (SVM)—were evaluated with respect to their ability to detect faults at two stages of degradation. At the incipient stage, RF detected 27 out of 56 fault cycles (48.2% detection rate) while LR detected only 7 out of 56 (12.5%), representing a difference of 3.9×. At the advanced stage, both classifiers converged to Area Under the Curve (AUC) = 1.000. Latency was measured using CPU cycle-counting directly from a real-world ESP32 microcontroller (Xtensa LX6, 240 MHz), not from simulation. LR had a latency of 184 ns while RF had a latency of 23.3 μs, i.e., a 126× difference. SVM misclassified the fault on hardware at 96.5 μs and was disqualified. Fisher Discriminant Ratio (FDR) analysis shows a 5.89× separability increase from incipient to advanced stage, and a label-free proxy trigger validated on IMS Bearing 2 yielded zero false positives. To the best of the authors’ knowledge, no prior study has characterized this trade-off based on degradation stage using physical microcontroller hardware.
                 </p>
                 <p className="font-mono text-[10px] text-gray-500 mt-6"><span className="text-white/40 uppercase tracking-widest">Index Terms —</span> Edge AI, Predictive Maintenance, TinyML, Bearing Fault Detection, Fisher Discriminant Ratio, Hardware Benchmark.</p>
             </div>
@@ -350,7 +350,7 @@ const FaultDetectionCASE = () => {
                         <span className="text-white text-xl">⏱️</span>
                         <div>
                             <strong className="text-white block mb-1">CPU-Cycle Latency Measurement</strong>
-                            Inference time was measured directly on the microcontroller. A lightweight Random Forest takes 23.3 μs (5,592 CPU cycles) per inference, while optimized Logistic Regression requires only 184 ns (44 cycles), enabling ultra-efficient real-time monitoring.
+                            Inference time was measured directly on the microcontroller. A lightweight Random Forest takes 23.3 μs (5,592 CPU cycles) per inference, while optimized Logistic Regression requires only 184 ns (44 cycles), enabling ultra-efficient real-time monitoring.
                         </div>
                     </li>
                     <li className="flex gap-4">
