@@ -4,26 +4,26 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
 
 <ProjectLayout
   badge="IEEE Research · CASE 2026 · Accepted"
-  title="High-Speed Fault Detection — 126× Faster than the Baseline."
-  description="A hybrid CNN-PCA pipeline that achieves 126× speedup in bearing fault detection while maintaining 99.1% accuracy — accepted to IEEE CASE 2026 (Automation Science & Engineering)."
+  title="Edge AI That Knows When to Switch Models."
+  description="A stage-aware framework that switches between Random Forest and Logistic Regression based on measured fault separability (FDR), benchmarked on real ESP32 hardware. Logistic Regression runs 126x faster once a fault is obvious, and a real single-precision hardware bug flipped an SVM's decision that looked perfect in simulation. Accepted to IEEE CASE 2026, presenting in person in Shenyang."
   coverImage="/portfolio/images/cover_case.webp"
-  coverAlt="Visualización del pipeline CNN-PCA de detección de fallas de alta velocidad"
+  coverAlt="Microcontrolador ESP32 usado para el benchmark de hardware"
   ogImage="https://alesso-24.github.io/portfolio/images/cover_case.webp"
   meta={[
-    { label: 'Venue',    value: 'IEEE CASE 2026 — Automation Science' },
-    { label: 'Status',   value: '✓ Accepted · IEEE Xplore ~Nov 2026' },
-    { label: 'Speedup',  value: '126× vs. baseline' },
-    { label: 'Accuracy', value: '99.1% on CWRU benchmark' },
-    { label: 'Role',     value: 'Lead Researcher & System Architect' },
+    { label: 'Venue',   value: 'IEEE CASE 2026 · Shenyang, China' },
+    { label: 'Status',  value: '✓ Accepted · Presenting in person, Aug 2026' },
+    { label: 'Result',  value: '184ns (LR) vs. 23.3μs (RF) on real ESP32' },
+    { label: 'Stack',   value: 'Python · scikit-learn · ESP32 (Xtensa LX6)' },
+    { label: 'Role',    value: 'Lead Researcher & Hardware Benchmarking' },
   ]}
 >
 
-  <!-- IEEE badge -->
+  <!-- Status badge -->
   <div data-reveal style="margin:clamp(20px,3vh,36px) 0 0;">
     <div class="ieee-badge">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      <span class="lang-en">IEEE Xplore · Expected November 2026</span>
-      <span class="lang-es">IEEE Xplore · Previsto Noviembre 2026</span>
+      <span class="lang-en">Presenting in person · IEEE Xplore after the August 2026 presentation</span>
+      <span class="lang-es">Presentación presencial · IEEE Xplore después de la presentación en agosto 2026</span>
     </div>
   </div>
 
@@ -31,92 +31,158 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
 
   <blockquote class="pull-quote" data-reveal>
     <p>
-      <span class="lang-en">"126× faster isn't an optimization — it's a qualitative shift. What was too slow for real-time use suddenly becomes the fastest thing in the room."</span>
-      <span class="lang-es">"126× más rápido no es una optimización — es un cambio cualitativo. Lo que era demasiado lento para uso en tiempo real de repente se convierte en lo más rápido de la sala."</span>
+      <span class="lang-en">"A model that scored a perfect 1.000 AUC in Python misclassified the same fault on real silicon. Simulation alone would never have caught it."</span>
+      <span class="lang-es">"Un modelo que obtuvo un AUC perfecto de 1.000 en Python clasificó mal esa misma falla en silicio real. La simulación por sí sola jamás lo hubiera detectado."</span>
     </p>
   </blockquote>
 
   <hr class="divider" />
 
   <h2 class="section-h2" data-reveal>
-    <span class="lang-en">The Speed Problem in Fault Detection.</span>
-    <span class="lang-es">El Problema de Velocidad en Detección de Fallas.</span>
+    <span class="lang-en">One Model, the Whole Way Through, Is the Wrong Idea.</span>
+    <span class="lang-es">Un Solo Modelo Durante Todo el Proceso Es la Idea Equivocada.</span>
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">Bearing fault detection in industrial environments is computationally demanding. Traditional deep-learning approaches achieve high accuracy but require inference times incompatible with real-time control loops — especially for high-speed machinery running at thousands of RPM where fault progression can happen within seconds.</span>
-    <span class="lang-es">La detección de fallas en rodamientos en entornos industriales es computacionalmente exigente. Los enfoques tradicionales de aprendizaje profundo logran alta precisión pero requieren tiempos de inferencia incompatibles con los bucles de control en tiempo real — especialmente para maquinaria de alta velocidad que opera a miles de RPM donde la progresión de fallas puede ocurrir en segundos.</span>
+    <span class="lang-en">A bearing fault doesn't appear all at once. It starts as a faint, sporadic signature buried in noise, then grows into an unmistakable one as damage accumulates. Most edge-deployed classifiers ignore that evolution and run a single fixed model across the entire process, so they're either too heavy for the easy part or not sensitive enough for the hard part.</span>
+    <span class="lang-es">Una falla en un rodamiento no aparece de golpe. Empieza como una firma tenue y esporádica enterrada en el ruido, y crece hasta ser inconfundible conforme se acumula el daño. La mayoría de los clasificadores desplegados en el borde ignoran esa evolución y corren un solo modelo fijo durante todo el proceso, así que terminan siendo demasiado pesados para la parte fácil o poco sensibles para la parte difícil.</span>
   </p>
 
   <p class="prose" data-reveal data-reveal-delay="100">
-    <span class="lang-en">This research introduces a hybrid CNN-PCA architecture that front-loads dimensionality reduction — eliminating ~87% of redundant features before the CNN sees the data — enabling 126× speedup while retaining 99.1% accuracy on the CWRU benchmark dataset.</span>
-    <span class="lang-es">Esta investigación introduce una arquitectura híbrida CNN-PCA que adelanta la reducción de dimensionalidad — eliminando ~87% de características redundantes antes de que la CNN procese los datos — habilitando un speedup de 126× mientras se retiene el 99.1% de precisión en el dataset de referencia CWRU.</span>
+    <span class="lang-en">This research asks a simpler question: what if the system tracked how separable the fault signature already is, and switched models accordingly? We built a stage-aware framework, validated it with a measurable separability metric (the Fisher Discriminant Ratio), and benchmarked every latency number on physical ESP32 hardware instead of trusting simulation.</span>
+    <span class="lang-es">Esta investigación plantea una pregunta más simple: ¿qué pasaría si el sistema rastreara qué tan separable es ya la firma de la falla, y cambiara de modelo en consecuencia? Construimos un framework consciente de la etapa de degradación, lo validamos con una métrica de separabilidad medible (el Fisher Discriminant Ratio), y medimos cada número de latencia en hardware ESP32 físico en lugar de confiar en simulación.</span>
   </p>
 
-  <!-- 126× hero stat -->
-  <div data-reveal data-reveal-delay="140" style="
-    text-align:center; padding:clamp(32px,5vh,64px) 0;
-    border-top:1px solid rgba(33,31,26,0.1); border-bottom:1px solid rgba(33,31,26,0.1);
-    margin:clamp(28px,4vh,48px) 0;
-  ">
-    <div style="font-family:'Instrument Serif',serif; font-size:clamp(72px,14vw,160px); line-height:0.88;
-                color:#ea6a2e; letter-spacing:-0.04em; font-weight:400;">
-      126×
+  <div class="stat-highlight" data-reveal data-reveal-delay="140">
+    <div class="stat-grid">
+      {[
+        { num: '126×', labelEn: 'Faster inference once the fault is obvious (real ESP32)', labelEs: 'Inferencia más rápida cuando la falla es evidente (ESP32 real)' },
+        { num: '5.89×', labelEn: 'Separability increase from incipient to advanced stage', labelEs: 'Aumento de separabilidad de etapa incipiente a avanzada' },
+        { num: '~9 hrs', labelEn: 'Advance warning before the confirmed fault point', labelEs: 'Aviso anticipado antes del punto de falla confirmado' },
+      ].map(({ num, labelEn, labelEs }) => (
+        <div style="border-top: 2px solid #ea6a2e; padding-top: 16px;">
+          <div style="font-family:'Instrument Serif',serif; font-size:clamp(28px,3.5vw,52px); color:#ea6a2e; line-height:1; margin-bottom:8px;">{num}</div>
+          <p style="margin:0; font-size:13px; color:#6f6a5f; letter-spacing:0.03em; line-height:1.4;">
+            <span class="lang-en">{labelEn}</span>
+            <span class="lang-es">{labelEs}</span>
+          </p>
+        </div>
+      ))}
     </div>
-    <p style="margin:18px 0 0; font:700 11px 'Hanken Grotesk',system-ui,sans-serif;
-              letter-spacing:0.14em; text-transform:uppercase; color:#6f6a5f;">
-      <span class="lang-en">Faster than full-feature CNN baseline</span>
-      <span class="lang-es">Más rápido que la línea base CNN completa</span>
-    </p>
   </div>
 
   <hr class="divider" />
 
   <h2 class="section-h2" data-reveal>
-    <span class="lang-en">The CNN-PCA Architecture.</span>
-    <span class="lang-es">La Arquitectura CNN-PCA.</span>
+    <span class="lang-en">Measuring Which Stage a Bearing Is In.</span>
+    <span class="lang-es">Midiendo en Qué Etapa Está un Rodamiento.</span>
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">The key insight: not all dimensions of a vibration signal are equally informative for fault classification. PCA identifies the principal components accounting for 95% of variance — discarding the rest before the CNN processes the data. The CNN then operates on a dramatically smaller, more expressive feature space.</span>
-    <span class="lang-es">La idea clave: no todas las dimensiones de una señal de vibración son igualmente informativas para la clasificación de fallas. El PCA identifica los componentes principales que representan el 95% de la varianza — descartando el resto antes de que la CNN procese los datos. La CNN entonces opera sobre un espacio de características dramáticamente más pequeño y expresivo.</span>
+    <span class="lang-en">Using the NASA IMS bearing dataset (Bearing 1, outer race fault, 984 files sampled at 20kHz), we filtered the raw signal through a Butterworth high-pass stage and a noise gate, then tracked three simple time-domain features: RMS, Kurtosis, and peak amplitude. A statistical threshold over five consecutive cycles pinpointed the confirmed fault onset at cycle 576. But Kurtosis crossed an early warning threshold 56 cycles earlier, at cycle 520. That 56-cycle window, faint enough that most models miss it, is what we call the Blind Zone.</span>
+    <span class="lang-es">Usando el dataset de rodamientos IMS de la NASA (Rodamiento 1, falla en pista externa, 984 archivos muestreados a 20kHz), filtramos la señal cruda con una etapa Butterworth pasa altas y una puerta de ruido, y rastreamos tres características simples en el dominio temporal: RMS, Kurtosis y amplitud pico. Un umbral estadístico sobre cinco ciclos consecutivos ubicó el inicio confirmado de la falla en el ciclo 576. Pero Kurtosis cruzó un umbral de alerta temprana 56 ciclos antes, en el ciclo 520. Esa ventana de 56 ciclos, lo suficientemente tenue como para que la mayoría de los modelos la ignoren, es lo que llamamos la Zona Ciega.</span>
   </p>
+
+  <div data-reveal class="img-grid-2">
+    <div style="border-radius:14px; overflow:hidden; box-shadow:0 18px 44px -20px rgba(234,106,46,0.3);">
+      <img src="/portfolio/images/case_signal.webp" alt="Acondicionamiento de señal: vibración cruda contra sensor virtual" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+    </div>
+    <div style="border-radius:14px; overflow:hidden; box-shadow:0 18px 44px -20px rgba(37,64,192,0.3);">
+      <img src="/portfolio/images/case_trend.webp" alt="Tendencia de monitoreo de condición sobre 984 ciclos, con el punto de falla confirmado marcado" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <h2 class="section-h2" data-reveal>
+    <span class="lang-en">A Counterintuitive Result in the Blind Zone.</span>
+    <span class="lang-es">Un Resultado Contraintuitivo en la Zona Ciega.</span>
+  </h2>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">Inside the Blind Zone, Random Forest correctly flagged 27 of 56 fault cycles (48.2%). Logistic Regression caught only 7 (12.5%), a 3.9x gap. That's the opposite of what the raw ranking metric (AUC) suggests: Logistic Regression actually ranks the fault cycles better than Random Forest does. The catch is that a good ranking is useless without a threshold to act on, and the right threshold depends on a fault prevalence you can't know in advance, in a real deployment, without labels. Random Forest's ensemble of a hundred trees produces a default decision boundary that stays usable even when no one has tuned it. Logistic Regression's does not.</span>
+    <span class="lang-es">Dentro de la Zona Ciega, Random Forest marcó correctamente 27 de 56 ciclos con falla (48.2%). Logistic Regression solo detectó 7 (12.5%), una diferencia de 3.9x. Eso es lo opuesto a lo que sugiere la métrica de ranking cruda (AUC): Logistic Regression en realidad ordena mejor los ciclos con falla que Random Forest. El problema es que un buen ranking es inútil sin un umbral sobre el cual actuar, y el umbral correcto depende de una prevalencia de falla que no se puede conocer de antemano, en un despliegue real, sin etiquetas. El ensamble de cien árboles de Random Forest produce una frontera de decisión por defecto que se mantiene útil aunque nadie la haya ajustado. La de Logistic Regression no.</span>
+  </p>
+
+  <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(234,106,46,0.35);">
+    <img src="/portfolio/images/case_pca.webp" alt="Dispersión PCA: solapamiento de clases en etapa incipiente vs. separación limpia en etapa avanzada" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+  </div>
 
   <div class="tech-grid" data-reveal data-reveal-delay="100">
     <div class="tech-card">
       <div class="tech-num" style="color:#ea6a2e;">01</div>
-      <h3><span class="lang-en">PCA Pre-Processing</span><span class="lang-es">Pre-procesamiento PCA</span></h3>
-      <p><span class="lang-en">Principal component analysis reduces input dimensionality from ~1500 to ~190 features per sample — removing noise while preserving the fault-relevant signal structure.</span><span class="lang-es">El análisis de componentes principales reduce la dimensionalidad de entrada de ~1500 a ~190 características por muestra — eliminando ruido mientras preserva la estructura de señal relevante para las fallas.</span></p>
+      <h3><span class="lang-en">Real Hardware, Not Simulation</span><span class="lang-es">Hardware Real, No Simulación</span></h3>
+      <p><span class="lang-en">Every latency number comes from 10,000 runs on a physical ESP32, using a CPU cycle counter accurate to the nanosecond, not the Arduino timer's 1μs resolution floor.</span><span class="lang-es">Cada número de latencia viene de 10,000 corridas en un ESP32 físico, usando un contador de ciclos de CPU preciso al nanosegundo, no el piso de resolución de 1μs del timer de Arduino.</span></p>
     </div>
     <div class="tech-card">
       <div class="tech-num" style="color:#ea6a2e;">02</div>
-      <h3><span class="lang-en">Lightweight CNN</span><span class="lang-es">CNN Ligera</span></h3>
-      <p><span class="lang-en">A shallow 3-layer 1D CNN trained on PCA-compressed inputs achieves 99.1% accuracy — without the overhead of processing raw high-dimensional vibration data.</span><span class="lang-es">Una CNN 1D superficial de 3 capas entrenada sobre entradas comprimidas por PCA logra 99.1% de precisión — sin la sobrecarga de procesar datos de vibración crudos de alta dimensión.</span></p>
+      <h3><span class="lang-en">FDR as a Stage Signal</span><span class="lang-es">FDR Como Señal de Etapa</span></h3>
+      <p><span class="lang-en">The Fisher Discriminant Ratio quantifies how separable healthy and faulty cycles are. It rises from 1.26 (incipient) to 7.42 (advanced), a measurable trigger for when to trust the cheaper model.</span><span class="lang-es">El Fisher Discriminant Ratio cuantifica qué tan separables son los ciclos sanos y con falla. Sube de 1.26 (incipiente) a 7.42 (avanzada), un disparador medible de cuándo confiar en el modelo más barato.</span></p>
     </div>
     <div class="tech-card">
       <div class="tech-num" style="color:#ea6a2e;">03</div>
-      <h3><span class="lang-en">FPU Bug Discovery</span><span class="lang-es">Descubrimiento de Bug FPU</span></h3>
-      <p><span class="lang-en">During hardware testing, an undocumented FPU edge case was discovered — leading to a novel software workaround now included in the paper as a deployment contribution.</span><span class="lang-es">Durante las pruebas de hardware, se descubrió un caso límite no documentado de la FPU — lo que llevó a una solución de software novedosa ahora incluida en el artículo como contribución de despliegue.</span></p>
+      <h3><span class="lang-en">Label-Free Switching</span><span class="lang-es">Cambio Sin Etiquetas</span></h3>
+      <p><span class="lang-en">The trigger is calibrated purely from a healthy baseline at start-up. No fault labels are needed ahead of time, so the framework deploys on bearings it has never seen fail.</span><span class="lang-es">El disparador se calibra únicamente a partir de una línea base sana al arrancar. No se necesitan etiquetas de falla de antemano, así que el framework se despliega en rodamientos que nunca ha visto fallar.</span></p>
     </div>
+  </div>
+
+  <hr class="divider" />
+
+  <h2 class="section-h2" data-reveal>
+    <span class="lang-en">The Bug Simulation Never Would Have Caught.</span>
+    <span class="lang-es">El Bug Que la Simulación Jamás Habría Detectado.</span>
+  </h2>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">Once the fault reaches the advanced stage, all three models converge to a perfect AUC of 1.000 in Python. On the actual ESP32, though, the Support Vector Machine misclassified the confirmed fault sample as healthy. Its Python decision value for that sample was +0.259, positive, but only barely. On the microcontroller's single-precision floating-point unit, the accumulated rounding error from 64 exponential calls was enough to flip that sign. A model that looked flawless in software failed the one test that mattered.</span>
+    <span class="lang-es">Una vez que la falla llega a la etapa avanzada, los tres modelos convergen a un AUC perfecto de 1.000 en Python. Sin embargo, en el ESP32 real, la Support Vector Machine clasificó como sana la muestra con falla confirmada. Su valor de decisión en Python para esa muestra era +0.259, positivo, pero apenas. En la unidad de punto flotante de precisión simple del microcontrolador, el error de redondeo acumulado de 64 llamadas exponenciales fue suficiente para invertir ese signo. Un modelo que se veía impecable en software falló la única prueba que importaba.</span>
+  </p>
+
+  <div class="callout" data-reveal>
+    <strong><span class="lang-en">On the Hardware Precision Bug</span><span class="lang-es">Sobre el Bug de Precisión en Hardware</span></strong>
+    <span class="lang-en">Random Forest and Logistic Regression reached 100% sensitivity on the advanced-stage holdout, with Logistic Regression running at just 184 nanoseconds per inference. SVM ran at 96.5 microseconds and missed the one fault it needed to catch. The fix isn't complicated (double-precision accumulation, or deferring to Random Forest whenever the decision value sits too close to zero), but finding it required testing on the real chip. This is exactly the gap simulation-only benchmarks leave open.</span>
+    <span class="lang-es">Random Forest y Logistic Regression alcanzaron 100% de sensibilidad en la muestra de reserva de etapa avanzada, con Logistic Regression corriendo en apenas 184 nanosegundos por inferencia. SVM corrió en 96.5 microsegundos y falló la única falla que necesitaba detectar. La solución no es complicada (acumulación de doble precisión, o recurrir a Random Forest cuando el valor de decisión está demasiado cerca de cero), pero encontrarla requirió probar en el chip real. Este es exactamente el vacío que dejan los benchmarks basados solo en simulación.</span>
   </div>
 
   <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35);">
-    <img src="/portfolio/images/case_fdr.webp" alt="Diagrama del pipeline CNN-PCA de detección de fallas" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+    <img src="/portfolio/images/case_esp32.webp" alt="Latencia de inferencia en ESP32 real: 184ns (LR) vs. 23.3μs (RF) vs. 96.5μs (SVM)" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
   </div>
 
-  <div data-reveal class="img-grid-2">
-    <div style="border-radius:14px; overflow:hidden; box-shadow:0 18px 44px -20px rgba(37,64,192,0.3);">
-      <img src="/portfolio/images/case_latency.webp" alt="Comparación de latencia mostrando speedup de 126×" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
-    </div>
-    <div style="border-radius:14px; overflow:hidden; box-shadow:0 18px 44px -20px rgba(234,106,46,0.3);">
-      <img src="/portfolio/images/case_pca.webp" alt="Visualización del espacio de características PCA" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
-    </div>
+  <hr class="divider" />
+
+  <h2 class="section-h2" data-reveal>
+    <span class="lang-en">Putting the Two Halves Together.</span>
+    <span class="lang-es">Uniendo las Dos Mitades.</span>
+  </h2>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">The deployable framework watches a rolling average of Kurtosis against a threshold learned from a healthy baseline. When it rises, Random Forest takes over for maximum sensitivity in the Blind Zone. Once the confirmed-fault criterion fires, the system hands off to Logistic Regression, keeping the same accuracy at 126x lower energy cost. On this dataset, that handoff happened at cycle 520, about nine hours before the confirmed failure point.</span>
+    <span class="lang-es">El framework desplegable observa un promedio móvil de Kurtosis contra un umbral aprendido de una línea base sana. Cuando sube, Random Forest toma el control para máxima sensibilidad en la Zona Ciega. Una vez que se dispara el criterio de falla confirmada, el sistema le cede el control a Logistic Regression, manteniendo la misma precisión a un costo energético 126x menor. En este dataset, ese cambio ocurrió en el ciclo 520, unas nueve horas antes del punto de falla confirmado.</span>
+  </p>
+
+  <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(234,106,46,0.3);">
+    <img src="/portfolio/images/case_framework.webp" alt="Framework de decisión: la ruta de alta criticidad favorece a RF en detección ultra temprana, la ruta de eficiencia favorece a LR en monitoreo de estado estable" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
   </div>
 
-  <div class="callout" data-reveal>
-    <strong><span class="lang-en">On the FPU Bug</span><span class="lang-es">Sobre el Bug FPU</span></strong>
-    <span class="lang-en">During deployment testing, we encountered consistent numerical errors in the PCA matrix multiplication on the target hardware. After systematic debugging, we traced it to a denormalized-float edge case in the hardware FPU — undocumented for this chip variant. The software workaround adds ~3μs per inference and is now part of the published paper.</span>
-    <span class="lang-es">Durante las pruebas de despliegue, encontramos errores numéricos consistentes en la multiplicación de matrices PCA en el hardware objetivo. Después de una depuración sistemática, lo rastreamos a un caso límite de float desnormalizado en la FPU de hardware — no documentado para esta variante del chip. La solución de software agrega ~3μs por inferencia y ahora es parte del artículo publicado.</span>
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">To check that this doesn't just cry wolf on a healthy machine, we ran the same models on Bearing 2 from the same test run, a channel that never developed a fault. False-positive rates stayed near zero across the board (Random Forest: 1.8%, SVM and Logistic Regression: 0.0%), which is exactly what a specificity check should show.</span>
+    <span class="lang-es">Para comprobar que esto no genera falsas alarmas en una máquina sana, corrimos los mismos modelos sobre el Rodamiento 2 de la misma corrida de prueba, un canal que nunca desarrolló una falla. Las tasas de falsos positivos se mantuvieron cerca de cero en todos los casos (Random Forest: 1.8%, SVM y Logistic Regression: 0.0%), justo lo que debería mostrar una prueba de especificidad.</span>
+  </p>
+
+  <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; max-width:480px; margin-left:auto; margin-right:auto; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35);">
+    <img src="/portfolio/images/case_crossbearing.webp" alt="Validación cruzada entre rodamientos: modelos entrenados en Rodamiento 1, evaluados en Rodamiento 2 sano" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
   </div>
+
+  <hr class="divider" />
+
+  <h2 class="section-h2" data-reveal>
+    <span class="lang-en">Presenting at CASE 2026.</span>
+    <span class="lang-es">Presentación en CASE 2026.</span>
+  </h2>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">Co-authored with Karime Farias Yabur, Claudia Isaret Méndez Rosas and Fannor Antonio Rodríguez De León (Tecnológico de Monterrey), Javier Osorio Figueroa and Oliver Ochoa García (Universidad Iberoamericana Puebla), and Agustín L. Herrera May and Gerardo Mora Aquino (Universidad Veracruzana). I'll be presenting the paper in person at the IEEE 22nd International Conference on Automation Science and Engineering, August 17 to 21, 2026, in Shenyang, China. My travel is funded by an IEEE Robotics and Automation Society (RAS) student travel grant, the publication fee is covered by Universidad Veracruzana, and lodging is covered by Universidad Iberoamericana Puebla.</span>
+    <span class="lang-es">Coescrito con Karime Farias Yabur, Claudia Isaret Méndez Rosas y Fannor Antonio Rodríguez De León (Tecnológico de Monterrey), Javier Osorio Figueroa y Oliver Ochoa García (Universidad Iberoamericana Puebla), y Agustín L. Herrera May y Gerardo Mora Aquino (Universidad Veracruzana). Presentaré el artículo de forma presencial en la 22ª Conferencia Internacional IEEE sobre Ciencia e Ingeniería de la Automatización, del 17 al 21 de agosto de 2026, en Shenyang, China. Mi viaje está financiado por una beca de viaje estudiantil de la IEEE Robotics and Automation Society (RAS), la cuota de publicación la cubre la Universidad Veracruzana, y el hospedaje lo cubre la Universidad Iberoamericana Puebla.</span>
+  </p>
 
 </ProjectLayout>
