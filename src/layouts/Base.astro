@@ -75,7 +75,7 @@ const {
     <!-- Skip to main content (a11y) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Navigation (React island — needs client JS for mobile menu + lang toggle) -->
+    <!-- Navigation (React island, needs client JS for mobile menu + lang toggle) -->
     <Nav client:load lang={lang} />
 
     <!-- Page content -->
@@ -104,7 +104,7 @@ const {
         gsap.ticker.lagSmoothing(0)
       }
 
-      // Scroll reveals — [data-reveal] elements animate in
+      // Scroll reveals: [data-reveal] elements animate in
       const reveals = document.querySelectorAll<HTMLElement>('[data-reveal]')
 
       if (!prefersReduced) {
