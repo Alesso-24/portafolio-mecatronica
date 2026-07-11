@@ -51,7 +51,7 @@ export const STATS = [
   },
   {
     value: '2×',
-    label: { en: 'IEEE accepted papers (CASE 2026 + BDAI 2026)', es: 'Artículos aceptados en IEEE (CASE 2026 + BDAI 2026)' },
+    label: { en: 'IEEE papers — BDAI 2026 presented, CASE 2026 accepted', es: 'Artículos IEEE — BDAI 2026 presentado, CASE 2026 aceptado' },
   },
 ]
 
@@ -128,7 +128,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'fault-detection',
-    tag: { en: 'IEEE BDAI 2026 · Accepted', es: 'IEEE BDAI 2026 · Aceptado' },
+    tag: { en: 'IEEE BDAI 2026 · Presented', es: 'IEEE BDAI 2026 · Presentado' },
     title: { en: 'Industrial Fault Detection via Machine Learning', es: 'Detección de Fallas Industriales mediante Machine Learning' },
     description: {
       en: '99.85% accuracy, zero false positives, 98.4% less energy than the cloud — predictive maintenance light enough to run on a $5 microcontroller.',

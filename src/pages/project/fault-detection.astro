@@ -3,18 +3,18 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
 ---
 
 <ProjectLayout
-  badge="IEEE Research · BDAI 2026 · Accepted"
-  title="Edge AI Fault Detection — Induction Motors at 99.3% Accuracy."
-  description="A lightweight CNN-LSTM model that detects induction motor faults at the edge with 99.3% accuracy, consuming 10× less energy than server-side inference — accepted to IEEE BDAI 2026."
+  badge="IEEE Research · BDAI 2026 · Presented"
+  title="Predictive Maintenance at 99.85% — Without the Cloud."
+  description="A Random Forest classifier reaches 99.85% accuracy detecting bearing faults in the NASA IMS dataset with zero false positives — and an analytical model shows 98.4% less energy than streaming raw vibration data to the cloud. Presented at IEEE BDAI 2026, Chongqing."
   coverImage="/portfolio/images/cover_bdai.webp"
-  coverAlt="Sistema de detección de fallas Edge AI para motores de inducción"
+  coverAlt="Rodamiento industrial — mantenimiento predictivo con Machine Learning"
   ogImage="https://alesso-24.github.io/portfolio/images/cover_bdai.webp"
   meta={[
-    { label: 'Venue',     value: 'IEEE BDAI 2026 — Big Data & AI' },
-    { label: 'Status',    value: '✓ Accepted · IEEE Xplore ~Sep 2026' },
-    { label: 'Accuracy',  value: '99.3% (test set)' },
-    { label: 'Stack',     value: 'Python · TensorFlow Lite · ESP32' },
-    { label: 'Role',      value: 'Lead Researcher & Implementation' },
+    { label: 'Venue',     value: 'IEEE BDAI 2026 — Chongqing, China' },
+    { label: 'Status',    value: '✓ Presented · IEEE Xplore pending' },
+    { label: 'Accuracy',  value: '99.85% · zero false positives' },
+    { label: 'Stack',     value: 'Python · scikit-learn · ESP32 · FreeRTOS' },
+    { label: 'Role',      value: 'Lead Researcher · Presenter & Session Chair' },
   ]}
 >
 
@@ -22,8 +22,8 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   <div data-reveal style="margin:clamp(20px,3vh,36px) 0 0;">
     <div class="ieee-badge">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      <span class="lang-en">IEEE Xplore · Expected September 2026</span>
-      <span class="lang-es">IEEE Xplore · Previsto Septiembre 2026</span>
+      <span class="lang-en">IEEE Xplore · Publication pending (Ei Compendex / Scopus)</span>
+      <span class="lang-es">IEEE Xplore · Publicación pendiente (Ei Compendex / Scopus)</span>
     </div>
   </div>
 
@@ -31,8 +31,8 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
 
   <blockquote class="pull-quote" data-reveal>
     <p>
-      <span class="lang-en">"The industrial floor can't wait for the cloud. We pushed a full fault-detection brain to a microcontroller — and it works better than expected."</span>
-      <span class="lang-es">"El piso industrial no puede esperar a la nube. Instalamos un cerebro completo de detección de fallas en un microcontrolador — y funciona mejor de lo esperado."</span>
+      <span class="lang-en">"Selecting complex AI is not necessarily the only path forward. A $5 microcontroller tracking three numbers caught every failure a GPU-bound deep learning model would — at a fraction of the energy."</span>
+      <span class="lang-es">"Elegir IA compleja no es necesariamente el único camino. Un microcontrolador de $5 rastreando tres números detectó cada falla que un modelo de deep learning dependiente de GPU detectaría — a una fracción de la energía."</span>
     </p>
   </blockquote>
 
@@ -44,21 +44,21 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">Induction motors power roughly 70% of global industrial electricity consumption. When one fails unexpectedly, downtime costs can reach tens of thousands of dollars per hour. Traditional condition monitoring sends data to a remote server for analysis — introducing latency and cloud dependency that makes real-time intervention impossible.</span>
-    <span class="lang-es">Los motores de inducción alimentan aproximadamente el 70% del consumo eléctrico industrial global. Cuando uno falla inesperadamente, los costos de inactividad pueden alcanzar decenas de miles de dólares por hora. El monitoreo de condición tradicional envía datos a un servidor remoto para análisis — introduciendo latencia y dependencia de la nube que hace imposible la intervención en tiempo real.</span>
+    <span class="lang-en">Bearings are one of the most failure-prone components in rotating machinery, accounting for nearly 40% of induction motor breakdowns. An unexpected failure doesn't just halt production — it generates vibrations that cascade into collateral damage on shafts, gears, and couplings, and unscheduled downtime routinely costs manufacturers tens of thousands of dollars per hour.</span>
+    <span class="lang-es">Los rodamientos son uno de los componentes más propensos a fallar en maquinaria rotativa, y representan casi el 40% de las averías en motores de inducción. Una falla inesperada no solo detiene la producción — genera vibraciones que se convierten en daño colateral en ejes, engranes y acoplamientos, y el tiempo de inactividad no planificado cuesta rutinariamente decenas de miles de dólares por hora a los fabricantes.</span>
   </p>
 
   <p class="prose" data-reveal data-reveal-delay="100">
-    <span class="lang-en">We asked: can a microcontroller at the motor itself detect faults as accurately as a remote server — and do it an order of magnitude more efficiently? The answer to that question is what this research is about.</span>
-    <span class="lang-es">Nos preguntamos: ¿puede un microcontrolador en el propio motor detectar fallas tan precisamente como un servidor remoto, y hacerlo un orden de magnitud más eficientemente? La respuesta a esa pregunta es de lo que trata esta investigación.</span>
+    <span class="lang-en">The usual fix — heavy deep-learning models analyzing vibration data in the cloud — solves the accuracy problem but ignores the energy and latency cost of streaming raw signals off the factory floor. With Industry 4.0 came the idea of Green AI: keep the accuracy, but stop paying for it in carbon and bandwidth. We asked whether a handful of statistical features and a classical ensemble model, running entirely on a $5 microcontroller, could do the job just as well.</span>
+    <span class="lang-es">La solución habitual — modelos pesados de deep learning analizando vibraciones en la nube — resuelve el problema de precisión pero ignora el costo energético y de latencia de transmitir señales crudas fuera de la planta. Con la Industria 4.0 llegó el concepto de Green AI: mantener la precisión, pero dejar de pagarla en carbono y ancho de banda. Nos preguntamos si un puñado de características estadísticas y un modelo de ensamble clásico, corriendo enteramente en un microcontrolador de $5, podían hacer el trabajo igual de bien.</span>
   </p>
 
   <div class="stat-highlight" data-reveal data-reveal-delay="140">
     <div class="stat-grid">
       {[
-        { num: '99.3%', labelEn: 'Classification accuracy on test set', labelEs: 'Precisión de clasificación en conjunto de prueba' },
-        { num: '10×', labelEn: 'Lower energy vs. server inference', labelEs: 'Menos energía vs. inferencia en servidor' },
-        { num: '4', labelEn: 'Fault classes detected incl. healthy', labelEs: 'Clases de falla detectadas incl. sano' },
+        { num: '99.85%', labelEn: 'Random Forest accuracy on the held-out test set', labelEs: 'Exactitud de Random Forest en el conjunto de prueba' },
+        { num: '0', labelEn: 'False positives and false negatives (197 samples)', labelEs: 'Falsos positivos y negativos (197 muestras)' },
+        { num: '98.4%', labelEn: 'Less transmission energy vs. streaming to the cloud', labelEs: 'Menos energía de transmisión vs. enviar todo a la nube' },
       ].map(({ num, labelEn, labelEs }) => (
         <div style="border-top: 2px solid #2540c0; padding-top: 16px;">
           <div style="font-family:'Instrument Serif',serif; font-size:clamp(28px,3.5vw,52px); color:#2540c0; line-height:1; margin-bottom:8px;">{num}</div>
@@ -74,50 +74,141 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   <hr class="divider" />
 
   <h2 class="section-h2" data-reveal>
-    <span class="lang-en">Model Architecture & Approach.</span>
-    <span class="lang-es">Arquitectura del Modelo y Enfoque.</span>
+    <span class="lang-en">Feature Engineering — Less Is More.</span>
+    <span class="lang-es">Ingeniería de Características — Menos Es Más.</span>
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">The model combines a 1D CNN for spatial feature extraction from motor current signatures, stacked with LSTM layers to capture temporal dependencies in bearing fault progression. The full pipeline was quantized to INT8 using TensorFlow Lite, enabling deployment on an ESP32 microcontroller with less than 512KB of RAM.</span>
-    <span class="lang-es">El modelo combina una CNN 1D para extracción de características espaciales de las firmas de corriente del motor, apilada con capas LSTM para capturar dependencias temporales en la progresión de fallas en rodamientos. El pipeline completo fue cuantizado a INT8 usando TensorFlow Lite, permitiendo el despliegue en un microcontrolador ESP32 con menos de 512KB de RAM.</span>
+    <span class="lang-en">Classic fault detection relies on the FFT to isolate characteristic bearing frequencies (BPFO/BPFI) — reliable, but with O(N log N) complexity that gets expensive on a microcontroller. Instead, we tracked how simple time-domain statistics evolve as a bearing degrades, which only costs O(N).</span>
+    <span class="lang-es">La detección de fallas clásica depende de la FFT para aislar las frecuencias características del rodamiento (BPFO/BPFI) — confiable, pero con una complejidad O(N log N) que resulta costosa en un microcontrolador. En su lugar, rastreamos cómo evolucionan estadísticas simples en el dominio temporal a medida que el rodamiento se degrada, lo que solo cuesta O(N).</span>
+  </p>
+
+  <p class="prose" data-reveal data-reveal-delay="100">
+    <span class="lang-en">We evaluated four candidate features — Crest Factor, Shape Factor, Skewness and Kurtosis — by training a Random Forest on all of them and reading off its feature-importance ranking. Shape Factor and Skewness turned out to be nearly useless and were dropped. The final input vector was reduced to just three numbers: RMS, Kurtosis, and peak amplitude.</span>
+    <span class="lang-es">Evaluamos cuatro características candidatas — Crest Factor, Shape Factor, Skewness y Kurtosis — entrenando un Random Forest con todas ellas y leyendo su ranking de importancia. Shape Factor y Skewness resultaron casi inútiles y fueron descartadas. El vector de entrada final se redujo a solo tres números: RMS, Kurtosis y amplitud máxima.</span>
+  </p>
+
+  <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35);">
+    <img src="/portfolio/images/bdai_importance.webp" alt="Ranking de importancia de características — RMS domina como la métrica más discriminativa" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+  </div>
+
+  <hr class="divider" />
+
+  <h2 class="section-h2" data-reveal>
+    <span class="lang-en">Signal Analysis.</span>
+    <span class="lang-es">Análisis de Señal.</span>
+  </h2>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">Using the NASA IMS bearing dataset — four bearings run to failure at 2000 RPM under a 6000 lbs radial load, sampled at 20 kHz for 7 days — the difference between a healthy and a critical bearing is stark in the time domain: amplitude stays below ~0.5g when healthy, then spikes past 4g as the outer race fails.</span>
+    <span class="lang-es">Usando el dataset de rodamientos IMS de la NASA — cuatro rodamientos llevados a la falla a 2000 RPM bajo una carga radial de 6000 lbs, muestreados a 20 kHz durante 7 días — la diferencia entre un rodamiento sano y uno crítico es evidente en el dominio temporal: la amplitud se mantiene bajo ~0.5g en estado sano, y luego se dispara por encima de 4g cuando falla la pista externa.</span>
+  </p>
+
+  <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35); max-width:520px; margin-left:auto; margin-right:auto;">
+    <img src="/portfolio/images/bdai_signal.webp" alt="Comparación en dominio temporal: estado sano (arriba) vs. falla crítica (abajo)" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+  </div>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">Because the data is a time series, random cross-validation would leak future failure signal into training. Labels were instead assigned chronologically: an empirical RMS threshold of 0.20g (consistent with ISO 10816-3 degradation guidelines) split the run into "Healthy" and "Faulty" segments, discarding the ambiguous transition band in between.</span>
+    <span class="lang-es">Como los datos son una serie temporal, la validación cruzada aleatoria filtraría señal de falla futura al entrenamiento. Las etiquetas se asignaron cronológicamente: un umbral empírico de RMS de 0.20g (consistente con las guías de degradación de ISO 10816-3) dividió la corrida en segmentos "Sano" y "Con falla", descartando la banda de transición ambigua entre ambos.</span>
+  </p>
+
+  <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35);">
+    <img src="/portfolio/images/bdai_rms.webp" alt="Evolución del RMS a lo largo del tiempo — la degradación comienza tras 700 periodos y cruza el umbral de falla en 0.20g" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+  </div>
+
+  <hr class="divider" />
+
+  <h2 class="section-h2" data-reveal>
+    <span class="lang-en">Algorithm Comparison & Tuning.</span>
+    <span class="lang-es">Comparación de Algoritmos y Ajuste.</span>
+  </h2>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">Random Forest, SVM (RBF kernel), and k-NN were compared head-to-head. Random Forest won on accuracy and, unlike k-NN, doesn't need the entire training set held in memory at inference time — a real constraint on a chip with 512KB of RAM. Grid Search over estimator count and tree depth found the sweet spot at 100 trees with a max depth of 5.</span>
+    <span class="lang-es">Random Forest, SVM (kernel RBF) y k-NN se compararon cara a cara. Random Forest ganó en precisión y, a diferencia de k-NN, no necesita mantener todo el set de entrenamiento en memoria durante la inferencia — una restricción real en un chip con 512KB de RAM. Grid Search sobre el número de estimadores y la profundidad del árbol encontró el punto óptimo en 100 árboles con profundidad máxima de 5.</span>
+  </p>
+
+  <div data-reveal class="img-grid-2">
+    <div style="border-radius:14px; overflow:hidden; box-shadow:0 18px 44px -20px rgba(37,64,192,0.3);">
+      <img src="/portfolio/images/bdai_comparison.webp" alt="Comparación de exactitud en test set: Random Forest 99.85%, SVM 97.50%, k-NN 96.80%" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+    </div>
+    <div style="border-radius:14px; overflow:hidden; box-shadow:0 18px 44px -20px rgba(234,106,46,0.3);">
+      <img src="/portfolio/images/bdai_gridsearch.webp" alt="Heatmap de Grid Search — profundidad óptima de 5" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+    </div>
+  </div>
+
+  <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; max-width:420px; margin-left:auto; margin-right:auto; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35);">
+    <img src="/portfolio/images/bdai_matrix.webp" alt="Matriz de confusión — 194/194 sanos y 3/3 con falla correctamente clasificados, cero falsos positivos" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+  </div>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">On the 197-sample test partition, the tuned Random Forest classified every single bearing correctly — 194/194 healthy and 3/3 faulty, with zero false positives. In an industrial setting that matters as much as raw accuracy: false alarms erode operator trust and lead to unnecessary shutdowns.</span>
+    <span class="lang-es">En la partición de prueba de 197 muestras, el Random Forest ajustado clasificó correctamente cada rodamiento — 194/194 sanos y 3/3 con falla, con cero falsos positivos. En un entorno industrial eso importa tanto como la precisión bruta: las falsas alarmas erosionan la confianza del operador y provocan paros innecesarios.</span>
+  </p>
+
+  <hr class="divider" />
+
+  <h2 class="section-h2" data-reveal>
+    <span class="lang-en">Robustness Under Noise.</span>
+    <span class="lang-es">Robustez Bajo Ruido.</span>
+  </h2>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">Clean signals are rare on a real factory floor. To stress-test the model beyond the lab, we injected synthetic Gaussian noise to artificially degrade the signal-to-noise ratio. Random Forest held above the 90% accuracy threshold even at a noise standard deviation of 0.5 — strong evidence that RMS and Kurtosis capture the mechanical impact signature rather than overfitting to clean-lab artifacts.</span>
+    <span class="lang-es">Las señales limpias son poco comunes en una planta real. Para someter al modelo a un estrés más allá del laboratorio, inyectamos ruido Gaussiano sintético para degradar artificialmente la relación señal-ruido. Random Forest se mantuvo por encima del umbral de 90% de precisión incluso con una desviación estándar de ruido de 0.5 — evidencia sólida de que RMS y Kurtosis capturan la firma del impacto mecánico en lugar de sobreajustarse a artefactos de laboratorio limpio.</span>
+  </p>
+
+  <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35);">
+    <img src="/portfolio/images/bdai_noise.webp" alt="Degradación de exactitud bajo niveles crecientes de ruido — el modelo se mantiene sobre el 90%" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+  </div>
+
+  <hr class="divider" />
+
+  <h2 class="section-h2" data-reveal>
+    <span class="lang-en">Theoretical Embedded Architecture.</span>
+    <span class="lang-es">Arquitectura Embebida Teórica.</span>
+  </h2>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">For deployment, a FreeRTOS-based firmware is proposed for the ESP32's two Xtensa cores: one core handles ADC acquisition via hardware interrupts, the other extracts the feature vector and runs Random Forest inference — so the math never blocks the sampling loop.</span>
+    <span class="lang-es">Para el despliegue, se propone un firmware basado en FreeRTOS para los dos núcleos Xtensa del ESP32: un núcleo maneja la adquisición del ADC vía interrupciones de hardware, el otro extrae el vector de características y ejecuta la inferencia de Random Forest — así el cálculo nunca bloquea el ciclo de muestreo.</span>
   </p>
 
   <div class="tech-grid" data-reveal data-reveal-delay="100">
     <div class="tech-card">
       <div class="tech-num" style="color:#2540c0;">01</div>
-      <h3><span class="lang-en">Signal Preprocessing</span><span class="lang-es">Preprocesamiento de Señales</span></h3>
-      <p><span class="lang-en">Motor stator current processed through windowed FFT and time-domain feature extraction — building structured input tensors from raw ADC readings.</span><span class="lang-es">Corriente del estátor del motor procesada mediante FFT con ventana y extracción de características en dominio temporal — construyendo tensores de entrada estructurados desde lecturas ADC brutas.</span></p>
+      <h3><span class="lang-en">Dual-Core FreeRTOS Split</span><span class="lang-es">Split Dual-Core en FreeRTOS</span></h3>
+      <p><span class="lang-en">Core 0 acquires vibration samples via ADC interrupts; Core 1 extracts RMS/Kurtosis/Max and runs the Random Forest — sampling and inference never contend for the same core.</span><span class="lang-es">El núcleo 0 adquiere muestras de vibración vía interrupciones del ADC; el núcleo 1 extrae RMS/Kurtosis/Max y ejecuta el Random Forest — el muestreo y la inferencia nunca compiten por el mismo núcleo.</span></p>
     </div>
     <div class="tech-card">
       <div class="tech-num" style="color:#2540c0;">02</div>
-      <h3><span class="lang-en">CNN-LSTM Fusion</span><span class="lang-es">Fusión CNN-LSTM</span></h3>
-      <p><span class="lang-en">Convolutional filters detect fault-frequency signatures; LSTM layers track fault progression over time — achieving cloud-level accuracy at edge-level cost.</span><span class="lang-es">Filtros convolucionales detectan firmas de frecuencia de falla; las capas LSTM rastrean la progresión de fallas en el tiempo — logrando precisión de nivel nube al costo de nivel edge.</span></p>
+      <h3><span class="lang-en">MQTT, Alerts Only</span><span class="lang-es">MQTT, Solo Alertas</span></h3>
+      <p><span class="lang-en">Instead of streaming raw floating-point arrays over HTTP, the ESP32 publishes a binary "Faulty" alert over MQTT only when the classifier flags a problem — the radio stays off almost all the time.</span><span class="lang-es">En lugar de transmitir arreglos crudos de punto flotante por HTTP, el ESP32 publica una alerta binaria de "Falla" por MQTT solo cuando el clasificador detecta un problema — el radio permanece apagado casi todo el tiempo.</span></p>
     </div>
     <div class="tech-card">
       <div class="tech-num" style="color:#2540c0;">03</div>
-      <h3><span class="lang-en">TFLite INT8 Quantization</span><span class="lang-es">Cuantización INT8 TFLite</span></h3>
-      <p><span class="lang-en">Post-training quantization reduces the model 4× in size. Runs on microcontrollers with virtually no accuracy penalty (≤0.2% drop).</span><span class="lang-es">La cuantización post-entrenamiento reduce el modelo 4× en tamaño. Corre en microcontroladores con una penalidad de precisión virtualmente nula (caída ≤0.2%).</span></p>
-    </div>
-  </div>
-
-  <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35);">
-    <img src="/portfolio/images/paper1.webp" alt="Arquitectura CNN-LSTM para detección de fallas" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
-  </div>
-
-  <div data-reveal style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(12px,2vw,24px); margin-bottom:clamp(28px,4vh,48px);">
-    <div style="border-radius:14px; overflow:hidden; box-shadow:0 18px 44px -20px rgba(37,64,192,0.3);">
-      <img src="/portfolio/images/paper3.webp" alt="Comparación de latencia: edge vs. servidor" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
-    </div>
-    <div style="border-radius:14px; overflow:hidden; box-shadow:0 18px 44px -20px rgba(234,106,46,0.3);">
-      <img src="/portfolio/images/paper5.webp" alt="Visualización PCA de clases de falla" loading="lazy" decoding="async" style="width:100%;height:auto;display:block;" />
+      <h3><span class="lang-en">$5 of Hardware</span><span class="lang-es">$5 de Hardware</span></h3>
+      <p><span class="lang-en">Against a Raspberry Pi 4 (4GB RAM, ~5W) or a laptop-class CPU, the ESP32-S3 (512KB RAM, ~0.5W, ~$5) is analytically sufficient — inference is estimated under 5ms, well inside a real-time budget.</span><span class="lang-es">Frente a una Raspberry Pi 4 (4GB RAM, ~5W) o una CPU clase laptop, el ESP32-S3 (512KB RAM, ~0.5W, ~$5) es analíticamente suficiente — la inferencia se estima en menos de 5ms, dentro de un presupuesto de tiempo real.</span></p>
     </div>
   </div>
 
   <div class="callout" data-reveal>
-    <strong><span class="lang-en">Edge vs. Cloud Energy Cost</span><span class="lang-es">Costo energético: Edge vs. Nube</span></strong>
-    <span class="lang-en">A single fault-detection inference on the server costs ~110mJ per query (including network round-trip). On the ESP32 with INT8 TFLite: ~11mJ. At 1 inference/second over an 8-hour shift, that's 317Wh vs. 31.7Wh per motor — the difference compounds dramatically at factory scale.</span>
-    <span class="lang-es">Una sola inferencia de detección de fallas en el servidor cuesta ~110mJ por consulta (incluyendo el viaje de red de ida y vuelta). En el ESP32 con INT8 TFLite: ~11mJ. Con 1 inferencia/segundo durante un turno de 8 horas, eso es 317Wh vs. 31.7Wh por motor — la diferencia se compone dramáticamente a escala de fábrica.</span>
+    <strong><span class="lang-en">Edge vs. Cloud Energy Model</span><span class="lang-es">Modelo Energético: Edge vs. Nube</span></strong>
+    <span class="lang-en">Using nominal ESP32 datasheet values: streaming raw vibration data to the cloud costs ~63.36mJ per query (3.3V × 240mA × 80ms). Running Random Forest locally and transmitting only a binary health flag costs ~0.99mJ (3.3V × 60mA × 5ms) — an estimated 98.4% reduction that directly extends battery life for wireless IIoT sensor nodes.</span>
+    <span class="lang-es">Usando valores nominales del datasheet del ESP32: transmitir vibración cruda a la nube cuesta ~63.36mJ por consulta (3.3V × 240mA × 80ms). Ejecutar Random Forest localmente y transmitir solo una bandera binaria de estado cuesta ~0.99mJ (3.3V × 60mA × 5ms) — una reducción estimada de 98.4% que extiende directamente la vida de batería de nodos IIoT inalámbricos.</span>
   </div>
+
+  <hr class="divider" />
+
+  <h2 class="section-h2" data-reveal>
+    <span class="lang-en">Presenting at BDAI 2026.</span>
+    <span class="lang-es">Presentación en BDAI 2026.</span>
+  </h2>
+
+  <p class="prose" data-reveal data-reveal-delay="60">
+    <span class="lang-en">The paper — co-authored with Karen Pastrana Monzón, Javier Osorio Figueroa and Oliver Ochoa García, all from the Department of Mechatronics Engineering at Universidad Iberoamericana Puebla — was presented remotely on July 4–5, 2026 at the IEEE 9th International Conference on Big Data and Artificial Intelligence (BDAI 2026) in Chongqing, China. I presented it myself in Online Session 3, and also chaired that session — introducing seven other international presenters and moderating Q&A before stepping back in to present my own work. The paper is now in the queue for IEEE Xplore, Ei Compendex and Scopus indexing.</span>
+    <span class="lang-es">El artículo — coescrito con Karen Pastrana Monzón, Javier Osorio Figueroa y Oliver Ochoa García, todos del Departamento de Ingeniería Mecatrónica de la Universidad Iberoamericana Puebla — fue presentado de forma remota el 4 y 5 de julio de 2026 en la 9ª Conferencia Internacional IEEE sobre Big Data e Inteligencia Artificial (BDAI 2026) en Chongqing, China. Lo presenté yo mismo en la Sesión Online 3, y además fui chair de esa sesión — presentando a otros siete ponentes internacionales y moderando el Q&A antes de retomar el rol para exponer mi propio trabajo. El artículo está ahora en cola para indexación en IEEE Xplore, Ei Compendex y Scopus.</span>
+  </p>
 
 </ProjectLayout>

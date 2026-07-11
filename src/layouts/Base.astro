@@ -145,7 +145,7 @@ const {
             yPercent: 16,
             opacity: 0.4,
             ease: 'none',
-            scrollTrigger: { trigger: 'header', start: 'top top', end: 'bottom top', scrub: true },
+            scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true },
           })
         }
 
@@ -153,7 +153,7 @@ const {
           gsap.to(heroBg, {
             yPercent: 26,
             ease: 'none',
-            scrollTrigger: { trigger: 'header', start: 'top top', end: 'bottom top', scrub: true },
+            scrollTrigger: { trigger: '#top', start: 'top top', end: 'bottom top', scrub: true },
           })
         }
 
@@ -177,6 +177,11 @@ const {
             scrollTrigger: { trigger: el, start: 'top 85%', once: true },
           })
         })
+
+        // Recalculate trigger positions once late-loading images/fonts settle,
+        // otherwise reveal/parallax points drift out of sync with actual layout.
+        window.addEventListener('load', () => ScrollTrigger.refresh())
+        document.fonts?.ready.then(() => ScrollTrigger.refresh())
 
       } else {
         // Reduced motion: show all reveals immediately
