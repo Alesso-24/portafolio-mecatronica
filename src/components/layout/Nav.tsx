@@ -29,7 +29,11 @@ export default function Nav({ lang: initialLang = 'en' }: Props) {
   const scrollTo = (href: string) => {
     setMenu(false)
     const el = document.querySelector(href)
-    el?.scrollIntoView({ behavior: 'smooth' })
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.location.href = `/portfolio/${href}`
+    }
   }
 
   const toggleLang = () => {
