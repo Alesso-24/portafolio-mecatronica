@@ -29,8 +29,8 @@ export const HERO = {
     es: { plain: 'Construyendo IA que sobrevive al contacto con', italic: 'el hardware real.' },
   },
   paragraph: {
-    en: 'Mechatronics engineer crafting intelligent systems where software meets motors, sensors and microcontrollers — built to work in the real world.',
-    es: 'Ingeniero mecatrónico creando sistemas inteligentes donde el software se encuentra con motores, sensores y microcontroladores — construido para funcionar en el mundo real.',
+    en: 'Mechatronics engineer crafting intelligent systems where software meets motors, sensors and microcontrollers, built to work in the real world.',
+    es: 'Ingeniero mecatrónico creando sistemas inteligentes donde el software se encuentra con motores, sensores y microcontroladores, construido para funcionar en el mundo real.',
   },
   cta_primary:   { en: 'View work',    es: 'Ver proyectos' },
   cta_secondary: { en: 'Get in touch', es: 'Contactar' },
@@ -51,7 +51,7 @@ export const STATS = [
   },
   {
     value: '2×',
-    label: { en: 'IEEE papers — BDAI 2026 presented, CASE 2026 accepted', es: 'Artículos IEEE — BDAI 2026 presentado, CASE 2026 aceptado' },
+    label: { en: 'IEEE papers: BDAI 2026 presented, CASE 2026 accepted', es: 'Artículos IEEE: BDAI 2026 presentado, CASE 2026 aceptado' },
   },
 ]
 
@@ -59,12 +59,12 @@ export const ABOUT = {
   label: { en: 'Who I am', es: 'Quién soy' },
   h2: {
     en: {
-      plain: "I build AI that doesn't just run in a notebook — it runs on",
+      plain: "I build AI that doesn't just run in a notebook: it runs on",
       italic: 'motors, sensors and microcontrollers,',
       end: 'in the real world.',
     },
     es: {
-      plain: 'Construyo IA que no solo corre en un notebook — corre en',
+      plain: 'Construyo IA que no solo corre en un notebook: corre en',
       italic: 'motores, sensores y microcontroladores,',
       end: 'en el mundo real.',
     },
@@ -103,8 +103,8 @@ export const PROJECTS: Project[] = [
     tag: { en: 'LARC 2025 Robotics Competition', es: 'Competencia Robótica LARC 2025' },
     title: { en: 'Tracky: High-Speed Line Follower Robot', es: 'Tracky: Robot Seguidor de Línea de Alta Velocidad' },
     description: {
-      en: 'Built and raced a custom ESP32-C6 robot that recovers from 90° turns in milliseconds — engineered and debugged under real competition pressure at LARC 2025.',
-      es: 'Construimos y corrimos un robot ESP32-C6 personalizado que se recupera de giros de 90° en milisegundos — diseñado y depurado bajo presión de competencia real en LARC 2025.',
+      en: 'Built and raced a custom ESP32-C6 robot that recovers from 90° turns in milliseconds, engineered and debugged under real competition pressure at LARC 2025.',
+      es: 'Construimos y corrimos un robot ESP32-C6 personalizado que se recupera de giros de 90° en milisegundos, diseñado y depurado bajo presión de competencia real en LARC 2025.',
     },
     image: '/portfolio/images/larc_arena.webp',
     imageAlt: 'Tracky robot at LARC 2025 arena',
@@ -117,8 +117,8 @@ export const PROJECTS: Project[] = [
     tag: { en: 'IEEE CASE 2026 · Accepted', es: 'IEEE CASE 2026 · Aceptado' },
     title: { en: 'Edge AI Decision Framework: Quantifying the Sensitivity-Latency Trade-off', es: 'Framework de Decisión Edge AI: Cuantificando el Trade-off Sensibilidad-Latencia' },
     description: {
-      en: 'Found a hardware bug that silently broke a "perfect" ML model, then built a model 126× faster with zero false alarms — validated on real ESP32 silicon.',
-      es: 'Encontramos un bug de hardware que silenciosamente rompía un modelo ML "perfecto", luego construimos un modelo 126× más rápido con cero falsas alarmas — validado en silicio ESP32 real.',
+      en: 'Found a real hardware bug that flipped a "perfect" model\'s decision on actual silicon, then proved a 126× faster model matches Random Forest once a fault signature is separable enough.',
+      es: 'Encontramos un bug real de hardware que invirtió la decisión de un modelo "perfecto" en silicio real, y demostramos que un modelo 126× más rápido iguala a Random Forest una vez que la falla es lo suficientemente separable.',
     },
     image: '/portfolio/images/cover_case.webp',
     imageAlt: 'Edge AI Decision Framework research paper',
@@ -131,8 +131,8 @@ export const PROJECTS: Project[] = [
     tag: { en: 'IEEE BDAI 2026 · Presented', es: 'IEEE BDAI 2026 · Presentado' },
     title: { en: 'Industrial Fault Detection via Machine Learning', es: 'Detección de Fallas Industriales mediante Machine Learning' },
     description: {
-      en: '99.85% accuracy, zero false positives, 98.4% less energy than the cloud — predictive maintenance light enough to run on a $5 microcontroller.',
-      es: '99.85% de exactitud, cero falsos positivos, 98.4% menos energía que la nube — mantenimiento predictivo lo suficientemente ligero para correr en un microcontrolador de $5.',
+      en: '99.85% accuracy, zero false positives, 98.4% less energy than the cloud. Predictive maintenance light enough to run on a $5 microcontroller.',
+      es: '99.85% de exactitud, cero falsos positivos, 98.4% menos energía que la nube. Mantenimiento predictivo lo suficientemente ligero para correr en un microcontrolador de $5.',
     },
     image: '/portfolio/images/cover_bdai.webp',
     imageAlt: 'Industrial fault detection ML research',
@@ -145,8 +145,8 @@ export const PROJECTS: Project[] = [
     tag: { en: 'Robotics & Control Systems', es: 'Robótica y Sistemas de Control' },
     title: { en: 'Self-Balancing Platform with Computer Vision', es: 'Plataforma Autobalanceable con Visión por Computadora' },
     description: {
-      en: 'Real-time computer vision and inverse kinematics keep a rolling ball balanced on a moving plate — and keep predicting its trajectory even when a camera frame drops.',
-      es: 'Visión por computadora en tiempo real y cinemática inversa mantienen una pelota rodante equilibrada en una placa móvil — y siguen prediciendo su trayectoria incluso cuando se pierde un frame de cámara.',
+      en: 'Real-time computer vision and inverse kinematics keep a rolling ball balanced on a moving plate, and keep predicting its trajectory even when a camera frame drops.',
+      es: 'Visión por computadora en tiempo real y cinemática inversa mantienen una pelota rodante equilibrada en una placa móvil, y siguen prediciendo su trayectoria incluso cuando se pierde un frame de cámara.',
     },
     image: '/portfolio/images/plat1.webp',
     imageAlt: 'Self-balancing platform with computer vision',
@@ -159,8 +159,8 @@ export const PROJECTS: Project[] = [
     tag: { en: 'OQI Hackathon LATAM 2026 · 1st Place', es: 'OQI Hackathon LATAM 2026 · 1er Lugar' },
     title: { en: 'Quantum Computing for Puebla’s Water Crisis', es: 'Computación Cuántica para la Crisis del Agua en Puebla' },
     description: {
-      en: 'Won 1st place LATAM-wide modeling Puebla’s water deficit as MILP and QUBO, then solving it with QAOA on IBM Qiskit — three days, four students, a real hydrological crisis.',
-      es: 'Ganamos 1er lugar a nivel LATAM modelando el déficit hídrico de Puebla como MILP y QUBO, resolviéndolo con QAOA en IBM Qiskit — tres días, cuatro estudiantes, una crisis hidrológica real.',
+      en: 'Won 1st place LATAM-wide modeling Puebla’s water deficit as MILP and QUBO, then solving it with QAOA on IBM Qiskit. Three days, four students, a real hydrological crisis.',
+      es: 'Ganamos 1er lugar a nivel LATAM modelando el déficit hídrico de Puebla como MILP y QUBO, resolviéndolo con QAOA en IBM Qiskit. Tres días, cuatro estudiantes, una crisis hidrológica real.',
     },
     image: '/portfolio/images/hack_team.webp',
     imageAlt: 'Equipo 9 BUAP con certificados del Hackathon LATAM 2026',
@@ -174,6 +174,7 @@ export interface Publication {
   number: string
   title: { en: string; es: string }
   venue: string
+  status: { en: string; es: string }
   year: string
   href: string
 }
@@ -186,6 +187,7 @@ export const PUBLICATIONS: Publication[] = [
       es: 'Framework de Decisión Edge AI: Cuantificando el Trade-off Sensibilidad-Latencia en Mantenimiento Predictivo de Rodamientos Industriales',
     },
     venue: 'IEEE CASE 2026',
+    status: { en: 'Accepted · Presenting Aug 2026', es: 'Aceptado · Presentando ago 2026' },
     year: '2026 ↗',
     href: '/portfolio/project/fault-detection-case',
   },
@@ -196,6 +198,7 @@ export const PUBLICATIONS: Publication[] = [
       es: 'Evaluación Comparativa de Técnicas Ligeras de Machine Learning Supervisado para Maquinaria Rotativa Industrial',
     },
     venue: 'IEEE BDAI 2026',
+    status: { en: 'Presented · IEEE Xplore pending', es: 'Presentado · IEEE Xplore pendiente' },
     year: '2026 ↗',
     href: '/portfolio/project/fault-detection',
   },
@@ -214,7 +217,7 @@ export const CONTACT = {
     message:  { en: 'Message', es: 'Mensaje' },
     send:     { en: 'Send Message',  es: 'Enviar Mensaje' },
     sending:  { en: 'Sending...',    es: 'Enviando...' },
-    success:  { en: "Thanks — I'll get back to you soon.", es: 'Gracias — te respondo pronto.' },
+    success:  { en: "Thanks! I'll get back to you soon.", es: '¡Gracias! Te respondo pronto.' },
     error:    { en: 'Something went wrong. Please email me directly.', es: 'Algo salió mal. Escríbeme directamente.' },
   },
   footer: { en: 'Designed for the real world.', es: 'Diseñado para el mundo real.' },

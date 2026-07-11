@@ -4,14 +4,14 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
 
 <ProjectLayout
   badge="OQI Hackathon LATAM 2026 · 1st Place"
-  title="1st Place — Quantum Computing for Puebla’s Water Crisis."
-  description="Won 1st place at Hackathon LATAM 2026: Quantum Computing for Water Challenges — modeled Puebla's water deficit as MILP and QUBO, then solved it with QAOA on IBM Qiskit. Organized by OQI, with CERN and QCentroid on the jury and infrastructure."
+  title="1st Place: Quantum Computing for Puebla’s Water Crisis."
+  description="Won 1st place at Hackathon LATAM 2026: Quantum Computing for Water Challenges. Modeled Puebla's water deficit as MILP and QUBO, then solved it with QAOA on IBM Qiskit. Organized by OQI, with CERN and QCentroid on the jury and infrastructure."
   coverImage="/portfolio/images/hack_team.webp"
   coverAlt="Equipo 9 BUAP con certificados de participación del Hackathon LATAM 2026"
   ogImage="https://alesso-24.github.io/portfolio/images/hack_team.webp"
   githubHref="https://github.com/ro-sgr/OQI26-BUAP-equipo9"
   meta={[
-    { label: 'Venue',   value: 'OQI Hackathon LATAM 2026 — BUAP, Puebla' },
+    { label: 'Venue',   value: 'OQI Hackathon LATAM 2026 · BUAP, Puebla' },
     { label: 'Status',  value: '🥇 1st Place · Jun 29 – Jul 1, 2026' },
     { label: 'Team',    value: 'Equipo 9 · 4 students' },
     { label: 'Stack',   value: 'Python · PuLP/CBC · Qiskit · PennyLane' },
@@ -45,8 +45,8 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">Over 1.9 million people across 3 municipalities in the Valle de Puebla and Atlixco-Izúcar regions depend on 2 critically overexploited aquifers. Even in a normal year, with no drought at all, demand (149 hm³/yr) already outstrips supply (125 hm³/yr) — and drought scenarios cut that supply a further 20–40%. This directly maps to SDG Target 6.4 (water-use efficiency) and SDG 2, since agricultural allocation determines rural food security.</span>
-    <span class="lang-es">Más de 1.9 millones de personas en 3 municipios de las regiones Valle de Puebla y Atlixco-Izúcar dependen de 2 acuíferos críticamente sobreexplotados. Incluso en un año normal, sin ninguna sequía, la demanda (149 hm³/año) ya supera la oferta (125 hm³/año) — y los escenarios de sequía recortan esa oferta entre 20–40% adicional. Esto conecta directamente con el ODS 6.4 (eficiencia en el uso del agua) y el ODS 2, ya que la asignación agrícola determina la seguridad alimentaria rural.</span>
+    <span class="lang-en">Over 1.9 million people across 3 municipalities in the Valle de Puebla and Atlixco-Izúcar regions depend on 2 critically overexploited aquifers. Even in a normal year, with no drought at all, demand (149 hm³/yr) already outstrips supply (125 hm³/yr), and drought scenarios cut that supply a further 20–40%. This directly maps to SDG Target 6.4 (water-use efficiency) and SDG 2, since agricultural allocation determines rural food security.</span>
+    <span class="lang-es">Más de 1.9 millones de personas en 3 municipios de las regiones Valle de Puebla y Atlixco-Izúcar dependen de 2 acuíferos críticamente sobreexplotados. Incluso en un año normal, sin ninguna sequía, la demanda (149 hm³/año) ya supera la oferta (125 hm³/año), y los escenarios de sequía recortan esa oferta entre 20–40% adicional. Esto conecta directamente con el ODS 6.4 (eficiencia en el uso del agua) y el ODS 2, ya que la asignación agrícola determina la seguridad alimentaria rural.</span>
   </p>
 
   <div class="stat-highlight" data-reveal data-reveal-delay="140">
@@ -75,8 +75,8 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">This was my part of the project. We formulated a Mixed-Integer Linear Program that minimizes a Normalized Weighted Water Deficit (NWWD) — urban shortfall weighted 10× more heavily than agricultural shortfall — subject to supply limits per source, demand caps per municipality, and non-negativity. 12 decision variables, 8 constraints, solved to global optimality with PuLP/CBC in under a second across three drought scenarios (α = 1.0, 0.8, 0.6).</span>
-    <span class="lang-es">Esta fue mi parte del proyecto. Formulamos un Programa Lineal Entero Mixto que minimiza un Déficit Hídrico Ponderado Normalizado (NWWD) — el déficit urbano pesa 10× más que el agrícola — sujeto a límites de oferta por fuente, topes de demanda por municipio y no negatividad. 12 variables de decisión, 8 restricciones, resuelto a optimalidad global con PuLP/CBC en menos de un segundo para tres escenarios de sequía (α = 1.0, 0.8, 0.6).</span>
+    <span class="lang-en">This was my part of the project. We formulated a Mixed-Integer Linear Program that minimizes a Normalized Weighted Water Deficit (NWWD), with urban shortfall weighted 10× more heavily than agricultural shortfall, subject to supply limits per source, demand caps per municipality, and non-negativity. 12 decision variables, 8 constraints, solved to global optimality with PuLP/CBC in under a second across three drought scenarios (α = 1.0, 0.8, 0.6).</span>
+    <span class="lang-es">Esta fue mi parte del proyecto. Formulamos un Programa Lineal Entero Mixto que minimiza un Déficit Hídrico Ponderado Normalizado (NWWD), con el déficit urbano pesando 10× más que el agrícola, sujeto a límites de oferta por fuente, topes de demanda por municipio y no negatividad. 12 variables de decisión, 8 restricciones, resuelto a optimalidad global con PuLP/CBC en menos de un segundo para tres escenarios de sequía (α = 1.0, 0.8, 0.6).</span>
   </p>
 
   <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35);">
@@ -84,8 +84,8 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   </div>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">NWWD came out to 2.53 (Normal), 5.16 (Moderate), 7.79 (Severe) — and every scenario revealed the same honest, uncomfortable pattern: 100% of the deficit falls on urban Puebla, while agricultural demand and the smaller municipalities (S.A. Cholula, Atlixco) are fully served in every case. The optimizer isn't wrong — it's just telling us the objective function has a blind spot, which became the seed of our biggest finding later.</span>
-    <span class="lang-es">El NWWD resultó en 2.53 (Normal), 5.16 (Moderado), 7.79 (Severo) — y cada escenario reveló el mismo patrón honesto e incómodo: 100% del déficit recae sobre Puebla urbano, mientras la demanda agrícola y los municipios más pequeños (S.A. Cholula, Atlixco) se satisfacen por completo en todos los casos. El optimizador no está equivocado — solo nos está mostrando un punto ciego en la función objetivo, que se convirtió en la semilla de nuestro mayor hallazgo más adelante.</span>
+    <span class="lang-en">NWWD came out to 2.53 (Normal), 5.16 (Moderate), 7.79 (Severe), and every scenario revealed the same honest, uncomfortable pattern: 100% of the deficit falls on urban Puebla, while agricultural demand and the smaller municipalities (S.A. Cholula, Atlixco) are fully served in every case. The optimizer isn't wrong. It's just telling us the objective function has a blind spot, which became the seed of our biggest finding later.</span>
+    <span class="lang-es">El NWWD resultó en 2.53 (Normal), 5.16 (Moderado), 7.79 (Severo), y cada escenario reveló el mismo patrón honesto e incómodo: 100% del déficit recae sobre Puebla urbano, mientras la demanda agrícola y los municipios más pequeños (S.A. Cholula, Atlixco) se satisfacen por completo en todos los casos. El optimizador no está equivocado. Solo nos está mostrando un punto ciego en la función objetivo, que se convirtió en la semilla de nuestro mayor hallazgo más adelante.</span>
   </p>
 
   <hr class="divider" />
@@ -96,25 +96,25 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">Our MILP baseline solves the pilot instance (2 sources, 3 municipalities) optimally and instantly. But real water networks add discrete decisions — valve on/off states, reservoir zoning, integer allocations — and MILP variable counts explode: a 50×100 network needs 10,000 variables. Reformulated as a QUBO problem, that same network needs 40,000 qubits — but QUBO maps natively onto the Ising Hamiltonian that quantum hardware runs, and QAOA explores the solution space in superposition instead of branch-and-bound. The team built the full QUBO reformulation with binary encoding (1–4 bits per allocation variable) to test whether that theoretical advantage holds up in practice.</span>
-    <span class="lang-es">Nuestra línea base MILP resuelve la instancia piloto (2 fuentes, 3 municipios) de forma óptima e instantánea. Pero las redes de agua reales agregan decisiones discretas — válvulas on/off, zonificación de reservorios, asignaciones enteras — y el número de variables MILP explota: una red de 50×100 necesita 10,000 variables. Reformulada como problema QUBO, esa misma red necesita 40,000 qubits — pero QUBO se mapea de forma nativa al Hamiltoniano de Ising que corre en hardware cuántico, y QAOA explora el espacio de soluciones en superposición en vez de branch-and-bound. El equipo construyó la reformulación QUBO completa con codificación binaria (1–4 bits por variable de asignación) para probar si esa ventaja teórica se sostiene en la práctica.</span>
+    <span class="lang-en">Our MILP baseline solves the pilot instance (2 sources, 3 municipalities) optimally and instantly. But real water networks add discrete decisions (valve on/off states, reservoir zoning, integer allocations) and MILP variable counts explode: a 50×100 network needs 10,000 variables. Reformulated as a QUBO problem, that same network needs 40,000 qubits. QUBO maps natively onto the Ising Hamiltonian that quantum hardware runs, and QAOA explores the solution space in superposition instead of branch-and-bound. The team built the full QUBO reformulation with binary encoding (1 to 4 bits per allocation variable) to test whether that theoretical advantage holds up in practice.</span>
+    <span class="lang-es">Nuestra línea base MILP resuelve la instancia piloto (2 fuentes, 3 municipios) de forma óptima e instantánea. Pero las redes de agua reales agregan decisiones discretas (válvulas on/off, zonificación de reservorios, asignaciones enteras) y el número de variables MILP explota: una red de 50×100 necesita 10,000 variables. Reformulada como problema QUBO, esa misma red necesita 40,000 qubits. QUBO se mapea de forma nativa al Hamiltoniano de Ising que corre en hardware cuántico, y QAOA explora el espacio de soluciones en superposición en vez de branch-and-bound. El equipo construyó la reformulación QUBO completa con codificación binaria (1 a 4 bits por variable de asignación) para probar si esa ventaja teórica se sostiene en la práctica.</span>
   </p>
 
   <div class="tech-grid" data-reveal data-reveal-delay="100">
     <div class="tech-card">
       <div class="tech-num" style="color:#2540c0;">01</div>
       <h3><span class="lang-en">MILP Baseline</span><span class="lang-es">Línea Base MILP</span></h3>
-      <p><span class="lang-en">Exact ground truth via PuLP/CBC — NWWD 2.53 / 5.16 / 7.79 across drought scenarios, reproducible benchmark for everything that follows.</span><span class="lang-es">Verdad fundamental exacta vía PuLP/CBC — NWWD 2.53 / 5.16 / 7.79 según escenario de sequía, benchmark reproducible para todo lo que sigue.</span></p>
+      <p><span class="lang-en">Exact ground truth via PuLP/CBC: NWWD 2.53 / 5.16 / 7.79 across drought scenarios, reproducible benchmark for everything that follows.</span><span class="lang-es">Verdad fundamental exacta vía PuLP/CBC: NWWD 2.53 / 5.16 / 7.79 según escenario de sequía, benchmark reproducible para todo lo que sigue.</span></p>
     </div>
     <div class="tech-card">
       <div class="tech-num" style="color:#2540c0;">02</div>
       <h3><span class="lang-en">QUBO Reformulation</span><span class="lang-es">Reformulación QUBO</span></h3>
-      <p><span class="lang-en">Same objective and constraints re-expressed as a Quadratic Unconstrained Binary Optimization problem — up to 61 qubits (48 allocation variables + 13 Qiskit slack qubits) at K=4 bits of precision.</span><span class="lang-es">Mismo objetivo y restricciones reexpresados como un problema de Optimización Binaria Cuadrática No Restringida — hasta 61 qubits (48 variables de asignación + 13 qubits de holgura de Qiskit) a K=4 bits de precisión.</span></p>
+      <p><span class="lang-en">Same objective and constraints re-expressed as a Quadratic Unconstrained Binary Optimization problem: up to 61 qubits (48 allocation variables + 13 Qiskit slack qubits) at K=4 bits of precision.</span><span class="lang-es">Mismo objetivo y restricciones reexpresados como un problema de Optimización Binaria Cuadrática No Restringida: hasta 61 qubits (48 variables de asignación + 13 qubits de holgura de Qiskit) a K=4 bits de precisión.</span></p>
     </div>
     <div class="tech-card">
       <div class="tech-num" style="color:#2540c0;">03</div>
       <h3><span class="lang-en">QAOA on Qiskit</span><span class="lang-es">QAOA en Qiskit</span></h3>
-      <p><span class="lang-en">IBM Qiskit Aer (matrix-product-state simulator), circuit depth p=1, 500 shots, COBYLA optimizer for the variational parameters (γ, β) — run at pilot scale on QCentroid's infrastructure.</span><span class="lang-es">IBM Qiskit Aer (simulador de estado de producto matricial), profundidad de circuito p=1, 500 shots, optimizador COBYLA para los parámetros variacionales (γ, β) — ejecutado a escala piloto sobre la infraestructura de QCentroid.</span></p>
+      <p><span class="lang-en">IBM Qiskit Aer (matrix-product-state simulator), circuit depth p=1, 500 shots, COBYLA optimizer for the variational parameters (γ, β), run at pilot scale on QCentroid's infrastructure.</span><span class="lang-es">IBM Qiskit Aer (simulador de estado de producto matricial), profundidad de circuito p=1, 500 shots, optimizador COBYLA para los parámetros variacionales (γ, β), ejecutado a escala piloto sobre la infraestructura de QCentroid.</span></p>
     </div>
   </div>
 
@@ -126,14 +126,14 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">On the Moderate drought scenario, each extra bit of precision roughly halved the discretization error — QAOA's best result reached 36% of MILP's solution quality at K=3 (14.34 vs. the optimal 5.16), then plateaued at K=4 (14.76). That plateau is itself the finding: at circuit depth p=1, the 61-qubit landscape is harder to optimize, so it's circuit depth — not bit precision — that becomes the next bottleneck.</span>
-    <span class="lang-es">En el escenario de sequía Moderado, cada bit extra de precisión redujo aproximadamente a la mitad el error de discretización — el mejor resultado de QAOA alcanzó 36% de la calidad de solución de MILP en K=3 (14.34 vs. el óptimo de 5.16), y luego se estancó en K=4 (14.76). Ese estancamiento es en sí mismo el hallazgo: a profundidad de circuito p=1, el paisaje de 61 qubits es más difícil de optimizar, así que es la profundidad del circuito — no la precisión de bits — el siguiente cuello de botella.</span>
+    <span class="lang-en">On the Moderate drought scenario, each extra bit of precision roughly halved the discretization error: QAOA's best result reached 36% of MILP's solution quality at K=3 (14.34 vs. the optimal 5.16), then plateaued at K=4 (14.76). That plateau is itself the finding: at circuit depth p=1, the 61-qubit landscape is harder to optimize, so circuit depth, not bit precision, becomes the next bottleneck.</span>
+    <span class="lang-es">En el escenario de sequía Moderado, cada bit extra de precisión redujo aproximadamente a la mitad el error de discretización: el mejor resultado de QAOA alcanzó 36% de la calidad de solución de MILP en K=3 (14.34 vs. el óptimo de 5.16), y luego se estancó en K=4 (14.76). Ese estancamiento es en sí mismo el hallazgo: a profundidad de circuito p=1, el paisaje de 61 qubits es más difícil de optimizar, así que la profundidad del circuito, no la precisión de bits, es el siguiente cuello de botella.</span>
   </p>
 
   <div class="callout" data-reveal>
-    <strong><span class="lang-en">Benchmark Table — Moderate Scenario (α=0.8)</span><span class="lang-es">Tabla de Benchmark — Escenario Moderado (α=0.8)</span></strong>
-    <span class="lang-en">MILP (CBC): NWWD 5.16 — 100% (ground truth). QUBO K=1 (25 qubits): 36.63 — 14.1%. QUBO K=2 (37 qubits): 29.20 — 17.7%. QUBO K=3 (49 qubits): 14.34 — 36.0% (best result; supply caps always satisfied, minor demand-cap softness). QUBO K=4 (61 qubits): 14.76 — 35.0% (plateau). Supply constraints were hard caps and always respected; demand constraints were soft (penalty-based), fully feasible up to K=2, with minor over-allocation at K≥3.</span>
-    <span class="lang-es">MILP (CBC): NWWD 5.16 — 100% (verdad fundamental). QUBO K=1 (25 qubits): 36.63 — 14.1%. QUBO K=2 (37 qubits): 29.20 — 17.7%. QUBO K=3 (49 qubits): 14.34 — 36.0% (mejor resultado; los topes de oferta siempre se cumplieron, con leve suavidad en el tope de demanda). QUBO K=4 (61 qubits): 14.76 — 35.0% (estancamiento). Las restricciones de oferta fueron topes duros y siempre se respetaron; las de demanda fueron suaves (basadas en penalización), totalmente factibles hasta K=2, con sobre-asignación leve en K≥3.</span>
+    <strong><span class="lang-en">Benchmark Table · Moderate Scenario (α=0.8)</span><span class="lang-es">Tabla de Benchmark · Escenario Moderado (α=0.8)</span></strong>
+    <span class="lang-en">MILP (CBC): NWWD 5.16 (100%, ground truth). QUBO K=1 (25 qubits): 36.63 (14.1%). QUBO K=2 (37 qubits): 29.20 (17.7%). QUBO K=3 (49 qubits): 14.34 (36.0%, best result; supply caps always satisfied, minor demand-cap softness). QUBO K=4 (61 qubits): 14.76 (35.0%, plateau). Supply constraints were hard caps and always respected; demand constraints were soft (penalty-based), fully feasible up to K=2, with minor over-allocation at K≥3.</span>
+    <span class="lang-es">MILP (CBC): NWWD 5.16 (100%, verdad fundamental). QUBO K=1 (25 qubits): 36.63 (14.1%). QUBO K=2 (37 qubits): 29.20 (17.7%). QUBO K=3 (49 qubits): 14.34 (36.0%, mejor resultado; los topes de oferta siempre se cumplieron, con leve suavidad en el tope de demanda). QUBO K=4 (61 qubits): 14.76 (35.0%, estancamiento). Las restricciones de oferta fueron topes duros y siempre se respetaron; las de demanda fueron suaves (basadas en penalización), totalmente factibles hasta K=2, con sobre-asignación leve en K≥3.</span>
   </div>
 
   <hr class="divider" />
@@ -144,8 +144,8 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">Our most interesting result wasn't a number — it was a flaw we found in our own objective function. NWWD normalizes deficit by demand size, so satisfying a small demand (Cholula's 5 hm³ agricultural need) reduces the score more efficiently than satisfying a large one. The result: despite weighting urban deficit 10× more than agricultural (wᵘ=10 vs. wᵃ=3), every optimal solution — in both MILP and QAOA — routes 100% of the shortfall to Puebla, the largest and most urban city. Mathematically optimal, but the least-protected population is the biggest one. The fix isn't a bigger model — it's minimum supply guarantees or a lexicographic priority objective that can't be gamed by demand size.</span>
-    <span class="lang-es">Nuestro resultado más interesante no fue un número — fue una falla que encontramos en nuestra propia función objetivo. NWWD normaliza el déficit por el tamaño de la demanda, así que satisfacer una demanda pequeña (la necesidad agrícola de Cholula de 5 hm³) reduce el puntaje de forma más eficiente que satisfacer una grande. El resultado: a pesar de ponderar el déficit urbano 10× más que el agrícola (wᵘ=10 vs. wᵃ=3), toda solución óptima — tanto en MILP como en QAOA — enruta el 100% del faltante hacia Puebla, la ciudad más grande y urbana. Matemáticamente óptimo, pero la población menos protegida es la más grande. La solución no es un modelo más grande — son garantías de suministro mínimo o un objetivo de prioridad lexicográfica que no pueda ser explotado por el tamaño de la demanda.</span>
+    <span class="lang-en">Our most interesting result wasn't a number. It was a flaw we found in our own objective function. NWWD normalizes deficit by demand size, so satisfying a small demand (Cholula's 5 hm³ agricultural need) reduces the score more efficiently than satisfying a large one. The result: despite weighting urban deficit 10× more than agricultural (wᵘ=10 vs. wᵃ=3), every optimal solution (in both MILP and QAOA) routes 100% of the shortfall to Puebla, the largest and most urban city. Mathematically optimal, but the least-protected population is the biggest one. The fix isn't a bigger model. It's minimum supply guarantees or a lexicographic priority objective that can't be gamed by demand size.</span>
+    <span class="lang-es">Nuestro resultado más interesante no fue un número. Fue una falla que encontramos en nuestra propia función objetivo. NWWD normaliza el déficit por el tamaño de la demanda, así que satisfacer una demanda pequeña (la necesidad agrícola de Cholula de 5 hm³) reduce el puntaje de forma más eficiente que satisfacer una grande. El resultado: a pesar de ponderar el déficit urbano 10× más que el agrícola (wᵘ=10 vs. wᵃ=3), toda solución óptima (tanto en MILP como en QAOA) enruta el 100% del faltante hacia Puebla, la ciudad más grande y urbana. Matemáticamente óptimo, pero la población menos protegida es la más grande. La solución no es un modelo más grande. Son garantías de suministro mínimo o un objetivo de prioridad lexicográfica que no pueda ser explotado por el tamaño de la demanda.</span>
   </p>
 
   <hr class="divider" />
@@ -156,8 +156,8 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">Three days, surrounded by students from across LATAM, with representatives from OQI (Open Quantum Institute) and CERN on the jury, and QCentroid providing the computational infrastructure to actually run our circuits at scale. I'd never touched quantum computing a month before this — diving into the MILP side while the rest of the team built out the QUBO and QAOA implementation was one of the most fascinating things I've worked on.</span>
-    <span class="lang-es">Tres días, rodeado de estudiantes de toda LATAM, con representantes de OQI (Open Quantum Institute) y CERN en el jurado, y QCentroid aportando la infraestructura computacional para correr nuestros circuitos a escala. Un mes antes jamás había tocado computación cuántica — sumergirme en el lado MILP mientras el resto del equipo construía la implementación de QUBO y QAOA fue una de las cosas más fascinantes en las que he trabajado.</span>
+    <span class="lang-en">Three days, surrounded by students from across LATAM, with representatives from OQI (Open Quantum Institute) and CERN on the jury, and QCentroid providing the computational infrastructure to actually run our circuits at scale. I'd never touched quantum computing a month before this. Diving into the MILP side while the rest of the team built out the QUBO and QAOA implementation was one of the most fascinating things I've worked on.</span>
+    <span class="lang-es">Tres días, rodeado de estudiantes de toda LATAM, con representantes de OQI (Open Quantum Institute) y CERN en el jurado, y QCentroid aportando la infraestructura computacional para correr nuestros circuitos a escala. Un mes antes jamás había tocado computación cuántica. Sumergirme en el lado MILP mientras el resto del equipo construía la implementación de QUBO y QAOA fue una de las cosas más fascinantes en las que he trabajado.</span>
   </p>
 
   <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; box-shadow:0 22px 50px -24px rgba(234,106,46,0.3);">
@@ -172,8 +172,8 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro'
   </h2>
 
   <p class="prose" data-reveal data-reveal-delay="60">
-    <span class="lang-en">Equipo 9, Benemérita Universidad Autónoma de Puebla (BUAP): Moisés Chávez Huerta, Rodrigo Segura Moreno, Roberto García Sol, and myself — Jordi Alessandro Reyes Martínez. Full formulation and code (MILP + QUBO + QAOA notebooks, benchmarking results) is open source and linked below.</span>
-    <span class="lang-es">Equipo 9, Benemérita Universidad Autónoma de Puebla (BUAP): Moisés Chávez Huerta, Rodrigo Segura Moreno, Roberto García Sol, y yo — Jordi Alessandro Reyes Martínez. La formulación completa y el código (notebooks de MILP + QUBO + QAOA, resultados de benchmarking) es de código abierto y está enlazado abajo.</span>
+    <span class="lang-en">Equipo 9, Benemérita Universidad Autónoma de Puebla (BUAP): Moisés Chávez Huerta, Rodrigo Segura Moreno, Roberto García Sol, and myself, Jordi Alessandro Reyes Martínez. Full formulation and code (MILP + QUBO + QAOA notebooks, benchmarking results) is open source and linked below.</span>
+    <span class="lang-es">Equipo 9, Benemérita Universidad Autónoma de Puebla (BUAP): Moisés Chávez Huerta, Rodrigo Segura Moreno, Roberto García Sol, y yo, Jordi Alessandro Reyes Martínez. La formulación completa y el código (notebooks de MILP + QUBO + QAOA, resultados de benchmarking) es de código abierto y está enlazado abajo.</span>
   </p>
 
   <div data-reveal style="border-radius:18px; overflow:hidden; margin:clamp(28px,4vh,48px) 0; max-width:380px; margin-left:auto; margin-right:auto; box-shadow:0 22px 50px -24px rgba(37,64,192,0.35);">
