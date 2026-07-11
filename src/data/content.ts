@@ -154,6 +154,20 @@ export const PROJECTS: Project[] = [
     shadowColor: 'blue',
     href: '/portfolio/project/self-balancing-platform',
   },
+  {
+    slug: 'quantum-water-hackathon',
+    tag: { en: 'OQI Hackathon LATAM 2026 · 1st Place', es: 'OQI Hackathon LATAM 2026 · 1er Lugar' },
+    title: { en: 'Quantum Computing for Puebla’s Water Crisis', es: 'Computación Cuántica para la Crisis del Agua en Puebla' },
+    description: {
+      en: 'Won 1st place LATAM-wide modeling Puebla’s water deficit as MILP and QUBO, then solving it with QAOA on IBM Qiskit — three days, four students, a real hydrological crisis.',
+      es: 'Ganamos 1er lugar a nivel LATAM modelando el déficit hídrico de Puebla como MILP y QUBO, resolviéndolo con QAOA en IBM Qiskit — tres días, cuatro estudiantes, una crisis hidrológica real.',
+    },
+    image: '/portfolio/images/hack_team.webp',
+    imageAlt: 'Equipo 9 BUAP con certificados del Hackathon LATAM 2026',
+    size: 'small',
+    shadowColor: 'orange',
+    href: '/portfolio/project/quantum-water-hackathon',
+  },
 ]
 
 export interface Publication {
